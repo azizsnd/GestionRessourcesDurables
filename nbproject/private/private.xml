@@ -3,13 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/Users/HP/Documents/NetBeansProjects/GestionRessourcesDurables/src/serviceSuivi/Services.fxml</file>
             <file>file:/C:/Users/HP/Documents/NetBeansProjects/GestionRessourcesDurables/src/entiteDurable/EntiteDurable.java</file>
-            <file>file:/C:/Users/HP/Documents/NetBeansProjects/GestionRessourcesDurables/src/entiteDurable/Dechet.java</file>
-            <file>file:/C:/Users/HP/Documents/NetBeansProjects/GestionRessourcesDurables/src/serviceSuivi/ServiceSuivi.java</file>
-            <file>file:/C:/Users/HP/Documents/NetBeansProjects/GestionRessourcesDurables/src/entiteDurable/ObjectifDurabilite.java</file>
-            <file>file:/C:/Users/HP/Documents/NetBeansProjects/GestionRessourcesDurables/src/entiteDurable/EmpreinteCarbone.java</file>
-            <file>file:/C:/Users/HP/Documents/NetBeansProjects/GestionRessourcesDurables/src/entiteDurable/Energie.java</file>
-            <file>file:/C:/Users/HP/Documents/NetBeansProjects/GestionRessourcesDurables/src/entiteDurable/Ressource.java</file>
+            <file>file:/C:/Users/HP/Documents/NetBeansProjects/GestionRessourcesDurables/src/login/Login.fxml</file>
+            <file>file:/C:/Users/HP/Documents/NetBeansProjects/GestionRessourcesDurables/src/serviceSuivi/ServiceSuiviEnergie.java</file>
+            <file>file:/C:/Users/HP/Documents/NetBeansProjects/GestionRessourcesDurables/src/serviceSuivi/ServiceSuiviCarbone.java</file>
+            <file>file:/C:/Users/HP/Documents/NetBeansProjects/GestionRessourcesDurables/src/login/LoginApp.java</file>
+            <file>file:/C:/Users/HP/Documents/NetBeansProjects/GestionRessourcesDurables/src/serviceSuivi/Services.java</file>
         </group>
     </open-files>
 </project-private>

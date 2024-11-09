@@ -1,31 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.Text?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<VBox xmlns:fx="http://javafx.com/fxml/1" 
-      alignment="CENTER" spacing="10"
-      style="-fx-padding: 30; -fx-background-color: rgba(255, 255, 255, 0.479); -fx-background-radius: 10; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 10, 0, 0, 0); max-width: 400px; width: 100%;">
 
-    <Text text="Bienvenue" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-alignment: center;"/>
-
-    <Label fx:id="errorLabel" visible="false" style="-fx-text-fill: red;"/>
-    
-    <Label text="Email"/>
-    <TextField fx:id="emailField" promptText="username@gmail.com" 
-               styleClass="form-control" 
-              />
-    <Label fx:id="emailErrorLabel" visible="false" style="-fx-text-fill: red;"/>
-    
-    <Label text="Mot de passe"/>
-    <PasswordField fx:id="passwordField" promptText="Mot de passe" 
-                   styleClass="form-control" 
-                  />
-    <Label fx:id="passwordErrorLabel" visible="false" style="-fx-text-fill: red;"/>
-
-    <Hyperlink text="Mot de passe oublié?" style="-fx-text-alignment: right;"/>
-
-    <Button text="Se connecter" styleClass="login-btn" 
-        />
-</VBox>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <VBox alignment="TOP_CENTER" layoutX="-2.0" layoutY="-1.0" prefHeight="400.0" prefWidth="142.0" style="-fx-background-color: #bafaa0; -fx-padding: 5; -fx-spacing: 20;">
+         <children>
+            <Label graphicTextGap="10.0" style="-fx-label-padding: 10;" text="DashBord" underline="true">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+            </Label>
+            <MenuButton mnemonicParsing="false" prefHeight="27.0" prefWidth="116.0" text="Suivi Services">
+              <items>
+                <MenuItem mnemonicParsing="false" text="ServiceSuiviCarbone" />
+                <MenuItem mnemonicParsing="false" text="ServiceSuiviEnergie" />
+              </items>
+            </MenuButton>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </VBox>
+      <VBox alignment="CENTER_RIGHT" layoutX="139.0" layoutY="-1.0" prefHeight="400.0" prefWidth="466.0" />
+   </children>
+</AnchorPane>
