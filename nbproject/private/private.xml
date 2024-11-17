@@ -3,13 +3,24 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/HP/Documents/NetBeansProjects/GestionRessourcesDurables/src/serviceSuivi/Services.fxml</file>
-            <file>file:/C:/Users/HP/Documents/NetBeansProjects/GestionRessourcesDurables/src/entiteDurable/EntiteDurable.java</file>
-            <file>file:/C:/Users/HP/Documents/NetBeansProjects/GestionRessourcesDurables/src/login/Login.fxml</file>
-            <file>file:/C:/Users/HP/Documents/NetBeansProjects/GestionRessourcesDurables/src/serviceSuivi/ServiceSuiviEnergie.java</file>
-            <file>file:/C:/Users/HP/Documents/NetBeansProjects/GestionRessourcesDurables/src/serviceSuivi/ServiceSuiviCarbone.java</file>
-            <file>file:/C:/Users/HP/Documents/NetBeansProjects/GestionRessourcesDurables/src/login/LoginApp.java</file>
-            <file>file:/C:/Users/HP/Documents/NetBeansProjects/GestionRessourcesDurables/src/serviceSuivi/Services.java</file>
+            <file>file:/C:/Users/HP/Documents/NetBeansProjects/GestionRessourcesDurables/src/View/VueSuiviRessource.fxml</file>
+            <file>file:/C:/Users/HP/Documents/NetBeansProjects/GestionRessourcesDurables/src/Model/GestionDeRisque/PlanDeGestionRisque.java</file>
+            <file>file:/C:/Users/HP/Documents/NetBeansProjects/GestionRessourcesDurables/src/Model/GestionDeRisque/IncidentEnvironnemental.java</file>
+            <file>file:/C:/Users/HP/Documents/NetBeansProjects/GestionRessourcesDurables/src/View/VueSuiviEnergie.fxml</file>
+            <file>file:/C:/Users/HP/Documents/NetBeansProjects/GestionRessourcesDurables/src/View/VueSuiviDechet.fxml</file>
+            <file>file:/C:/Users/HP/Documents/NetBeansProjects/GestionRessourcesDurables/src/Controller/VueSuiviDechetController.java</file>
+            <file>file:/C:/Users/HP/Documents/NetBeansProjects/GestionRessourcesDurables/src/Model/Utilisateurs/Auditeur.java</file>
+            <file>file:/C:/Users/HP/Documents/NetBeansProjects/GestionRessourcesDurables/src/Model/entiteDurable/EmpreinteCarbone.java</file>
+            <file>file:/C:/Users/HP/Documents/NetBeansProjects/GestionRessourcesDurables/src/Model/entiteDurable/EntiteDurable.java</file>
+            <file>file:/C:/Users/HP/Documents/NetBeansProjects/GestionRessourcesDurables/src/Controller/LoginController.java</file>
+            <file>file:/C:/Users/HP/Documents/NetBeansProjects/GestionRessourcesDurables/src/View/menu.fxml</file>
+            <file>file:/C:/Users/HP/Documents/NetBeansProjects/GestionRessourcesDurables/src/Model/Utilisateurs/Utilisateur.java</file>
+            <file>file:/C:/Users/HP/Documents/NetBeansProjects/GestionRessourcesDurables/src/Model/GestionDeRisque/RisqueEnviromental.java</file>
+            <file>file:/C:/Users/HP/Documents/NetBeansProjects/GestionRessourcesDurables/src/Controller/MenuController.java</file>
+            <file>file:/C:/Users/HP/Documents/NetBeansProjects/GestionRessourcesDurables/src/Model/entiteDurable/Energie.java</file>
+            <file>file:/C:/Users/HP/Documents/NetBeansProjects/GestionRessourcesDurables/src/Model/Reglementation/AuditEnviromental.java</file>
+            <file>file:/C:/Users/HP/Documents/NetBeansProjects/GestionRessourcesDurables/src/GestionRessourcesDurables/GestionRessourcesDurables.java</file>
+            <file>file:/C:/Users/HP/Documents/NetBeansProjects/GestionRessourcesDurables/src/View/Login.fxml</file>
         </group>
     </open-files>
 </project-private>
