@@ -55,7 +55,7 @@ public class PlanDActionCorrectif {
         System.out.println("Date : " + date);
         System.out.println("Actions à prendre : " + actions);
         for (Reglementation reglementation : reglementationsCibles) {
-            System.out.println("Règlementation ciblée : " + reglementation.getNom());
+            System.out.println("Règlementation ciblée : " + reglementation.nom());
         }
     }
 

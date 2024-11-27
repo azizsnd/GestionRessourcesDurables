@@ -1,5 +1,9 @@
 package Model.serviceSuivi;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -10,7 +14,6 @@ public class GestionRapportSuivi {
     private int frequenceRapport;
     private String rapportType;
 
-    // Constructeur
     public GestionRapportSuivi(int frequenceRapport, String rapportType) {
         this.listeRapports = new ArrayList<>();
         this.frequenceRapport = frequenceRapport;
@@ -18,20 +21,30 @@ public class GestionRapportSuivi {
         this.dateDernierRapport = new Date();
     }
 
-    // Génère un rapport personnalisé et l'ajoute à la liste
     public void genererRapport(String contenuRapport) {
-        String rapport = "Rapport (" + rapportType + ") - " + new Date() + " : " + contenuRapport;
+        String rapport = "Rapport (" + rapportType + ") - " + new Date().toString() + " : " + contenuRapport;
         listeRapports.add(rapport);
         dateDernierRapport = new Date(); // Met à jour la date du dernier rapport
+        
+        // Utilisation du try-with-resources pour écrire dans un fichier
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd_HH-mm");
+        String dateFormatted = dateFormat.format(new Date());
+
+        // Utilisation du try-with-resources pour écrire dans un fichier
+        String filename = "rapport_" + rapportType + "_" + dateFormatted + ".txt"; 
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(filename, true))) {
+            writer.write(rapport);
+            writer.newLine();  // Ajoute une nouvelle ligne après chaque rapport
+        } catch (IOException e) {
+            System.out.println("Erreur lors de l'écriture du rapport dans le fichier : " + e.getMessage());
+        }
     }
 
-    // Génère automatiquement un rapport pour un service spécifique
     public void genererRapportPourService(ServiceSuivi service) {
         String contenuRapport = service.genererRapport();
         genererRapport(contenuRapport);
     }
 
-    // Accesseurs
     public List<String> getListeRapports() {
         return listeRapports;
     }
@@ -76,3 +89,4 @@ public class GestionRapportSuivi {
                 '}';
     }
 }
+

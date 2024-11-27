@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class ServiceSuiviCarbone extends ServiceSuivi {
+public final class ServiceSuiviCarbone extends ServiceSuivi {
     private List<EmpreinteCarbone> empreintesSuivis;
     private double emissionTotal;
     private double reductionCibleTotal;

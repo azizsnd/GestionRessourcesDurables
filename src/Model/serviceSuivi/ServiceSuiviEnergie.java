@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class ServiceSuiviEnergie extends ServiceSuivi{
+public final class ServiceSuiviEnergie extends ServiceSuivi{
     private List<Energie> sourcesEnergie;
     private double consommationTotalEnergie;
     private double pourcentageEnergieRenouvelable;
@@ -46,12 +46,11 @@ public class ServiceSuiviEnergie extends ServiceSuivi{
     }
 
     public double calculerPourcentageEnergieRenouvelable() {
-        double renouvelableQte=0.0;
-        for (Energie energie : sourcesEnergie) {
-            if (energie.estRenouvelable()) {
-                renouvelableQte=energie.getUtilisationActuelle();
-            }
-        }
+        double renouvelableQte = sourcesEnergie.stream()
+            .filter(Energie::estRenouvelable) // Filtrer les énergies renouvelables
+            .mapToDouble(Energie::getUtilisationActuelle) // Récupérer la quantité d'énergie renouvelable
+            .sum();
+        
         pourcentageEnergieRenouvelable=(renouvelableQte/ consommationTotalEnergie) * 100;
         return pourcentageEnergieRenouvelable;
     }
@@ -62,24 +61,23 @@ public class ServiceSuiviEnergie extends ServiceSuivi{
 
     @Override
     public void suivi() {
-        consommationTotalEnergie = 0;
-        for (Energie energie : sourcesEnergie) {
-            consommationTotalEnergie += energie.getUtilisationActuelle();
-        }
+        consommationTotalEnergie = sourcesEnergie.stream()
+            .mapToDouble(Energie::getUtilisationActuelle) 
+            .sum();
     }
     @Override
     public String genererRapport() {
-        double consommationTotale = 0;
-        int renouvelableCount = 0;
+        double consommationTotale = sourcesEnergie.stream()
+            .mapToDouble(Energie::getUtilisationActuelle) // Récupérer les consommations
+            .sum();
 
-        for (Energie energie : sourcesEnergie) {
-            consommationTotale += energie.getUtilisationActuelle();
-            if (energie.estRenouvelable()) {
-                renouvelableCount++;
-            }
-        }
+        long renouvelableCount = sourcesEnergie.stream()
+            .filter(Energie::estRenouvelable)
+            .count();        
 
-        double pourcentageRenouvelable = sourcesEnergie.size() > 0 ? (double) renouvelableCount / sourcesEnergie.size() * 100 : 0;
+
+        double pourcentageRenouvelable = sourcesEnergie.size() > 0 ?
+                (double) renouvelableCount / sourcesEnergie.size() * 100 : 0;
 
         return String.format("Rapport de Suivi de l'Énergie:\n" +
                              "Quantité totale d'énergie produite: %.2f unités\n" +
@@ -89,7 +87,9 @@ public class ServiceSuiviEnergie extends ServiceSuivi{
     }
     @Override
     public String toString() {
-        return "ServiceSuiviEnergie{" +super.toString()+" "+ "sourcesEnergie=" + sourcesEnergie + ", consommationTotalEnergie=" + consommationTotalEnergie + ", pourcentageEnergieRenouvelable=" + pourcentageEnergieRenouvelable + '}';
+        return "ServiceSuiviEnergie{" +super.toString()+" "+ "sourcesEnergie=" 
+                + sourcesEnergie + ", consommationTotalEnergie=" + consommationTotalEnergie
+                + ", pourcentageEnergieRenouvelable=" + pourcentageEnergieRenouvelable + '}';
     }
     
 }

@@ -2,7 +2,7 @@ package Model.entiteDurable;
 
 import java.util.Date;
 
-public class Dechet extends EntiteDurable {
+public final class Dechet extends EntiteDurable {
     private String type;
     private double quantiteProduite;
     private double quantiteRecycle;

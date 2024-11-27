@@ -40,7 +40,7 @@ public class NormeIso {
 
     public boolean verifierConformite() {
         for (Reglementation reglementation : exigences) {
-            if (!reglementation.estConforme()) {
+            if (!reglementation.estActive()) {
                 return false;
             }
         }
@@ -50,7 +50,7 @@ public class NormeIso {
     public void genererRapport() {
         System.out.println("Rapport de conformité pour la norme ISO : " + numISO);
         for (Reglementation reglementation : exigences) {
-            System.out.println("Règlementation : " + reglementation.getNom() + " - Conforme : " + reglementation.estConforme());
+            System.out.println("Règlementation : " + reglementation.nom()+ " - Conforme : " + reglementation.estActive());
         }
     }
 

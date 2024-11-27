@@ -2,12 +2,13 @@ package Model.GestionDeRisque;
 
 import java.util.Date;
 
-public class IncidentEnvironnemental {
+public final class IncidentEnvironnemental extends RisqueEnviromental {
     private String typeIncident;
     private Date dateIncident;
     private String consequence;
 
-    public IncidentEnvironnemental(String typeIncident, Date dateIncident, String consequence) {
+    public IncidentEnvironnemental(String typeIncident, Date dateIncident, String consequence, String nom, String description, double probabilite, double impact, int priorite) {
+        super(nom, description, probabilite, impact, priorite);
         this.typeIncident = typeIncident;
         this.dateIncident = dateIncident;
         this.consequence = consequence;

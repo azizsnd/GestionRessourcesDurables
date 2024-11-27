@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class ServiceSuiviDechet extends ServiceSuivi {
+public final class ServiceSuiviDechet extends ServiceSuivi {
     private List<Dechet> dechetSuivis;
     private double tauxRecyclageMoyenne;
     private double quantiteTotalDechet;
@@ -44,16 +44,11 @@ public class ServiceSuiviDechet extends ServiceSuivi {
         quantiteTotalDechet += quantite;
     }
 
-     public double calculerTauxRecyclageMoy() {
-        double totalRecyclage = 0;
-        for (Dechet dechet : dechetSuivis) {
-            totalRecyclage += dechet.calculerTauxRecyclage();
-        }
-        if (!dechetSuivis.isEmpty()) {
-            tauxRecyclageMoyenne = totalRecyclage / dechetSuivis.size();
-        } else {
-            tauxRecyclageMoyenne = 0;
-        }
+    public double calculerTauxRecyclageMoy() {
+        tauxRecyclageMoyenne = dechetSuivis.stream()
+            .mapToDouble(Dechet::calculerTauxRecyclage) 
+            .average() // Calcul de la moyenne
+            .orElse(0); // Si la liste est vide, retourner 0
         return tauxRecyclageMoyenne;
     }
     @Override
@@ -71,7 +66,9 @@ public class ServiceSuiviDechet extends ServiceSuivi {
     }
     @Override
     public String toString() {
-        return "SuiviDechet{" +super.toString()+" "+ "dechetSuivis=" + dechetSuivis + ", tauxRecyclageMoyenne=" + tauxRecyclageMoyenne + ", quantiteTotalDechet=" + quantiteTotalDechet + '}';
+        return "SuiviDechet{" +super.toString()+" "+ "dechetSuivis=" + dechetSuivis 
+                + ", tauxRecyclageMoyenne=" + tauxRecyclageMoyenne
+                + ", quantiteTotalDechet=" + quantiteTotalDechet + '}';
     }
     
 }

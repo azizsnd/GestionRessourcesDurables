@@ -1,6 +1,6 @@
 package Model.Utilisateurs;
 
-public class Utilisateur {
+public sealed class Utilisateur permits Administrateur, Auditeur{
     protected String nom;
     protected int idUtilisateur;
     protected String motDePasse;

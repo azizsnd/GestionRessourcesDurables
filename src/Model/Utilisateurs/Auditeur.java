@@ -1,6 +1,6 @@
 package Model.Utilisateurs;
 
-public class Auditeur extends Utilisateur {
+public final class Auditeur extends Utilisateur {
     
     public Auditeur(String nom, int idAuditeur, String motDePasse) {
         super(nom, idAuditeur, motDePasse);

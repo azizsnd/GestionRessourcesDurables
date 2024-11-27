@@ -2,7 +2,7 @@ package Model.entiteDurable;
 
 import java.util.Date;
 
-public class EmpreinteCarbone extends EntiteDurable {
+public final class EmpreinteCarbone extends EntiteDurable {
     private String sourceEmission;
     private double emissionAnnuelles;
     private double emissionActuelle;

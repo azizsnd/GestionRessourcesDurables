@@ -2,7 +2,7 @@ package Model.entiteDurable;
 
 import java.util.Date;
 
-public class Ressource extends EntiteDurable{
+public sealed class Ressource extends EntiteDurable permits Energie {
     private String uniteDeMesure;
     private double utilisationReference;
     private double utilisationActuelle;

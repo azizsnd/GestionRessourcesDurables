@@ -2,7 +2,7 @@ package Model.serviceSuivi;
 
 import java.util.Date;
 
-public abstract class ServiceSuivi {
+public sealed abstract class ServiceSuivi permits ServiceSuiviCarbone,ServiceSuiviDechet,ServiceSuiviEnergie,ServiceSuiviObjectif,ServiceSuiviRessource {
     private String nom;
     private int frequenceRapport;
     private Date dernierDateSuivi;

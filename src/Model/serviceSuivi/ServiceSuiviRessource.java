@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class ServiceSuiviRessource extends ServiceSuivi{
+public final class ServiceSuiviRessource extends ServiceSuivi{
     private List<Ressource> resourcesSuivis;
     private int nbreRessourceSuivi;
     private double coutTotalRessource;
@@ -58,19 +58,19 @@ public class ServiceSuiviRessource extends ServiceSuivi{
 
     @Override
     public void suivi() {
-        for (Ressource ressource : resourcesSuivis) {
-            coutTotalRessource += ressource.calculerCoutTotal();
-        }
+        coutTotalRessource = resourcesSuivis.stream()
+            .mapToDouble(Ressource::calculerCoutTotal)
+            .sum(); 
     }
     @Override
     public String genererRapport() {
-        double coutTotal = 0;
-        double utilisationTotale = 0;
+        double coutTotal = resourcesSuivis.stream()
+            .mapToDouble(Ressource::calculerCoutTotal) // Calculer le coût total pour chaque ressource
+            .sum();
 
-        for (Ressource ressource : resourcesSuivis) {
-             coutTotal += ressource.calculerCoutTotal();
-            utilisationTotale += ressource.getUtilisationReference();
-        }
+        double utilisationTotale = resourcesSuivis.stream()
+            .mapToDouble(Ressource::getUtilisationReference) // Récupérer la consommation de chaque ressource
+            .sum();
 
         return String.format("Rapport de Suivi des Ressources:\n" +
                              "Utilisation totale de ressources: %.2f unités\n" +
@@ -81,7 +81,9 @@ public class ServiceSuiviRessource extends ServiceSuivi{
 
     @Override
     public String toString() {
-        return "ServiceSuiviRessource{" + super.toString()+" "+ "resourcesSuivis=" + resourcesSuivis + ", nbreRessourceSuivi=" + nbreRessourceSuivi + ", coutTotalRessource=" + coutTotalRessource + '}';
+        return "ServiceSuiviRessource{" + super.toString()+" "+ "resourcesSuivis=" 
+                + resourcesSuivis + ", nbreRessourceSuivi=" + nbreRessourceSuivi 
+                + ", coutTotalRessource=" + coutTotalRessource + '}';
     }
     
 }

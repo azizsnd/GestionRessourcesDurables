@@ -2,7 +2,7 @@ package Model.entiteDurable;
 
 import java.util.Date;
 
-public class Energie extends Ressource{
+public final class Energie extends Ressource{
     private boolean estRenouvelable;
     private String type;
 

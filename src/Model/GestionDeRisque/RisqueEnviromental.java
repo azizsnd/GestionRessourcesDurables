@@ -1,7 +1,7 @@
 package Model.GestionDeRisque;
 
 
-public class RisqueEnviromental {
+public sealed class RisqueEnviromental permits IncidentEnvironnemental {
     private String nom;
     private String description;
     private double probabilite;

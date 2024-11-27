@@ -2,10 +2,9 @@ package Model.Utilisateurs;
 
 
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
-public class Administrateur extends Utilisateur {
+public final class Administrateur extends Utilisateur {
     private Set<Auditeur> listAuditeurs;
     private Set<Utilisateur> listUtilisateurs;
 

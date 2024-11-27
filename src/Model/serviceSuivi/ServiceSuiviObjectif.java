@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class ServiceSuiviObjectif extends ServiceSuivi {
+public final class ServiceSuiviObjectif extends ServiceSuivi {
     private List<ObjectifDurabilite> objectifsSuivis;
     private int nbreObjectifAtteints;
     private ObjectifDurabilite objectifPrioritaire;
@@ -54,19 +54,15 @@ public class ServiceSuiviObjectif extends ServiceSuivi {
     }
 
     public void afficherSuiviObjectif() {
-        for (ObjectifDurabilite objectif : objectifsSuivis) {
-            System.out.println(getStatusObjectif(objectif));
-        }
+        objectifsSuivis.forEach(objectif -> System.out.println(getStatusObjectif(objectif)));
     }
 
     @Override
     public void suivi() {
-        for (ObjectifDurabilite objectif : objectifsSuivis) {
-            if (objectif.objectifEstAtteint()) {
-                nbreObjectifAtteints++;
-            }
-        }
-    }    
+        nbreObjectifAtteints = (int) objectifsSuivis.stream()
+                .filter(ObjectifDurabilite::objectifEstAtteint)
+                .count();
+    }   
     @Override
     public String genererRapport() {
         int objectifsAtteints = 0;

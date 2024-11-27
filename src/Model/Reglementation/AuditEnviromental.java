@@ -30,7 +30,7 @@ public class AuditEnviromental {
 
     public void executerAudit() {
         for (Reglementation reglementation : resultat.keySet()) {
-            boolean conforme = reglementation.estConforme();
+            boolean conforme = reglementation.estActive();
             resultat.put(reglementation, conforme);
         }
     }
@@ -38,7 +38,7 @@ public class AuditEnviromental {
     public void genererRapport() {
         System.out.println("Rapport d'audit environnemental pour l'entité : " + entite);
         for (Map.Entry<Reglementation, Boolean> entry : resultat.entrySet()) {
-            System.out.println("Règlementation : " + entry.getKey().getNom() + " - Conforme : " + entry.getValue());
+            System.out.println("Règlementation : " + entry.getKey().nom()+ " - Conforme : " + entry.getValue());
         }
     }
 
