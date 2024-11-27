@@ -8,7 +8,7 @@ public sealed class Ressource extends EntiteDurable permits Energie {
     private double utilisationActuelle;
     private double coutParUnite;
 
-    public Ressource( int id, String nom, String description, Date dateCreation, ObjectifDurabilite objectif,String uniteDeMesure, double utilisationReference, double utilisationActuelle, double coutParUnite) {
+    public Ressource(int id,String nom,String description,Date dateCreation,ObjectifDurabilite objectif,String uniteDeMesure,double utilisationReference,double utilisationActuelle,double coutParUnite)throws ObjectifInvalideException {
         super(id, nom, description, dateCreation, objectif);
         this.uniteDeMesure = uniteDeMesure;
         this.utilisationReference = utilisationReference;
