@@ -67,22 +67,24 @@ public final class ServiceSuiviCarbone extends ServiceSuivi {
 
     @Override
     public void suivi() {
-        emissionTotal = 0;
-        reductionCibleTotal=0;
-        for (EmpreinteCarbone empreinte : empreintesSuivis) {
-            emissionTotal += empreinte.getEmissionActuelle();
-            emissionTotal += empreinte.getObjectif().getReductionCible();
-        }
+        emissionTotal = empreintesSuivis.stream()
+            .mapToDouble(EmpreinteCarbone::getEmissionActuelle)
+            .sum();
+        
+        reductionCibleTotal = empreintesSuivis.stream()
+            .mapToDouble(empreinte -> empreinte.getObjectif() != null ? empreinte.getObjectif().getReductionCible() : 0)
+            .sum();
     }
+    
     @Override    
     public String genererRapport() {
-        double emissionsTotales = 0;
-        double reductionsTotales = 0;
-
-        for (EmpreinteCarbone empreinte : empreintesSuivis) {
-            emissionsTotales += empreinte.getEmissionActuelle();
-            reductionsTotales += empreinte.calculerTauxReduction();
-        }
+        double emissionsTotales = empreintesSuivis.stream()
+            .mapToDouble(EmpreinteCarbone::getEmissionActuelle)
+            .sum();
+        
+        double reductionsTotales = empreintesSuivis.stream()
+            .mapToDouble(EmpreinteCarbone::calculerTauxReduction)
+            .sum();
 
         return String.format("Rapport de Suivi Carbone:\n" +
                              "Émissions totales actuelles : %.2f unités\n" +

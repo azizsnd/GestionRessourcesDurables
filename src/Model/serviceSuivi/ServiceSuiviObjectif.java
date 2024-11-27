@@ -3,6 +3,7 @@ import Model.entiteDurable.ObjectifDurabilite;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 
 public final class ServiceSuiviObjectif extends ServiceSuivi {
     private List<ObjectifDurabilite> objectifsSuivis;
@@ -63,25 +64,21 @@ public final class ServiceSuiviObjectif extends ServiceSuivi {
                 .filter(ObjectifDurabilite::objectifEstAtteint)
                 .count();
     }   
-    @Override
+   @Override
     public String genererRapport() {
-        int objectifsAtteints = 0;
-        ObjectifDurabilite objectifPrioritaire = null;
-        double progresRestantMin = Double.MAX_VALUE;
+        long objectifsAtteints = objectifsSuivis.stream()
+                .filter(ObjectifDurabilite::objectifEstAtteint)
+                .count();
+        //L'utilisation de Optional permet d'indiquer explicitement qu'une valeur pourrait être présente ou absente
+        // Éviter les erreurs NullPointerException
+        Optional<ObjectifDurabilite> objectifPrioritaireOpt = objectifsSuivis.stream()
+                .filter(objectif -> !objectif.objectifEstAtteint())
+                .min((o1, o2) -> Double.compare(o1.getProgresRestant(), o2.getProgresRestant()));
 
-        for (ObjectifDurabilite objectif : objectifsSuivis) {
-            if (objectif.objectifEstAtteint()) {
-                objectifsAtteints++;
-            } else if (objectif.getProgresRestant() < progresRestantMin) {
-                progresRestantMin = objectif.getProgresRestant();
-                objectifPrioritaire = objectif;
-            }
-        }
-
-        String objectifPrioritaireInfo = (objectifPrioritaire != null) ?
-                String.format("Objectif prioritaire : %s, Progrès restant : %.2f",
-                        objectifPrioritaire.getDescription(), objectifPrioritaire.getProgresRestant())
-                : "Aucun objectif prioritaire non atteint.";
+        String objectifPrioritaireInfo = objectifPrioritaireOpt.map(objectif -> 
+            String.format("Objectif prioritaire : %s, Progrès restant : %.2f", 
+                objectif.getDescription(), objectif.getProgresRestant()))
+            .orElse("Aucun objectif prioritaire non atteint.");
 
         return String.format("Rapport de Suivi des Objectifs:\n" +
                              "Nombre total d'objectifs : %d\n" +
@@ -89,7 +86,6 @@ public final class ServiceSuiviObjectif extends ServiceSuivi {
                              "%s",
                              objectifsSuivis.size(), objectifsAtteints, objectifPrioritaireInfo);
     }
-
     @Override
     public String toString() {
         return "ServiceSuiviObjectif{" +super.toString()+" "+  "objectifsSuivis=" + objectifsSuivis + ", nbreObjectifAtteints=" + nbreObjectifAtteints + ", objectifPrioritaire=" + objectifPrioritaire + '}';
