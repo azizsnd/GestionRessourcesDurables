@@ -5,6 +5,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class PlanDActionCorrectif {
+    private int id;
     private List<Reglementation> reglementationsCibles;
     private List<String> actions;
     private Date date;
@@ -17,6 +18,21 @@ public class PlanDActionCorrectif {
         this.responsable = responsable;
     }
 
+    public PlanDActionCorrectif(int id, List<Reglementation> reglementationsCibles, List<String> actions, Date date, String responsable) {
+        this.id = id;
+        this.reglementationsCibles = new LinkedList<Reglementation>();
+        this.actions = new LinkedList<String>();
+        this.date = date;
+        this.responsable = responsable;
+    }
+    
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
     public List<Reglementation> getReglementationsCibles() {
         return reglementationsCibles;
     }

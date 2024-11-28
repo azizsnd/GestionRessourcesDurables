@@ -23,7 +23,15 @@
             }   
             this.objectif = objectif;
         }
-
+        public EntiteDurable(String nom,String description,Date dateCreation,ObjectifDurabilite objectif) throws ObjectifInvalideException{
+            this.nom = nom;
+            this.description = description;
+            this.dateCreation = dateCreation;        
+            if (objectif == null) {
+             throw new ObjectifInvalideException("L'objectif ne peut pas être null.");
+            }   
+            this.objectif = objectif;
+        }
         public int getId() {
             return id;
         }

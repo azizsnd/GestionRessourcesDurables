@@ -15,6 +15,12 @@ public final class ServiceSuiviDechet extends ServiceSuivi {
         this.tauxRecyclageMoyenne = 0.0;
         this.quantiteTotalDechet = 0.0;
     }
+    public ServiceSuiviDechet(int id,String nom, int frequenceRapport, Date dernierDateSuivi, String statusService) {
+        super(id,nom, frequenceRapport, dernierDateSuivi, statusService);
+        this.dechetSuivis = new ArrayList<>();
+        this.tauxRecyclageMoyenne = 0.0;
+        this.quantiteTotalDechet = 0.0;
+    }
     public List<Dechet> getDechetSuivis() {
         return dechetSuivis;
     }

@@ -15,7 +15,13 @@ public final class Dechet extends EntiteDurable {
         this.quantiteRecycle = quantiteRecycle;
         this.methodeElimination = methodeElimination;
     }
-
+    public Dechet( String nom, String description, Date dateCreation, ObjectifDurabilite objectif, String type, double quantiteProduite, double quantiteRecycle, String methodeElimination)throws ObjectifInvalideException {
+        super(nom, description, dateCreation,objectif);
+        this.type = type;
+        this.quantiteProduite = quantiteProduite;
+        this.quantiteRecycle = quantiteRecycle;
+        this.methodeElimination = methodeElimination;
+    }    
     public String getType() {
         return type;
     }

@@ -3,6 +3,7 @@ package Model.serviceSuivi;
 import java.util.Date;
 
 public sealed abstract class ServiceSuivi permits ServiceSuiviCarbone,ServiceSuiviDechet,ServiceSuiviEnergie,ServiceSuiviObjectif,ServiceSuiviRessource {
+    private int id;
     private String nom;
     private int frequenceRapport;
     private Date dernierDateSuivi;
@@ -14,7 +15,20 @@ public sealed abstract class ServiceSuivi permits ServiceSuiviCarbone,ServiceSui
         this.dernierDateSuivi = dernierDateSuivi;
         this.statusService = statusService;
     }
+    public ServiceSuivi(int id,String nom, int frequenceRapport, Date dernierDateSuivi, String statusService) {
+        this.id = id;
+        this.nom = nom;
+        this.frequenceRapport = frequenceRapport;
+        this.dernierDateSuivi = dernierDateSuivi;
+        this.statusService = statusService;
+    }
+    public int getId() {
+        return id;
+    }
 
+    public void setId(int id) {
+        this.id = id;
+    }
     public String getNom() {
         return nom;
     }

@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class AuditEnviromental {
+    private int id;
     private String entite;
     private Map<Reglementation, Boolean> resultat;
 
@@ -12,6 +13,18 @@ public class AuditEnviromental {
         this.resultat = new HashMap<Reglementation, Boolean>();
     }
 
+    public AuditEnviromental(int id, String entite, Map<Reglementation, Boolean> resultat) {
+        this.id = id;
+        this.entite = entite;
+        this.resultat = new HashMap<Reglementation, Boolean>();
+    }
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
     public String getEntite() {
         return entite;
     }

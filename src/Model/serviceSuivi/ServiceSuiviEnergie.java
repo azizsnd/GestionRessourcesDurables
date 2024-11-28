@@ -16,7 +16,12 @@ public final class ServiceSuiviEnergie extends ServiceSuivi{
         this.consommationTotalEnergie = 0.0;
         this.pourcentageEnergieRenouvelable = 0.0;
     }
-
+    public ServiceSuiviEnergie(int id,String nom, int frequenceRapport, Date dernierDateSuivi, String statusService) {
+        super(id,nom, frequenceRapport, dernierDateSuivi, statusService);
+        this.sourcesEnergie =  new ArrayList<>();
+        this.consommationTotalEnergie = 0.0;
+        this.pourcentageEnergieRenouvelable = 0.0;
+    }
     public List<Energie> getSourcesEnergie() {
         return sourcesEnergie;
     }

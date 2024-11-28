@@ -2,6 +2,7 @@ package Model.GestionDeRisque;
 
 
 public sealed class RisqueEnviromental permits IncidentEnvironnemental {
+    private int id;
     private String nom;
     private String description;
     private double probabilite;
@@ -15,7 +16,22 @@ public sealed class RisqueEnviromental permits IncidentEnvironnemental {
         this.impact = impact;
         this.priorite = priorite;
     }
+    public RisqueEnviromental(int id, String nom, String description, double probabilite, double impact, int priorite) {
+        this.id = id;
+        this.nom = nom;
+        this.description = description;
+        this.probabilite = probabilite;
+        this.impact = impact;
+        this.priorite = priorite;
+    }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
     public String getNom() {
         return nom;
     }

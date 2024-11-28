@@ -1,30 +1,33 @@
 package Model.Utilisateurs;
 
 public sealed class Utilisateur permits Administrateur, Auditeur{
-    protected String nom;
-    protected int idUtilisateur;
-    protected String motDePasse;
+    private int id;
+    private String nom;
+    private String motDePasse;
 
-    public Utilisateur(String nom, int idUtilisateur, String motDePasse) {
+    public Utilisateur(String nom,String motDePasse) {
         this.nom = nom;
-        this.idUtilisateur = idUtilisateur;
         this.motDePasse = motDePasse;
     }
 
+    public Utilisateur(int id, String nom,String motDePasse) {
+        this.id = id;
+        this.nom = nom;
+        this.motDePasse = motDePasse;
+    }
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
     public String getNom() {
         return nom;
     }
 
     public void setNom(String nom) {
         this.nom = nom;
-    }
-
-    public int getIdUtilisateur() {
-        return idUtilisateur;
-    }
-
-    public void setIdUtilisateur(int idUtilisateur) {
-        this.idUtilisateur = idUtilisateur;
     }
 
     public String getMotDePasse() {
@@ -41,7 +44,8 @@ public sealed class Utilisateur permits Administrateur, Auditeur{
 
     @Override
     public String toString() {
-        return "Utilisateur{" + "nom=" + nom + ", idUtilisateur=" + idUtilisateur + ", motDePasse=" + motDePasse + '}';
+        return "Utilisateur{" + "nom=" + nom + ", id=" + id +
+                ", motDePasse=" + motDePasse + '}';
     }
     
 }

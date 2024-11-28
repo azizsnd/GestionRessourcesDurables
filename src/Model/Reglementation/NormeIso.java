@@ -4,6 +4,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class NormeIso {
+    private int id;
     private int numISO;
     private String descriptionNorme;
     private List<Reglementation> exigences;
@@ -14,6 +15,20 @@ public class NormeIso {
         this.exigences = new LinkedList<Reglementation>();
     }
 
+    public NormeIso(int id, int numISO, String descriptionNorme, List<Reglementation> exigences) {
+        this.id = id;
+        this.numISO = numISO;
+        this.descriptionNorme = descriptionNorme;
+        this.exigences = new LinkedList<Reglementation>();
+    }
+    
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
     public int getNumISO() {
         return numISO;
     }

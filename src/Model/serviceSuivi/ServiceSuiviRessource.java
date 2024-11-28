@@ -15,7 +15,12 @@ public final class ServiceSuiviRessource extends ServiceSuivi{
         this.resourcesSuivis =  new ArrayList<>();
         this.nbreRessourceSuivi = 0;
     }
-
+    public ServiceSuiviRessource(int id,String nom, int frequenceRapport, Date dernierDateSuivi, String statusService) {
+        super(id,nom, frequenceRapport, dernierDateSuivi, statusService);
+        this.resourcesSuivis =  new ArrayList<>();
+        this.nbreRessourceSuivi = 0;
+    }
+    
     public List<Ressource> getResourcesSuivis() {
         return resourcesSuivis;
     }

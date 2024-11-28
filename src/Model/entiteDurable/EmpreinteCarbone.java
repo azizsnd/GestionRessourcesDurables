@@ -13,7 +13,12 @@ public final class EmpreinteCarbone extends EntiteDurable {
         this.emissionAnnuelles = emissionAnnuelles;
         this.emissionActuelle = emissionActuelle;
     }
-
+    public EmpreinteCarbone( String nom, String description, Date dateCreation,ObjectifDurabilite objectif, String sourceEmission, double emissionAnnuelles,double emissionActuelle)throws ObjectifInvalideException{
+        super(nom, description, dateCreation,objectif);
+        this.sourceEmission = sourceEmission;
+        this.emissionAnnuelles = emissionAnnuelles;
+        this.emissionActuelle = emissionActuelle;
+    }
     public String getSourceEmission() {
         return sourceEmission;
     }

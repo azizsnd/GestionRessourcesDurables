@@ -1,6 +1,7 @@
 package Controller;
 
 import Model.entiteDurable.ObjectifDurabilite;
+import Model.entiteDurable.ObjectifInvalideException;
 import Model.entiteDurable.Ressource;
 import javafx.fxml.FXML;
 import javafx.scene.control.ListView;
@@ -22,7 +23,7 @@ public class VueSuiviRessourceController {
     private TextField txtUtilisationActuelle;
 
     @FXML
-    private void ajouterRessource() {
+    private void ajouterRessource() throws ObjectifInvalideException {
         try {
             // Récupérer les valeurs entrées par l'utilisateur
             String type = txtTypeRessource.getText();

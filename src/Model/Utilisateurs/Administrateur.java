@@ -8,8 +8,14 @@ public final class Administrateur extends Utilisateur {
     private Set<Auditeur> listAuditeurs;
     private Set<Utilisateur> listUtilisateurs;
 
-    public Administrateur(String nom, int idAdmin, String motDePasse) {
-        super(nom, idAdmin, motDePasse);
+    public Administrateur(String nom, String motDePasse) {
+        super(nom, motDePasse);
+        this.listAuditeurs = new HashSet<>();
+        this.listUtilisateurs = new HashSet<>();
+    }
+
+    public Administrateur(int id, String nom, String motDePasse) {
+        super(id, nom, motDePasse);
         this.listAuditeurs = new HashSet<>();
         this.listUtilisateurs = new HashSet<>();
     }
@@ -31,7 +37,7 @@ public final class Administrateur extends Utilisateur {
     }
 
     public void gererProfils() {
-        System.out.println("L'administrateur " + nom + " gère les profils.");
+        System.out.println("L'administrateur " + getNom() + " gère les profils.");
         System.out.println("Auditeurs enregistrés : " + listAuditeurs.size());
         System.out.println("Utilisateurs enregistrés : " + listUtilisateurs.size());
     }

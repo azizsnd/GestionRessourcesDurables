@@ -15,6 +15,11 @@ public final class ServiceSuiviObjectif extends ServiceSuivi {
         this.objectifsSuivis =  new ArrayList<>();
         this.nbreObjectifAtteints = 0;
     }
+    public ServiceSuiviObjectif(int id,String nom, int frequenceRapport, Date dernierDateSuivi, String statusService) {
+        super(id,nom, frequenceRapport, dernierDateSuivi, statusService);
+        this.objectifsSuivis =  new ArrayList<>();
+        this.nbreObjectifAtteints = 0;
+    }
     public List<ObjectifDurabilite> getObjectifsSuivis() {
         return objectifsSuivis;
     }

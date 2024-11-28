@@ -2,6 +2,7 @@ package Controller;
 
 import Model.entiteDurable.Dechet;
 import Model.entiteDurable.ObjectifDurabilite;
+import Model.entiteDurable.ObjectifInvalideException;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import java.util.Date;
@@ -21,7 +22,7 @@ public class VueSuiviDechetController {
     private TextField txtQuantiteRecycle;
 
     @FXML
-    private void ajouterDechet() {
+    private void ajouterDechet() throws ObjectifInvalideException {
         try {
             // Récupérer les valeurs entrées par l'utilisateur
             String type = txtTypeDechet.getText();

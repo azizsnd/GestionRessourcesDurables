@@ -1,11 +1,11 @@
 package Model.GestionDeRisque;
 
-
 import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
 
 public class PlanDeGestionRisque {
+    private int id;
     private List<RisqueEnviromental> risques;
     private List<String> strategiesMitigation;
     private String responsableGestion;
@@ -17,7 +17,20 @@ public class PlanDeGestionRisque {
         this.responsableGestion = responsableGestion;
         this.dateEvaluation = dateEvaluation;
     }
+    public PlanDeGestionRisque(int id, String responsableGestion, Date dateEvaluation) {
+        this.id = id;
+        this.risques = new LinkedList<RisqueEnviromental>();
+        this.strategiesMitigation = new LinkedList<String>();
+        this.responsableGestion = responsableGestion;
+        this.dateEvaluation = dateEvaluation;
+    }
+    public int getId() {
+        return id;
+    }
 
+    public void setId(int id) {
+        this.id = id;
+    }
     public List<RisqueEnviromental> getRisques() {
         return risques;
     }

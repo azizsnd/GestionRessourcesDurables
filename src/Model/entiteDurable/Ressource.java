@@ -15,7 +15,13 @@ public sealed class Ressource extends EntiteDurable permits Energie {
         this.utilisationActuelle = utilisationActuelle;
         this.coutParUnite = coutParUnite;
     }
-
+    public Ressource(String nom,String description,Date dateCreation,ObjectifDurabilite objectif,String uniteDeMesure,double utilisationReference,double utilisationActuelle,double coutParUnite)throws ObjectifInvalideException {
+        super( nom, description, dateCreation, objectif);
+        this.uniteDeMesure = uniteDeMesure;
+        this.utilisationReference = utilisationReference;
+        this.utilisationActuelle = utilisationActuelle;
+        this.coutParUnite = coutParUnite;
+    }
     public String getUniteDeMesure() {
         return uniteDeMesure;
     }

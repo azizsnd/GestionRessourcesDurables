@@ -2,6 +2,7 @@ package Controller;
 
 import Model.entiteDurable.ObjectifDurabilite;
 import Model.entiteDurable.Energie;
+import Model.entiteDurable.ObjectifInvalideException;
 import javafx.fxml.FXML;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.ListView;
@@ -25,7 +26,7 @@ public class VueSuiviEnergieController {
     private CheckBox chkRenouvelable;
 
     @FXML
-    private void ajouterEnergie() {
+    private void ajouterEnergie() throws ObjectifInvalideException {
         try {
             // Récupérer les valeurs entrées par l'utilisateur
             String type = txtTypeEnergie.getText();

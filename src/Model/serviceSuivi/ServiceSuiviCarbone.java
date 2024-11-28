@@ -11,10 +11,22 @@ public final class ServiceSuiviCarbone extends ServiceSuivi {
     private double reductionCibleTotal;
     private String sourcePrincipalEmission;
 
-    public ServiceSuiviCarbone(String nom, int frequenceRapport, Date dernierDateSuivi, String statusService) {
+    public ServiceSuiviCarbone(String nom, int frequenceRapport, Date dernierDateSuivi, String statusService,double reductionCibleTotal, String sourcePrincipalEmission) {
         super(nom, frequenceRapport, dernierDateSuivi, statusService);
         this.empreintesSuivis =  new ArrayList<>();
+        this.emissionTotal = 0.0;
+        this.reductionCibleTotal = reductionCibleTotal;
+        this.sourcePrincipalEmission = sourcePrincipalEmission;
     }
+
+    public ServiceSuiviCarbone(int id, String nom, int frequenceRapport, Date dernierDateSuivi, String statusService,double reductionCibleTotal, String sourcePrincipalEmission) {
+        super(id, nom, frequenceRapport, dernierDateSuivi, statusService);
+        this.empreintesSuivis =  new ArrayList<>();
+        this.emissionTotal = 0.0;
+        this.reductionCibleTotal = reductionCibleTotal;
+        this.sourcePrincipalEmission = sourcePrincipalEmission;
+    }
+
 
     public List<EmpreinteCarbone> getEmpreintesSuivis() {
         return empreintesSuivis;

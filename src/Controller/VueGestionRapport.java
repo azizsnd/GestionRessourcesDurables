@@ -7,9 +7,12 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
 import javafx.scene.layout.VBox;
 import Model.serviceSuivi.GestionRapportSuivi;
+import Model.serviceSuivi.ServiceSuiviDechet;
+import java.util.Date;
 
 public class VueGestionRapport {
-    private GestionRapportSuivi gestionRapportSuivi = new GestionRapportSuivi(30, "Rapport de Déchets");
+    ServiceSuiviDechet serviceDechet = new ServiceSuiviDechet(1,"Service de Suivi des Déchets",7, new Date(), "Actif");
+    private GestionRapportSuivi gestionRapportSuivi = new GestionRapportSuivi(30, "Rapport de Déchets",serviceDechet);
     private VBox layout;
     private ListView<String> listViewRapports;
     private TextArea txtContenuRapport;

@@ -14,6 +14,13 @@ public final class IncidentEnvironnemental extends RisqueEnviromental {
         this.consequence = consequence;
     }
 
+    public IncidentEnvironnemental(String typeIncident, Date dateIncident, String consequence, int id, String nom, String description, double probabilite, double impact, int priorite) {
+        super(id, nom, description, probabilite, impact, priorite);
+        this.typeIncident = typeIncident;
+        this.dateIncident = dateIncident;
+        this.consequence = consequence;
+    }
+
     public String getTypeIncident() {
         return typeIncident;
     }
