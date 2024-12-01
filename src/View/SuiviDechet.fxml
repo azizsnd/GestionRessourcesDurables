@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox id="Content-Area" prefHeight="500.0" prefWidth="774.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/23.0.1" fx:controller="Controller.SuiviDechetController">
+    <stylesheets>
+        <URL value="@stylesheet.css" />
+    </stylesheets>
+   <children>
+      <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="80.0" prefWidth="80.0">
+         <children>
+            <FontAwesomeIconView fill="#43523e" glyphName="TH_LIST" size="25" textAlignment="CENTER" />
+         </children>
+      </HBox>
+      <HBox prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="392.0">
+               <HBox.margin>
+                  <Insets top="10.0" />
+               </HBox.margin>
+               <children>
+                  <BarChart>
+                    <xAxis>
+                      <CategoryAxis label="Dechets" side="BOTTOM" tickLabelFill="#43523e">
+                           <tickLabelFont>
+                              <Font name="Sora ExtraBold" size="11.0" />
+                           </tickLabelFont>
+                        </CategoryAxis>
+                    </xAxis>
+                    <yAxis>
+                      <NumberAxis label="Qte" side="LEFT" tickLabelFill="#43523e">
+                           <tickLabelFont>
+                              <Font name="Sora ExtraBold" size="9.0" />
+                           </tickLabelFont>
+                        </NumberAxis>
+                    </yAxis>
+                  </BarChart>
+               </children>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="392.0">
+               <HBox.margin>
+                  <Insets top="10.0" />
+               </HBox.margin>
+               <children>
+                  <PieChart fx:id="PieChart" />
+               </children>
+            </HBox>
+         </children>
+      </HBox>
+   </children>
+</VBox>
