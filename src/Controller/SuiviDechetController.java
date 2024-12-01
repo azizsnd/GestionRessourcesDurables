@@ -17,7 +17,7 @@ import java.util.ResourceBundle;
 public class SuiviDechetController implements Initializable {
 
     @FXML
-    private PieChart PieChart;
+    private PieChart pieChart;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -37,6 +37,6 @@ public class SuiviDechetController implements Initializable {
                 )
         );
 
-        PieChart.getData().addAll(pieChartData);
+        pieChart.getData().addAll(pieChartData);
     }
 }

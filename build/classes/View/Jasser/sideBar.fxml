@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox fx:id="sidebar" alignment="TOP_CENTER" prefHeight="580.0" prefWidth="250.0" styleClass="sidebar" stylesheets="@../stylesheet.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.SideBarController">
+<VBox fx:id="sidebar" alignment="TOP_CENTER" prefHeight="580.0" prefWidth="250.0" styleClass="sidebar" stylesheets="@../../stylesheet.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.SideBarController">
    <children>
       <ImageView fitHeight="80.0" fitWidth="100.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
          <image>

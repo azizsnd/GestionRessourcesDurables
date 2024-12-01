@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<HBox id="Login" prefHeight="500.0" prefWidth="774.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/23.0.1" fx:controller="Controller.LoginController">
+    <stylesheets>
+        <URL value="@stylesheet.css" />
+    </stylesheets>
+   <children>
+      <HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="387.0" styleClass="loginLogo" stylesheets="@../../stylesheet.css" />
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="387.0" />
+   </children>
+</HBox>

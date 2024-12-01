@@ -47,3 +47,6 @@
     -fx-border-color: #cccccc;
     -fx-border-width: 0px 1px 0px 0px;
 }
+.loginLogo{
+        -fx-background-color: #CEDEC9;
+}
