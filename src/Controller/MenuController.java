@@ -7,6 +7,7 @@ import javafx.stage.Stage;
 import javafx.fxml.FXMLLoader;
 import java.io.IOException;
 import javafx.scene.control.Button;
+import javafx.scene.layout.HBox;
 
 public class MenuController {
 
@@ -14,31 +15,23 @@ public class MenuController {
     private Button deconnecter;
 
     @FXML
-    private Button SuiviObjectif;
+    private HBox SuiviObjectif;
 
     @FXML
-    private Button suiviDechet;
+    private HBox suiviDechet;
 
     @FXML
-    private Button SuiviCarbone;
+    private HBox SuiviCarbone;
 
     @FXML
-    private Button SuiviEnergie;
+    private HBox SuiviEnergie;
 
     @FXML
-    private Button SuiviRessource;
-
-    @FXML
-    private Button profil;
+    private HBox SuiviRessource;
 
     @FXML
     private void deconnecter() throws IOException {
         loadPage("../View/Login.fxml", deconnecter);
-    }
-
-    @FXML
-    private void navigateToProfil() throws IOException {
-       //
     }
 
     @FXML
@@ -72,7 +65,12 @@ public class MenuController {
         Stage currentStage = (Stage) button.getScene().getWindow();
         currentStage.setScene(new Scene(newPage));
     }
-
+    private void loadPage(String fxmlPath, HBox button) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlPath));
+        Parent newPage = loader.load();
+        Stage currentStage = (Stage) button.getScene().getWindow();
+        currentStage.setScene(new Scene(newPage));
+    }
     @FXML
     public void initialize() {
         // Initialization code if needed

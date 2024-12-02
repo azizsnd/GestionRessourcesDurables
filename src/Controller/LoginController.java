@@ -5,11 +5,9 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
-import javafx.scene.control.RadioButton;
-import javafx.scene.control.TextField;
-import javafx.scene.control.ToggleGroup;
+import com.gluonhq.charm.glisten.control.TextField;
+import com.jfoenix.controls.JFXButton;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -17,13 +15,13 @@ import java.io.IOException;
 public class LoginController {
 
     @FXML
-    private TextField emailField;
+    private TextField userField;
 
     @FXML
     private PasswordField passwordField;
 
     @FXML
-    private Button loginButton;
+    private JFXButton loginButton;
 
 
     @FXML

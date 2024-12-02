@@ -12,14 +12,14 @@
      <left>
         <AnchorPane prefHeight="500.0" prefWidth="240.0" style="-fx-background-color: transparent;" BorderPane.alignment="CENTER">
             <children>
-                <fx:include source="menu.fxml" />
+                <fx:include source="jasser/sideBar.fxml" />
             </children>
         </AnchorPane>
     </left>
     <center>
-        <AnchorPane prefHeight="500.0" prefWidth="466.0" BorderPane.alignment="CENTER">
+        <AnchorPane prefHeight="603.0" prefWidth="534.0" BorderPane.alignment="CENTER">
             <children>
-                <VBox alignment="CENTER" layoutY="7.0" prefHeight="485.0" prefWidth="550.0" spacing="10.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml">
+                <VBox alignment="CENTER" layoutY="7.0" prefHeight="516.0" prefWidth="550.0" spacing="10.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml">
                     <Label style="-fx-font-size: 14px; -fx-font-weight: bold;" text="Suivi des Déchets" />
 
                     <ListView fx:id="listViewDechets" prefHeight="200.0" prefWidth="400.0" />

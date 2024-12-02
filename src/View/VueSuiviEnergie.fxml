@@ -13,7 +13,7 @@
     <left>
         <AnchorPane prefHeight="500.0" prefWidth="240.0" style="-fx-background-color: transparent;" BorderPane.alignment="CENTER">
             <children>
-                <fx:include source="menu.fxml" />
+                <fx:include source="jasser/sideBar.fxml" />
             </children>
         </AnchorPane>
     </left>
