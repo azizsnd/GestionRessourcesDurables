@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.VueSuiviEnergieController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="810.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.VueSuiviEnergieController">
     <left>
         <AnchorPane prefHeight="500.0" prefWidth="240.0" style="-fx-background-color: transparent;" BorderPane.alignment="CENTER">
             <children>
@@ -28,6 +28,7 @@
                     <TextField fx:id="txtUtilisationActuelle" promptText="Utilisation Actuelle" />
                     <CheckBox fx:id="chkRenouvelable" text="Renouvelable" />
                     <Button onAction="#ajouterEnergie" text="Ajouter Énergie" />
+                    <Button onAction="#genererRapport" text="Générer Rapport" />
                 </VBox>
             </children>
         </AnchorPane>

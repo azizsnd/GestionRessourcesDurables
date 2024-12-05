@@ -101,7 +101,8 @@ public final class ServiceSuiviCarbone extends ServiceSuivi {
         return String.format("Rapport de Suivi Carbone:\n" +
                              "Émissions totales actuelles : %.2f unités\n" +
                              "Réduction nécessaire pour atteindre les objectifs : %.2f unités\n" +
-                             "Nombre de sources d'émissions suivies : %d",
+                             "Nombre de sources d'émissions suivies : %d"+
+                              "les empreintes Suivis :[\n"+empreintesSuivis +"\n]",
                              emissionsTotales, reductionsTotales, empreintesSuivis.size());
     }
 

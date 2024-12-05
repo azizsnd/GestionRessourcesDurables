@@ -3,7 +3,7 @@ package Model.entiteDurable;
 import java.util.Date;
 
  public class ObjectifDurabilite {
-     private int id;
+    private int id;
     private Date dateCible;
     private double reductionCible; //taux
     private double progresActuel;  //taux
@@ -28,6 +28,14 @@ import java.util.Date;
 
     public void setDateCible(Date dateCible) {
         this.dateCible = dateCible;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public double getReductionCible() {
@@ -68,7 +76,9 @@ import java.util.Date;
 
     @Override
     public String toString() {
-        return "ObjectifDurabilite{" + "dateCible=" + dateCible + ", reductionCible=" + reductionCible + ", progresActuel=" + progresActuel + ", description=" + description + '}';
+        return "\nObjectifDurabilite{" + "id=" + id + ", dateCible=" + dateCible + ", reductionCible=" + reductionCible + ", progresActuel=" + progresActuel + ", description=" + description + "}";
     }
+
+
 
 }
