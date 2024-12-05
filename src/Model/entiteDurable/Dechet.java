@@ -61,7 +61,7 @@ public final class Dechet extends EntiteDurable {
 
     @Override
     public String toString() {
-        return "Dechet{" + super.toString()+ ' '+"type=" + type + ", quantiteProduite=" + quantiteProduite + ", quantiteRecycle=" + quantiteRecycle + ", methodeElimination=" + methodeElimination + '}';
+        return "\nDechet{" + super.toString()+", type=" + type + ", quantiteProduite=" + quantiteProduite + ", quantiteRecycle=" + quantiteRecycle + ", methodeElimination=" + methodeElimination + '}';
     }
 
 }

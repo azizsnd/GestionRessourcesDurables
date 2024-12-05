@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.VueSuiviRessourceController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="810.0"  xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.VueSuiviRessourceController">
     <left>
         <AnchorPane prefHeight="500.0" prefWidth="240.0" style="-fx-background-color: transparent;" BorderPane.alignment="CENTER">
             <children>
@@ -25,7 +25,8 @@
                     <TextField fx:id="txtTypeRessource" promptText="Type de ressource" />
                     <TextField fx:id="txtUtilisationReference" promptText="Utilisation de référence" />
                     <TextField fx:id="txtUtilisationActuelle" promptText="Utilisation actuelle" />
-                    <Button text="Ajouter Ressource" />
+                    <Button onAction="#ajouterRessource" text="Ajouter Ressource" />
+                    <Button onAction="#genererRapport" text="Générer Rapport" />
                 </VBox>
             </children>
         </AnchorPane>

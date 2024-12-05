@@ -89,7 +89,7 @@
 
         @Override
         public String toString() {
-            return "EntiteDurable{" + "id=" + id + ", nom=" + nom + ", description=" + description + ", dateCreation=" + dateCreation + ", objectif=" + objectif + '}';
+            return "id=" + id + ", nom=" + nom + ", description=" + description + ", dateCreation=" + dateCreation + ", objectif=" + objectif ;
         }
 
     }

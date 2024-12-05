@@ -1,8 +1,10 @@
 package Model.serviceSuivi;
 
+import Services.RapportDAO;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -77,12 +79,17 @@ public class GestionRapportSuivi {
         this.rapportType = rapportType;
     }
     public void genererRapport(String contenuRapport) {
-        Rapport rapport = new Rapport(this.id, contenuRapport);
+        Rapport rapport = new Rapport(this.service.getNom(), contenuRapport);
         listeRapports.add(rapport);
         dateDernierRapport = rapport.getDateRapport(); // Met à jour la date du dernier rapport
-
-        // Sauvegarder le rapport dans un fichier
+        // Save the report locally
         sauvegarderRapportFichier(rapport);
+        // Save the report to the database
+        try {
+            RapportDAO.saveRapportToDatabase(rapport);
+        } catch (SQLException e) {
+            System.out.println("Erreur lors de la sauvegarde du rapport dans la base de données : " + e.getMessage());
+        }
     }
  
     public void genererRapportPourService() {
@@ -95,7 +102,7 @@ public class GestionRapportSuivi {
     }
     // Sauvegarde d'un rapport dans un fichier
     private void sauvegarderRapportFichier(Rapport rapport) {
-        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd_HH-mm");
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd_HH-mm-ss");
         String dateFormatted = dateFormat.format(rapport.getDateRapport());
         String filename = "rapport_" + rapportType + "_" + dateFormatted + ".txt";
 
