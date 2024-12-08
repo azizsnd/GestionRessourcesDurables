@@ -15,13 +15,4 @@ public record Reglementation(int id,String nom,String descriptionExigence,Date d
                 "\nDate d'application : " + dateMiseEnApplication);
     }
 
-    @Override
-    public String toString() {
-        return "Reglementation{" +
-                "id=" + id +
-                ", nom='" + nom + '\'' +
-                ", descriptionExigence='" + descriptionExigence + '\'' +
-                ", dateMiseEnApplication=" + dateMiseEnApplication +
-                '}';
-    }
 }

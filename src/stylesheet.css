@@ -16,7 +16,7 @@
     -fx-text-fill: #2A3327;
 }
 .sidebar-btn:hover{
-    -fx-background-color: transparent;
+    -fx-background-color: #589D43;
     -fx-background-radius: 0px;
     -fx-text-fill: #2A3327;
     -fx-border-color:#405C37;
@@ -33,6 +33,8 @@
      -fx-background-radius: 50px;
     -fx-border-radius: 50px;
     -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.8), 10, 0, 0, 0);
+    -fx-font-family: "Sora Medium";
+    -fx-font-size: 12px;
 }
 .sidebar-logout-btn:hover{
     -fx-background-color: #CEDEC9;
