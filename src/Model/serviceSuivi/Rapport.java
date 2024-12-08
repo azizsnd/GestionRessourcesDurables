@@ -4,19 +4,19 @@ import java.util.Date;
 
 public class Rapport {
     private int id;
-    private int gestionRapportSuiviId; 
+    private String typeService;
     private String contenuRapport;    
     private Date dateRapport;        
 
-    public Rapport(int gestionRapportSuiviId, String contenuRapport) {
-        this.gestionRapportSuiviId = gestionRapportSuiviId;
+    public Rapport(String typeService, String contenuRapport) {
+        this.typeService = typeService;
         this.contenuRapport = contenuRapport;
         this.dateRapport = new Date();  
     }
 
-    public Rapport(int id, int gestionRapportSuiviId, String contenuRapport, Date dateRapport) {
+    public Rapport(int id, String typeService, String contenuRapport, Date dateRapport) {
         this.id = id;
-        this.gestionRapportSuiviId = gestionRapportSuiviId;
+        this.typeService = typeService;
         this.contenuRapport = contenuRapport;
         this.dateRapport = dateRapport;
     }
@@ -29,12 +29,12 @@ public class Rapport {
         this.id = id;
     }
 
-    public int getGestionRapportSuiviId() {
-        return gestionRapportSuiviId;
+    public String getTypeService() {
+        return typeService;
     }
 
-    public void setGestionRapportSuiviId(int gestionRapportSuiviId) {
-        this.gestionRapportSuiviId = gestionRapportSuiviId;
+    public void setTypeService(String typeService) {
+        this.typeService = typeService;
     }
 
     public String getContenuRapport() {
@@ -57,7 +57,7 @@ public class Rapport {
     public String toString() {
         return "Rapport{" +
                 "id=" + id +
-                ", gestionRapportSuiviId=" + gestionRapportSuiviId +
+                ", typeService=" + typeService +
                 ", contenuRapport='" + contenuRapport + '\'' +
                 ", dateRapport=" + dateRapport +
                 "}\n";

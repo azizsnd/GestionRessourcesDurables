@@ -1,11 +1,10 @@
 package Controller;
 
+import Utils.ViewLoader;
 import javafx.fxml.FXML;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.stage.Stage;
-import javafx.fxml.FXMLLoader;
 import java.io.IOException;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.layout.HBox;
 
@@ -31,48 +30,39 @@ public class MenuController {
 
     @FXML
     private void deconnecter() throws IOException {
-        loadPage("../View/Login.fxml", deconnecter);
+        navigateTo("../View/Login.fxml", deconnecter);
     }
 
     @FXML
     private void navigateToSuiviRessource() throws IOException {
-        loadPage("../View/VueSuiviRessource.fxml", SuiviRessource);
+        navigateTo("../View/VueSuiviRessource.fxml", SuiviRessource);
     }
 
     @FXML
     private void navigateToSuiviEnergie() throws IOException {
-        loadPage("../View/VueSuiviEnergie.fxml", SuiviEnergie);
+        navigateTo("../View/VueSuiviEnergie.fxml", SuiviEnergie);
     }
 
     @FXML
     private void navigateToSuiviCarbone() throws IOException {
-        loadPage("../View/VueSuiviCarbone.fxml", SuiviCarbone);
+        navigateTo("../View/VueSuiviCarbone.fxml", SuiviCarbone);
     }
 
     @FXML
     private void navigateToSuiviDechet() throws IOException {
-        loadPage("../View/VueSuiviDechet.fxml", suiviDechet);
+        navigateTo("../View/VueSuiviDechet.fxml", suiviDechet);
     }
 
     @FXML
     private void navigateToSuiviObjectif() throws IOException {
-        loadPage("../View/VueSuiviObjectif.fxml", SuiviObjectif);
+        navigateTo("../View/VueSuiviObjectif.fxml", SuiviObjectif);
     }
 
-    private void loadPage(String fxmlPath, Button button) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlPath));
-        Parent newPage = loader.load();
-        Stage currentStage = (Stage) button.getScene().getWindow();
-        currentStage.setScene(new Scene(newPage));
-    }
-    private void loadPage(String fxmlPath, HBox button) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlPath));
-        Parent newPage = loader.load();
-        Stage currentStage = (Stage) button.getScene().getWindow();
-        currentStage.setScene(new Scene(newPage));
-    }
+        private void navigateTo(String fxmlPath, Node node) {
+            Stage stage = (Stage) node.getScene().getWindow();
+            ViewLoader.load(fxmlPath, stage);
+        }
     @FXML
     public void initialize() {
-        // Initialization code if needed
     }
 }

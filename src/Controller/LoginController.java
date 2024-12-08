@@ -1,15 +1,15 @@
 
 package Controller;
+import Model.Utilisateurs.Utilisateur;
+import Services.authenticateUser;
+import Utils.ViewLoader;
+import Utils.Alert;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.PasswordField;
 import com.gluonhq.charm.glisten.control.TextField;
 import com.jfoenix.controls.JFXButton;
 import javafx.stage.Stage;
-
 import java.io.IOException;
 
 public class LoginController {
@@ -26,13 +26,19 @@ public class LoginController {
 
     @FXML
     private void handleLoginButton(ActionEvent event) throws IOException {
-        // Création d'une instance de FXMLLoader et chargement du fichier FXML
-
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("../View/VueSuiviRessource.fxml"));
-        Parent newPage = loader.load();
-
-        // Obtenir la scène actuelle et changer la page affichée
-        Stage currentStage = (Stage) loginButton.getScene().getWindow();
-        currentStage.setScene(new Scene(newPage));
-    }
-}
+        String username = userField.getText();
+        String password = passwordField.getText();
+        Utilisateur user = authenticateUser.authenticateUser(username, password);
+        
+    if (user != null) {
+            Stage currentStage = (Stage) loginButton.getScene().getWindow();
+            if (user instanceof Model.Utilisateurs.Administrateur) {
+                ViewLoader.load("../View/VueSuiviRessource.fxml", currentStage);
+            } else {
+                ViewLoader.load("../View/VueSuiviRessource.fxml", currentStage);
+            }
+          } else {
+                   Alert.showErrorAlert("Login Failed", "Invalid username or password.");
+               }
+        }
+   }

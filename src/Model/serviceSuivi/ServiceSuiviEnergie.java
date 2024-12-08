@@ -87,7 +87,8 @@ public final class ServiceSuiviEnergie extends ServiceSuivi{
         return String.format("Rapport de Suivi de l'Énergie:\n" +
                              "Quantité totale d'énergie produite: %.2f unités\n" +
                              "Pourcentage d'énergie renouvelable: %.2f%%\n" +
-                             "Nombre de sources d'énergie suivies: %d",
+                             "Nombre de sources d'énergie suivies: %d"+
+                             "les sources Energie :[\n"+sourcesEnergie +"\n]",
                              consommationTotale, pourcentageRenouvelable, sourcesEnergie.size());
     }
     @Override

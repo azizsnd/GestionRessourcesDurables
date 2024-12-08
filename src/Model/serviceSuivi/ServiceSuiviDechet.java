@@ -49,7 +49,10 @@ public final class ServiceSuiviDechet extends ServiceSuivi {
         dechet.setQuantiteProduite(dechet.getQuantiteProduite()+ quantite);
         quantiteTotalDechet += quantite;
     }
-
+    public void addDechet(Dechet dechet){
+        dechetSuivis.add(dechet);
+        quantiteTotalDechet += dechet.getQuantiteProduite();
+    }
     public double calculerTauxRecyclageMoy() {
         tauxRecyclageMoyenne = dechetSuivis.stream()
             .mapToDouble(Dechet::calculerTauxRecyclage) 
@@ -67,7 +70,8 @@ public final class ServiceSuiviDechet extends ServiceSuivi {
         return String.format("Rapport de Suivi des Déchets:\n" +
                              "Quantité totale de déchets: %.2f\n" +
                              "Taux de recyclage moyen: %.2f%%\n" +
-                             "Nombre de types de déchets suivis: %d",
+                             "Nombre de types de déchets suivis: %d"+
+                             "les dechet Suivis :[\n"+dechetSuivis +"\n]",
                              quantiteTotalDechet, tauxRecyclageMoyenne, dechetSuivis.size());
     }
     @Override

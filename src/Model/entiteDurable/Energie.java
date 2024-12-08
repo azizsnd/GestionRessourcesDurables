@@ -34,7 +34,7 @@ public final class Energie extends Ressource{
 
     @Override
     public String toString() {
-        return "Energie{" + super.toString()+ ' '+"estRenouvelable=" + estRenouvelable + ", type=" + type + '}';
+        return "\nEnergie{" + super.toString()+", estRenouvelable=" + estRenouvelable + ", type=" + type + '}';
     }
     
 }

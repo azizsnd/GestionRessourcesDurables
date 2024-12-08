@@ -56,7 +56,7 @@ public final class EmpreinteCarbone extends EntiteDurable {
     }
     @Override
     public String toString() {
-        return "EmpreinteCarbone{" + super.toString()+ ' '+"sourceEmission=" + sourceEmission + ", emissionAnnuelles=" + emissionAnnuelles +", emissionActuelle=" + emissionActuelle + '}';
+        return "\nEmpreinteCarbone{" + super.toString()+", sourceEmission=" + sourceEmission + ", emissionAnnuelles=" + emissionAnnuelles +", emissionActuelle=" + emissionActuelle + '}';
     }
 
 }

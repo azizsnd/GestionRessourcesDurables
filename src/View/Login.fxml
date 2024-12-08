@@ -10,13 +10,13 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="774.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.LoginController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="810.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.LoginController">
    <children>
-      <AnchorPane prefHeight="500.0" prefWidth="378.0" styleClass="loginLogo" stylesheets="@../stylesheet.css">
+      <AnchorPane prefHeight="600.0" prefWidth="378.0" styleClass="loginLogo" stylesheets="@../stylesheet.css">
          <children>
             <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="89.0" layoutY="175.0" pickOnBounds="true" preserveRatio="true" />
          </children></AnchorPane>
-      <VBox alignment="TOP_CENTER" layoutX="378.0" prefHeight="500.0" prefWidth="398.0">
+      <VBox alignment="TOP_CENTER" layoutX="378.0" prefHeight="600.0" prefWidth="435.0">
          <children>
             <Label text="Welcome">
                <font>

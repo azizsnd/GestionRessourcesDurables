@@ -30,6 +30,14 @@ import java.util.Date;
         this.dateCible = dateCible;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public double getReductionCible() {
         return reductionCible;
     }
@@ -68,7 +76,9 @@ import java.util.Date;
 
     @Override
     public String toString() {
-        return "ObjectifDurabilite{" + "dateCible=" + dateCible + ", reductionCible=" + reductionCible + ", progresActuel=" + progresActuel + ", description=" + description + '}';
+        return "\nObjectifDurabilite{" + "id=" + id + ", dateCible=" + dateCible + ", reductionCible=" + reductionCible + ", progresActuel=" + progresActuel + ", description=" + description + "}";
     }
+
+
 
 }

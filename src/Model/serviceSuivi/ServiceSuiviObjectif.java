@@ -88,7 +88,8 @@ public final class ServiceSuiviObjectif extends ServiceSuivi {
         return String.format("Rapport de Suivi des Objectifs:\n" +
                              "Nombre total d'objectifs : %d\n" +
                              "Nombre d'objectifs atteints : %d\n" +
-                             "%s",
+                             "%s\n"+
+                             "les objectifsSuivis :[\n"+objectifsSuivis +"\n]",
                              objectifsSuivis.size(), objectifsAtteints, objectifPrioritaireInfo);
     }
     @Override
