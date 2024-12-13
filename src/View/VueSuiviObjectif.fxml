@@ -8,13 +8,9 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="810.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.VueSuiviObjectifController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.VueSuiviObjectifController">
     <left>
-        <AnchorPane prefHeight="654.0" prefWidth="250.0" style="-fx-background-color: transparent;" BorderPane.alignment="CENTER">
-            <children>
-                <fx:include source="jasser/sideBar.fxml" />
-            </children>
-        </AnchorPane>
+        <fx:include source="Components/sideBar.fxml" />
     </left>
     <center>
         <AnchorPane prefHeight="594.0" prefWidth="550.0" BorderPane.alignment="CENTER">
