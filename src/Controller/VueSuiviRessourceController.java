@@ -13,18 +13,40 @@ import Services.SuiviRessource;
 import Utils.Alert;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
+import javafx.fxml.FXML;
+import javafx.scene.chart.BarChart;
+import javafx.scene.chart.LineChart;
+import javafx.scene.chart.CategoryAxis;
+import javafx.scene.chart.NumberAxis;
 
 public class VueSuiviRessourceController {
     private ServiceSuiviRessource suiviRessource = new ServiceSuiviRessource("Ressource", 30, null, "Actif");
-
+     @FXML
+    private BarChart<String, Number> barChart;
+    
     @FXML
-    private ListView<String> listViewRessources;
+    private BarChart<String, Number> barChart1;
+    
     @FXML
-    private TextField txtTypeRessource;
+    private LineChart<Number, Number> lineChart;
+    
     @FXML
-    private TextField txtUtilisationReference;
+    private CategoryAxis barXAxis;
+    
     @FXML
-    private TextField txtUtilisationActuelle;
+    private NumberAxis barYAxis;
+    
+    @FXML
+    private CategoryAxis barXAxis1;
+    
+    @FXML
+    private NumberAxis barYAxis1;
+    
+    @FXML
+    private NumberAxis lineXAxis;
+    
+    @FXML
+    private NumberAxis lineYAxis;
 
     @FXML
     public void initialize() {
@@ -33,42 +55,17 @@ public class VueSuiviRessourceController {
 
     private void loadRessources() {
         try {
-            listViewRessources.getItems().clear();
+            //listViewRessources.getItems().clear();
             suiviRessource.setResourcesSuivis(SuiviRessource.getAllRessources());
 
             for (Ressource ressource : suiviRessource.getResourcesSuivis()) {
-                listViewRessources.getItems().add(ressource.toString());
+                //listViewRessources.getItems().add(ressource.toString());
             }
 
         } catch (SQLException | ObjectifInvalideException e) {
             e.printStackTrace();
             Alert.showErrorAlert("Erreur de Chargement", e.getMessage());
         }
-    }
-    @FXML
-    private void ajouterRessource() throws ObjectifInvalideException {
-        try {
-            // Récupérer les valeurs entrées par l'utilisateur
-            String type = txtTypeRessource.getText();
-            double utilisationReference = Double.parseDouble(txtUtilisationReference.getText());
-            double utilisationActuelle = Double.parseDouble(txtUtilisationActuelle.getText());
-
-            // Créer un objectif de réduction pour la ressource
-            ObjectifDurabilite objectif = new ObjectifDurabilite(new Date(), 500, 100, "Objectif de réduction");
-
-            // Créer un nouvel objet Ressource
-            Ressource ressource = new Ressource("Ressource de type " + type, "Description du déchet",  new Date(), objectif,"unité", utilisationReference, utilisationActuelle,1.0);
-            // Ajouter la ressource au service de suivi
-            SuiviRessource.addRessource(ressource);
-            loadRessources();
-            txtTypeRessource.clear();
-            txtUtilisationReference.clear();
-            txtUtilisationActuelle.clear();
-        } catch (NumberFormatException e) {
-            Alert.showErrorAlert("Champs invalide","Veuillez entrer des valeurs numériques pour l'utilisation.");
-        } catch (SQLException | ObjectifInvalideException e) {
-            Alert.showErrorAlert("Erreur",e.getMessage());
-        }   
     }
 
     @FXML

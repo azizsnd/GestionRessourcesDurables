@@ -9,13 +9,9 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="810.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.VueSuiviEnergieController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.VueSuiviEnergieController">
     <left>
-        <AnchorPane prefHeight="500.0" prefWidth="240.0" style="-fx-background-color: transparent;" BorderPane.alignment="CENTER">
-            <children>
-                <fx:include source="jasser/sideBar.fxml" />
-            </children>
-        </AnchorPane>
+        <fx:include source="Components/sideBar.fxml" />
     </left>
     <center>
         <AnchorPane prefHeight="500.0" prefWidth="466.0" BorderPane.alignment="CENTER">

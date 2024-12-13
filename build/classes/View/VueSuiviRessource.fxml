@@ -8,27 +8,11 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="810.0"  xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.VueSuiviRessourceController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1024.0"  xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" >
     <left>
-        <AnchorPane prefHeight="500.0" prefWidth="240.0" style="-fx-background-color: transparent;" BorderPane.alignment="CENTER">
-            <children>
-                <fx:include source="jasser/sideBar.fxml" />
-            </children>
-        </AnchorPane>
+        <fx:include source="Components/sideBar.fxml" />
     </left>
     <center>
-        <AnchorPane prefHeight="500.0" prefWidth="466.0" BorderPane.alignment="CENTER">
-            <children>
-                <VBox alignment="CENTER" layoutY="6.0" prefHeight="485.0" prefWidth="550.0" spacing="10.0" style="-fx-padding: 10;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
-                    <Label style="-fx-font-size: 14px; -fx-font-weight: bold;" text="Suivi des Ressources" />
-                    <ListView fx:id="listViewRessources" prefHeight="200.0" prefWidth="400.0" />
-                    <TextField fx:id="txtTypeRessource" promptText="Type de ressource" />
-                    <TextField fx:id="txtUtilisationReference" promptText="Utilisation de référence" />
-                    <TextField fx:id="txtUtilisationActuelle" promptText="Utilisation actuelle" />
-                    <Button onAction="#ajouterRessource" text="Ajouter Ressource" />
-                    <Button onAction="#genererRapport" text="Générer Rapport" />
-                </VBox>
-            </children>
-        </AnchorPane>
+        <fx:include source="Components/SuiviRessource.fxml" />
     </center>
 </BorderPane>
