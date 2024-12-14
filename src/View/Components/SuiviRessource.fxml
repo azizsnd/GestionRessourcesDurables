@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:controller="Controller.VueSuiviRessourceController"
+<BorderPane fx:controller="Controller.SuiviRessourceController"
             maxHeight="-Infinity" maxWidth="-Infinity" 
             minHeight="-Infinity" minWidth="-Infinity" 
             prefHeight="700.0" prefWidth="774.0" 
@@ -31,17 +31,17 @@
 
     <bottom>
         <HBox alignment="CENTER" prefHeight="53.0" prefWidth="774.0" spacing="10" style="-fx-background-color: #CEDEC9; -fx-padding: 10;">
-            <Button fx:id="loadDataButton" styleClass="sidebar-logout-btn" stylesheets="@../../stylesheet.css" text="Ajouter Ressource">
+            <Button fx:id="addButton" onAction="#ajouterEnergie" styleClass="sidebar-logout-btn" stylesheets="@../../stylesheet.css" text="Ajouter Ressource">
                 <font>
                     <Font name="Sora Medium" size="12.0" />
                 </font>
             </Button>
-            <Button fx:id="refreshButton" styleClass="sidebar-logout-btn" stylesheets="@../../stylesheet.css" text="Modifier Ressources">
+            <Button fx:id="modifyButton" styleClass="sidebar-logout-btn" stylesheets="@../../stylesheet.css" text="Modifier Ressources">
                 <font>
                     <Font name="Sora Medium" size="12.0" />
                 </font>
             </Button>
-            <Button fx:id="generateReportButton" layoutX="400.0" layoutY="24.0" styleClass="sidebar-logout-btn" stylesheets="@../../stylesheet.css" text="Générer Rapport">
+            <Button fx:id="generateReportButton" onAction="#genererRapport" layoutX="400.0" layoutY="24.0" styleClass="sidebar-logout-btn" stylesheets="@../../stylesheet.css" text="Générer Rapport">
                 <font>
                     <Font name="Sora Medium" size="12.0" />
                 </font>
