@@ -64,16 +64,17 @@ public final class ServiceSuiviDechet extends ServiceSuivi {
     public void suivi() {
         calculerTauxRecyclageMoy();
     }
-    @Override    
-    public String genererRapport() {
-        calculerTauxRecyclageMoy(); // Mettre à jour le taux de recyclage moyen
-        return String.format("Rapport de Suivi des Déchets:\n" +
-                             "Quantité totale de déchets: %.2f\n" +
-                             "Taux de recyclage moyen: %.2f%%\n" +
-                             "Nombre de types de déchets suivis: %d"+
-                             "les dechet Suivis :[\n"+dechetSuivis +"\n]",
-                             quantiteTotalDechet, tauxRecyclageMoyenne, dechetSuivis.size());
-    }
+@Override    
+public String genererRapport() {
+    calculerTauxRecyclageMoy();
+    return String.format("Rapport de Suivi des Déchets:\n" +
+                         "Quantité totale de déchets: %.2f\n" +
+                         "Taux de recyclage moyen: %.2f%%\n" +
+                         "Nombre de types de déchets suivis: %d\n" + 
+                         "Les déchets suivis :\n%s",  
+                         quantiteTotalDechet, tauxRecyclageMoyenne, dechetSuivis.size(), dechetSuivis);
+}
+
     @Override
     public String toString() {
         return "SuiviDechet{" +super.toString()+" "+ "dechetSuivis=" + dechetSuivis 

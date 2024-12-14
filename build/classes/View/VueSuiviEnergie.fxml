@@ -9,24 +9,11 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.VueSuiviEnergieController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
     <left>
         <fx:include source="Components/sideBarRespRSE.fxml" />
     </left>
     <center>
-        <AnchorPane prefHeight="500.0" prefWidth="466.0" BorderPane.alignment="CENTER">
-            <children>
-                <VBox alignment="CENTER" layoutY="8.0" prefHeight="484.0" prefWidth="551.0" spacing="10.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml">
-                    <Label style="-fx-font-size: 14px; -fx-font-weight: bold;" text="Suivi de l'Énergie" />
-                    <ListView fx:id="listViewEnergie" prefHeight="200.0" prefWidth="400.0" />
-                    <TextField fx:id="txtTypeEnergie" promptText="Type d'énergie" />
-                    <TextField fx:id="txtUtilisationReference" promptText="Utilisation Référence" />
-                    <TextField fx:id="txtUtilisationActuelle" promptText="Utilisation Actuelle" />
-                    <CheckBox fx:id="chkRenouvelable" text="Renouvelable" />
-                    <Button onAction="#ajouterEnergie" text="Ajouter Énergie" />
-                    <Button onAction="#genererRapport" text="Générer Rapport" />
-                </VBox>
-            </children>
-        </AnchorPane>
+        <fx:include source="Components/SuiviEnergie.fxml" />
     </center>
 </BorderPane>

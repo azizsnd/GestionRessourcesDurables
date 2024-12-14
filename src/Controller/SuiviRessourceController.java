@@ -159,7 +159,7 @@ private void setupLineChartCoutTotal() {
     @FXML
     public void genererRapport() {
         try {
-            GestionRapportSuivi gestionRapportSuivi = new GestionRapportSuivi(
+            GestionRapportSuivi gestionRapportSuivi = new GestionRapportSuivi(3,
                 suiviRessource.getFrequenceRapport(), 
                 "Ressource",                    
                 suiviRessource                   

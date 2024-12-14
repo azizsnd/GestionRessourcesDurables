@@ -70,7 +70,7 @@ public class VueSuiviDechetController {
     @FXML
     public void genererRapport() {
         try {
-            GestionRapportSuivi gestionRapportSuivi = new GestionRapportSuivi(
+            GestionRapportSuivi gestionRapportSuivi = new GestionRapportSuivi(2,
                 servicesuiviDechet.getFrequenceRapport(), 
                 "Dechet",                    
                 servicesuiviDechet                   
