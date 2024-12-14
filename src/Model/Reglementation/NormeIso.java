@@ -9,19 +9,21 @@ public class NormeIso {
     private String descriptionNorme;
     private List<Reglementation> exigences;
 
+    // Constructors
     public NormeIso(int numISO, String descriptionNorme) {
-        this.numISO = numISO;
-        this.descriptionNorme = descriptionNorme;
-        this.exigences = new LinkedList<Reglementation>();
+        this.setNumISO(numISO);
+        this.setDescriptionNorme(descriptionNorme);
+        this.exigences = new LinkedList<>();
     }
 
     public NormeIso(int id, int numISO, String descriptionNorme, List<Reglementation> exigences) {
         this.id = id;
-        this.numISO = numISO;
-        this.descriptionNorme = descriptionNorme;
-        this.exigences = new LinkedList<Reglementation>();
+        this.setNumISO(numISO);
+        this.setDescriptionNorme(descriptionNorme);
+        this.exigences = exigences != null ? exigences : new LinkedList<>();
     }
-    
+
+    // Getters and Setters
     public int getId() {
         return id;
     }
@@ -29,12 +31,17 @@ public class NormeIso {
     public void setId(int id) {
         this.id = id;
     }
+
     public int getNumISO() {
         return numISO;
     }
 
     public void setNumISO(int numISO) {
-        this.numISO = numISO;
+        if (numISO > 0) {
+            this.numISO = numISO;
+        } else {
+            throw new IllegalArgumentException("ISO number must be positive.");
+        }
     }
 
     public String getDescriptionNorme() {
@@ -42,6 +49,9 @@ public class NormeIso {
     }
 
     public void setDescriptionNorme(String descriptionNorme) {
+        if (descriptionNorme == null || descriptionNorme.isEmpty()) {
+            throw new IllegalArgumentException("Description cannot be empty.");
+        }
         this.descriptionNorme = descriptionNorme;
     }
 
@@ -50,9 +60,10 @@ public class NormeIso {
     }
 
     public void setExigences(List<Reglementation> exigences) {
-        this.exigences = exigences;
+        this.exigences = exigences != null ? exigences : new LinkedList<>();
     }
 
+    // Functional Methods
     public boolean verifierConformite() {
         for (Reglementation reglementation : exigences) {
             if (!reglementation.estActive()) {
@@ -62,16 +73,28 @@ public class NormeIso {
         return true;
     }
 
-    public void genererRapport() {
-        System.out.println("Rapport de conformité pour la norme ISO : " + numISO);
+    public String genererRapport() {
+        StringBuilder rapport = new StringBuilder();
+        rapport.append("Rapport de conformité pour la norme ISO : ").append(numISO).append("\n");
         for (Reglementation reglementation : exigences) {
-            System.out.println("Règlementation : " + reglementation.nom()+ " - Conforme : " + reglementation.estActive());
+            rapport.append("Règlementation : ").append(reglementation.nom())
+                  .append(" - Conforme : ").append(reglementation.estActive() ? "Oui" : "Non").append("\n");
         }
+        return rapport.toString();
+    }
+
+    public void ajouterExigence(Reglementation reglementation) {
+        if (reglementation != null && !exigences.contains(reglementation)) {
+            exigences.add(reglementation);
+        }
+    }
+
+    public void supprimerExigence(Reglementation reglementation) {
+        exigences.remove(reglementation);
     }
 
     @Override
     public String toString() {
-        return "NormeIso{" + "numISO=" + numISO + ", descriptionNorme=" + descriptionNorme + ", exigences=" + exigences + '}';
+        return String.format("ISO %d: %s (Exigences: %d)", numISO, descriptionNorme, exigences.size());
     }
-
 }
