@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
+<?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
@@ -12,10 +12,15 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane prefHeight="700" prefWidth="774" style="-fx-padding: 25; -fx-background-color: #CEDEC9; -fx-border-color: #505C4C;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<SplitPane dividerPositions="0.2817371937639198" orientation="HORIZONTAL" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<fx:include source="sideBarAdmin.fxml" />
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700" prefWidth="774" style="-fx-background-color: #FFFFFF; -fx-border-color: #505C4C;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
     <!-- Top: Title -->
     <top>
-        <Label alignment="CENTER" style="-fx-font-size: 28; -fx-font-weight: bold; -fx-text-fill: #253320; -fx-padding: 20;" text="Détails du Profil" />
+        <Label alignment="CENTER" prefHeight="53.0" prefWidth="772.0" style="-fx-text-fill: #FFFFFF; -fx-background-color: #589D43;" text="Détails du Profil">
+         <font>
+            <Font name="Sora ExtraBold" size="20.0" />
+         </font></Label>
     </top>
 
     <!-- Center: Profile Details -->
@@ -28,19 +33,19 @@
                <font>
                   <Font name="Sora Medium" size="18.0" />
                </font></Label>
-                <TextField fx:id="nomField" editable="false" style="-fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: #619E4F;" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                <TextField fx:id="nomField" editable="false" style="-fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: #619E4F; -fx-background-color: #CEDEC9;" GridPane.columnIndex="1" GridPane.rowIndex="0" />
 
                 <Label style="-fx-text-fill: #2B3329;" text="Prénom :" GridPane.columnIndex="0" GridPane.rowIndex="1">
                <font>
                   <Font name="Sora Medium" size="18.0" />
                </font></Label>
-                <TextField fx:id="prenomField" editable="false" style="-fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: #619E4F;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                <TextField fx:id="prenomField" editable="false" style="-fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: #619E4F; -fx-background-color: #CEDEC9;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
 
                 <Label style="-fx-text-fill: #2B3329;" text="Poste :" GridPane.columnIndex="0" GridPane.rowIndex="2">
                <font>
                   <Font name="Sora Medium" size="18.0" />
                </font></Label>
-                <TextField fx:id="posteField" editable="false" style="-fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: #619E4F;" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                <TextField fx:id="posteField" editable="false" style="-fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: #619E4F; -fx-background-color: #CEDEC9;" GridPane.columnIndex="1" GridPane.rowIndex="2" />
             <columnConstraints>
                <ColumnConstraints />
                <ColumnConstraints />
@@ -61,3 +66,4 @@
         </HBox>
     </bottom>
 </BorderPane>
+</SplitPane>

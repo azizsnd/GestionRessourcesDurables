@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox fx:id="sidebar" alignment="TOP_CENTER" prefHeight="700.0" prefWidth="250.0" styleClass="sidebar" stylesheets="@../../stylesheet.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.MenuController">
+<VBox fx:id="sidebar" alignment="TOP_CENTER" minHeight="-Infinity" prefHeight="700.0" prefWidth="250.0" styleClass="sidebar" stylesheets="@../../stylesheet.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.MenuController">
    <children>
    <AnchorPane prefHeight="80.0" prefWidth="100.0" BorderPane.alignment="CENTER">
          <children>
@@ -25,7 +25,7 @@
          </children>
       </AnchorPane>
 
-      <JFXButton contentDisplay="RIGHT" ripplerFill="#e4dddd" styleClass="sidebar-user-btn" text="Responsable RSE" textFill="#273329">
+      <JFXButton contentDisplay="RIGHT" ripplerFill="#e4dddd" styleClass="sidebar-user-btn" text="Admin" textFill="#273329">
          <font>
             <Font name="Sora ExtraBold" size="13.0" />
          </font>
@@ -42,7 +42,7 @@
       </JFXButton>
       <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn">
          <VBox.margin>
-            <Insets top="50.0" />
+            <Insets top="30.0" />
          </VBox.margin>
          <padding>
             <Insets left="20.0" />
@@ -61,6 +61,28 @@
                </HBox.margin>
             </Label>
          </children>
+      </HBox>
+      <HBox fx:id="SuiviObjectif4" alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#navigateToSuiviObjectif" prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn">
+         <padding>
+            <Insets left="20.0" />
+         </padding>
+         <children>
+            <ImageView fitHeight="30.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Images/icons8-groupe-d'utilisateurs-72.png" />
+               </image></ImageView>
+            <Label text="Gestion des utilisateurs" textFill="#273329">
+               <font>
+                  <Font name="Sora SemiBold" size="14.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="20.0" />
+               </HBox.margin>
+            </Label>
+         </children>
+         <VBox.margin>
+            <Insets top="10.0" />
+         </VBox.margin>
       </HBox>
       <HBox fx:id="SuiviRessource" alignment="CENTER_LEFT" layoutX="10.0" layoutY="127.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#navigateToSuiviRessource" prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn">
          <padding>
@@ -172,9 +194,75 @@
             <Insets top="10.0" />
          </VBox.margin>
       </HBox>
+      <HBox fx:id="SuiviObjectif1" alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#navigateToSuiviObjectif" prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn">
+         <padding>
+            <Insets left="20.0" />
+         </padding>
+         <children>
+            <ImageView fitHeight="30.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Images/icons8-diplôme-1-72.png" />
+               </image></ImageView>
+            <Label text="Management d'ISO" textFill="#273329">
+               <font>
+                  <Font name="Sora SemiBold" size="14.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="20.0" />
+               </HBox.margin>
+            </Label>
+         </children>
+         <VBox.margin>
+            <Insets top="10.0" />
+         </VBox.margin>
+      </HBox>
+      <HBox fx:id="SuiviObjectif2" alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#navigateToSuiviObjectif" prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn">
+         <padding>
+            <Insets left="20.0" />
+         </padding>
+         <children>
+            <ImageView fitHeight="30.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Images/icons8-audit-72.png" />
+               </image></ImageView>
+            <Label text="Audit Enviromentale" textFill="#273329">
+               <font>
+                  <Font name="Sora SemiBold" size="14.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="20.0" />
+               </HBox.margin>
+            </Label>
+         </children>
+         <VBox.margin>
+            <Insets top="10.0" />
+         </VBox.margin>
+      </HBox>
+      <HBox fx:id="SuiviObjectif3" alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#navigateToSuiviObjectif" prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn">
+         <padding>
+            <Insets left="20.0" />
+         </padding>
+         <children>
+            <ImageView fitHeight="30.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Images/icons8-modifier-72.png" />
+               </image></ImageView>
+            <Label text="Plan d'action corrective" textFill="#273329">
+               <font>
+                  <Font name="Sora SemiBold" size="14.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="20.0" />
+               </HBox.margin>
+            </Label>
+         </children>
+         <VBox.margin>
+            <Insets top="10.0" />
+         </VBox.margin>
+      </HBox>
       <Button fx:id="deconnecter" mnemonicParsing="false" onAction="#deconnecter" styleClass="sidebar-logout-btn" text="Déconnexion">
          <VBox.margin>
-            <Insets top="40.0" />
+            <Insets top="20.0" />
          </VBox.margin>
          <font>
             <Font name="Sora SemiBold" size="12.0" />

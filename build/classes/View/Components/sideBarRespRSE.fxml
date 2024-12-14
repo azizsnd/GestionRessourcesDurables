@@ -48,8 +48,11 @@
             <Insets left="20.0" />
          </padding>
          <children>
-            <ImageView fitHeight="30.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true" />
-            <Label text="Home" textFill="#273329">
+            <ImageView fitHeight="30.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Images/icons8-utilisateur-72.png" />
+               </image></ImageView>
+            <Label text="Profil" textFill="#273329">
                <font>
                   <Font name="Sora SemiBold" size="14.0" />
                </font>
@@ -64,7 +67,10 @@
             <Insets left="20.0" />
          </padding>
          <children>
-            <ImageView fitHeight="30.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fitHeight="30.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Images/icons8-nourriture-naturelle-72.png" />
+               </image></ImageView>
             <Label text="Suivi Ressource" textFill="#273329">
                <font>
                   <Font name="Sora SemiBold" size="14.0" />
@@ -83,7 +89,10 @@
             <Insets left="20.0" />
          </padding>
          <children>
-            <ImageView fitHeight="30.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fitHeight="30.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Images/icons8-panneau-solaire-72.png" />
+               </image></ImageView>
             <Label text="Suivi Energie" textFill="#273329">
                <font>
                   <Font name="Sora SemiBold" size="14.0" />
@@ -102,7 +111,10 @@
             <Insets left="20.0" />
          </padding>
          <children>
-            <ImageView fitHeight="30.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fitHeight="30.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Images/icons8-usine-72.png" />
+               </image></ImageView>
             <Label text="Suivi Carbone" textFill="#273329">
                <font>
                   <Font name="Sora SemiBold" size="14.0" />
@@ -121,7 +133,10 @@
             <Insets left="20.0" />
          </padding>
          <children>
-            <ImageView fitHeight="30.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fitHeight="30.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Images/icons8-corbeille-72.png" />
+               </image></ImageView>
             <Label text="Suivi Déchet" textFill="#273329">
                <font>
                   <Font name="Sora SemiBold" size="14.0" />
@@ -140,7 +155,10 @@
             <Insets left="20.0" />
          </padding>
          <children>
-            <ImageView fitHeight="30.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fitHeight="30.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Images/icons8-objectif-72.png" />
+               </image></ImageView>
             <Label text="Suivi Objectif" textFill="#273329">
                <font>
                   <Font name="Sora SemiBold" size="14.0" />

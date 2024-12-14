@@ -17,7 +17,7 @@
    <children>
    <AnchorPane prefHeight="80.0" prefWidth="100.0" BorderPane.alignment="CENTER">
          <children>
-            <ImageView fitHeight="100.0" fitWidth="102.0" layoutX="88.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="100.0" fitWidth="102.0" layoutX="88.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="88.0" AnchorPane.rightAnchor="87.0" AnchorPane.topAnchor="26.0">
                <image>
                   <Image url="@../../images/profil.jpg" />
                </image>
@@ -48,7 +48,10 @@
             <Insets left="20.0" />
          </padding>
          <children>
-            <ImageView fitHeight="27.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fitHeight="27.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Images/icons8-utilisateur-72.png" />
+               </image></ImageView>
             <Label text="Profile" textFill="#273329">
                <font>
                   <Font name="Sora SemiBold" size="14.0" />
@@ -64,8 +67,11 @@
             <Insets left="20.0" />
          </padding>
          <children>
-            <ImageView fitHeight="27.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" />
-            <Label text="Management d' ISO" textFill="#273329">
+            <ImageView fitHeight="27.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Images/icons8-diplôme-1-72.png" />
+               </image></ImageView>
+            <Label text="Management d'ISO" textFill="#273329">
                <font>
                   <Font name="Sora SemiBold" size="14.0" />
                </font>
@@ -83,7 +89,10 @@
             <Insets left="20.0" />
          </padding>
          <children>
-            <ImageView fitHeight="27.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fitHeight="27.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Images/icons8-audit-72.png" />
+               </image></ImageView>
             <Label text="Audit Enviromentale" textFill="#273329">
                <font>
                   <Font name="Sora SemiBold" size="14.0" />
@@ -102,7 +111,10 @@
             <Insets left="20.0" />
          </padding>
          <children>
-            <ImageView fitHeight="27.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fitHeight="27.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Images/icons8-modifier-72.png" />
+               </image></ImageView>
             <Label text="Plan d'action corrective" textFill="#273329">
                <font>
                   <Font name="Sora SemiBold" size="14.0" />
