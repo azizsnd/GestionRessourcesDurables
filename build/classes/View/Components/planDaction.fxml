@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" style="-fx-padding: 25; -fx-background-color: #CEDEC9; -fx-border-color: #505C4C;" fx:controller="your.package.ControllerClass">
+
+    <!-- Top: Title -->
+    <top>
+        <Label text="Plan d'Action Correctif" style="-fx-font-size: 22; -fx-font-weight: bold; -fx-text-fill: #253320; -fx-padding: 10;"/>
+    </top>
+
+    <!-- Center: List of Action Plans -->
+    <center>
+        <VBox spacing="15" style="-fx-padding: 20;">
+            <Label text="Plans d'Action Correctif" style="-fx-font-size: 18; -fx-font-weight: bold; -fx-text-fill: #2B3329;"/>
+            <ListView fx:id="actionPlansListView" style="-fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: #619E4F; -fx-padding: 10;"/>
+        </VBox>
+    </center>
+
+    <!-- Bottom: Action Buttons -->
+    <bottom>
+        <HBox spacing="20" alignment="CENTER" style="-fx-padding: 15;">
+            <Button text="Ajouter Nouveau Plan" fx:id="addNewPlanButton" style="-fx-background-color: #6BDB48; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 10;"/>
+            <Button text="Fermer" fx:id="closeButton" style="-fx-background-color: #505C4C; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 10;"/>
+        </HBox>
+    </bottom>
+</BorderPane>

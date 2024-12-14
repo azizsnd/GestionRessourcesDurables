@@ -25,7 +25,7 @@
          </children>
       </AnchorPane>
 
-      <JFXButton contentDisplay="RIGHT" ripplerFill="#e4dddd" styleClass="sidebar-user-btn" text="Responsable RSE" textFill="#273329">
+      <JFXButton contentDisplay="RIGHT" ripplerFill="#e4dddd" styleClass="sidebar-user-btn" text="Auditeur" textFill="#273329">
          <font>
             <Font name="Sora ExtraBold" size="13.0" />
          </font>
@@ -42,14 +42,14 @@
       </JFXButton>
       <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn">
          <VBox.margin>
-            <Insets top="50.0" />
+            <Insets top="100.0" />
          </VBox.margin>
          <padding>
             <Insets left="20.0" />
          </padding>
          <children>
             <FontAwesomeIconView glyphName="HOME" size="15" styleClass="sidebar-btn-icon" />
-            <Label text="Home" textFill="#273329">
+            <Label text="Profile" textFill="#273329">
                <font>
                   <Font name="Sora SemiBold" size="14.0" />
                </font>
@@ -59,13 +59,13 @@
             </Label>
          </children>
       </HBox>
-      <HBox fx:id="SuiviRessource" alignment="CENTER_LEFT" layoutX="10.0" layoutY="127.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#navigateToSuiviRessource" prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn">
+      <HBox fx:id="ManagementISO" alignment="CENTER_LEFT" layoutX="10.0" layoutY="127.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"  prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn">
          <padding>
             <Insets left="20.0" />
          </padding>
          <children>
             <FontAwesomeIconView glyphName="MATERIAL" size="15" styleClass="sidebar-btn-icon" text="" />
-            <Label text="Suivi Ressource" textFill="#273329">
+            <Label text="Management d' ISO" textFill="#273329">
                <font>
                   <Font name="Sora SemiBold" size="14.0" />
                </font>
@@ -78,13 +78,13 @@
             <Insets top="10.0" />
          </VBox.margin>
       </HBox>
-      <HBox fx:id="SuiviEnergie" alignment="CENTER_LEFT" layoutX="10.0" layoutY="127.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#navigateToSuiviEnergie" prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn">
+      <HBox fx:id="Audit" alignment="CENTER_LEFT" layoutX="10.0" layoutY="127.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"  prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn">
          <padding>
             <Insets left="20.0" />
          </padding>
          <children>
             <FontAwesomeIconView glyphName="ENERGY" size="15" styleClass="sidebar-btn-icon" />
-            <Label text="Suivi Energie" textFill="#273329">
+            <Label text="Audit Enviromentale" textFill="#273329">
                <font>
                   <Font name="Sora SemiBold" size="14.0" />
                </font>
@@ -97,51 +97,13 @@
             <Insets top="10.0" />
          </VBox.margin>
       </HBox>
-      <HBox fx:id="SuiviCarbone" alignment="CENTER_LEFT" layoutX="10.0" layoutY="162.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#navigateToSuiviCarbone" prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn">
+      <HBox fx:id="PAC" alignment="CENTER_LEFT" layoutX="10.0" layoutY="162.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"  prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn">
          <padding>
             <Insets left="20.0" />
          </padding>
          <children>
             <FontAwesomeIconView glyphName="CARBONE" size="15" styleClass="sidebar-btn-icon" />
-            <Label text="Suivi Carbone" textFill="#273329">
-               <font>
-                  <Font name="Sora SemiBold" size="14.0" />
-               </font>
-               <HBox.margin>
-                  <Insets left="20.0" />
-               </HBox.margin>
-            </Label>
-         </children>
-         <VBox.margin>
-            <Insets top="10.0" />
-         </VBox.margin>
-      </HBox>
-      <HBox fx:id="suiviDechet" alignment="CENTER_LEFT" layoutX="10.0" layoutY="127.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#navigateToSuiviDechet" prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn">
-         <padding>
-            <Insets left="20.0" />
-         </padding>
-         <children>
-            <FontAwesomeIconView glyphName="HOME" size="15" styleClass="sidebar-btn-icon" />
-            <Label text="Suivi Déchet" textFill="#273329">
-               <font>
-                  <Font name="Sora SemiBold" size="14.0" />
-               </font>
-               <HBox.margin>
-                  <Insets left="20.0" />
-               </HBox.margin>
-            </Label>
-         </children>
-         <VBox.margin>
-            <Insets top="10.0" />
-         </VBox.margin>
-      </HBox>
-      <HBox fx:id="SuiviObjectif" alignment="CENTER_LEFT" layoutX="10.0" layoutY="162.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#navigateToSuiviObjectif" prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn">
-         <padding>
-            <Insets left="20.0" />
-         </padding>
-         <children>
-            <FontAwesomeIconView glyphName="OBJECTIVE" size="15" styleClass="sidebar-btn-icon" />
-            <Label text="Suivi Objectif" textFill="#273329">
+            <Label text="Plan d'action corrective" textFill="#273329">
                <font>
                   <Font name="Sora SemiBold" size="14.0" />
                </font>

@@ -7,6 +7,7 @@ import java.io.IOException;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 
 public class MenuController {
 
@@ -27,6 +28,8 @@ public class MenuController {
 
     @FXML
     private HBox SuiviRessource;
+    @FXML
+    private VBox sidebar;
 
     @FXML
     private void deconnecter() throws IOException {
@@ -62,7 +65,6 @@ public class MenuController {
             Stage stage = (Stage) node.getScene().getWindow();
             ViewLoader.load(fxmlPath, stage);
         }
-    @FXML
     public void initialize() {
     }
 }

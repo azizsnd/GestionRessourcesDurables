@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane style="-fx-padding: 25; -fx-background-color: #CEDEC9; -fx-border-color: #505C4C;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+
+    <!-- Top: Title -->
+    <top>
+        <Label style="-fx-font-size: 22; -fx-font-weight: bold; -fx-text-fill: #253320; -fx-padding: 10;" text="Audit Environnementale" />
+    </top>
+
+    <!-- Center: Checklist of Regulations -->
+    <center>
+        <VBox spacing="15" style="-fx-padding: 20;">
+            <Label style="-fx-font-size: 18; -fx-font-weight: bold; -fx-text-fill: #2B3329;" text="Vérification des Réglementations" />
+            <VBox fx:id="regulationsContainer" spacing="10" style="-fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: #619E4F; -fx-padding: 10;">
+                <CheckBox text="Réglementation 1">
+               <font>
+                  <Font name="Sora Medium" size="12.0" />
+               </font></CheckBox>
+                <CheckBox text="Réglementation 2">
+               <font>
+                  <Font name="Sora Medium" size="12.0" />
+               </font></CheckBox>
+                <CheckBox text="Réglementation 3" >
+                    <font>
+                  <Font name="Sora Medium" size="12.0" />
+                    </font>
+                </CheckBox>
+                <CheckBox text="Réglementation 4" >
+                    <font>
+                  <Font name="Sora Medium" size="12.0" />
+                    </font>
+                </CheckBox>
+            </VBox>
+        </VBox>
+    </center>
+
+    <!-- Bottom: Action Buttons -->
+    <bottom>
+        <HBox alignment="CENTER" spacing="20" style="-fx-padding: 15;">
+            <Button fx:id="saveButton" style="-fx-background-color: #6BDB48; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 10;" text="Enregistrer" />
+            <Button fx:id="cancelButton" style="-fx-background-color: #505C4C; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 10;" text="Annuler" />
+        </HBox>
+    </bottom>
+</BorderPane>

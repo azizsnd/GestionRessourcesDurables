@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" style="-fx-padding: 25; -fx-background-color: #CEDEC9; -fx-border-color: #505C4C;">
+
+    <!-- Top: Title -->
+    <top>
+        <Label text="Plan d'Action Correctif" style="-fx-font-size: 22; -fx-font-weight: bold; -fx-text-fill: #253320; -fx-padding: 10;"/>
+    </top>
+
+    <!-- Center: Form -->
+    <center>
+        <VBox spacing="15" style="-fx-padding: 20;">
+            <Label text="Créer un Plan d'Action Correctif" style="-fx-font-size: 18; -fx-font-weight: bold; -fx-text-fill: #2B3329;"/>
+
+            <!-- Target Regulations -->
+            <VBox spacing="10">
+                <Label text="Réglementations Ciblées :" style="-fx-font-size: 14; -fx-text-fill: #2B3329;"/>
+                <ListView fx:id="targetRegulationsListView" style="-fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: #619E4F; -fx-padding: 10;"/>
+            </VBox>
+
+            <!-- Actions -->
+            <VBox spacing="10">
+                <Label text="Actions Correctives :" style="-fx-font-size: 14; -fx-text-fill: #2B3329;"/>
+                <TextArea fx:id="actionsTextArea" style="-fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: #619E4F;" promptText="Décrivez les actions..."/>
+            </VBox>
+
+            <!-- Date -->
+            <VBox spacing="10">
+                <Label text="Date :" style="-fx-font-size: 14; -fx-text-fill: #2B3329;"/>
+                <DatePicker fx:id="datePicker" style="-fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: #619E4F;"/>
+            </VBox>
+
+            <!-- Responsible -->
+            <VBox spacing="10">
+                <Label text="Responsable :" style="-fx-font-size: 14; -fx-text-fill: #2B3329;"/>
+                <TextField fx:id="responsableTextField" style="-fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: #619E4F;" promptText="Nom du responsable"/>
+            </VBox>
+        </VBox>
+    </center>
+
+    <!-- Bottom: Action Buttons -->
+    <bottom>
+        <HBox spacing="20" alignment="CENTER" style="-fx-padding: 15;">
+            <Button text="Enregistrer" fx:id="saveButton" style="-fx-background-color: #6BDB48; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 10;"/>
+            <Button text="Annuler" fx:id="cancelButton" style="-fx-background-color: #505C4C; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 10;"/>
+        </HBox>
+    </bottom>
+</BorderPane>

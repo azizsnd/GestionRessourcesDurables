@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox fx:id="sidebar" alignment="TOP_CENTER" prefHeight="700.0" prefWidth="250.0" styleClass="sidebar" stylesheets="@../../stylesheet.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <!-- Top: Title -->
+      <Label text="Plan d'Action Correctif" style="-fx-font-size: 22; -fx-font-weight: bold; -fx-text-fill: #253320; -fx-padding: 10;"/>
+
+      <!-- Center: List of Action Plans -->
+      <VBox spacing="15" style="-fx-padding: 20;">
+         <Label text="Plans d'Action Correctif" style="-fx-font-size: 18; -fx-font-weight: bold; -fx-text-fill: #2B3329;"/>
+         <ListView fx:id="actionPlansListView" style="-fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: #619E4F; -fx-padding: 10;">
+            <items>
+               <FXCollections fx:factory="observableArrayList">
+                  <String fx:value="Plan 1: Responsable A - 2024-01-01"/>
+                  <String fx:value="Plan 2: Responsable B - 2024-02-15"/>
+                  <String fx:value="Plan 3: Responsable C - 2024-03-10"/>
+               </FXCollections>
+            </items>
+         </ListView>
+      </VBox>
+
+      <!-- Bottom: Action Buttons -->
+      <HBox spacing="20" alignment="CENTER" style="-fx-padding: 15;">
+         <JFXButton text="Ajouter Nouveau Plan" fx:id="addNewPlanButton" styleClass="sidebar-user-btn" textFill="#273329">
+            <graphic>
+               <FontAwesomeIconView glyphName="PLUS_CIRCLE" size="15" styleClass="sidebar-btn-icon"/>
+            </graphic>
+         </JFXButton>
+         <JFXButton text="Fermer" fx:id="closeButton" styleClass="sidebar-user-btn" textFill="#273329">
+            <graphic>
+               <FontAwesomeIconView glyphName="TIMES" size="15" styleClass="sidebar-btn-icon"/>
+            </graphic>
+         </JFXButton>
+      </HBox>
+   </children>
+</VBox>
