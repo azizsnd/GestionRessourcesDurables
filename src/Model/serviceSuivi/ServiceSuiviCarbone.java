@@ -11,20 +11,18 @@ public final class ServiceSuiviCarbone extends ServiceSuivi {
     private double reductionCibleTotal;
     private String sourcePrincipalEmission;
 
-    public ServiceSuiviCarbone(String nom, int frequenceRapport, Date dernierDateSuivi, String statusService,double reductionCibleTotal, String sourcePrincipalEmission) {
+    public ServiceSuiviCarbone(String nom, int frequenceRapport, Date dernierDateSuivi, String statusService) {
         super(nom, frequenceRapport, dernierDateSuivi, statusService);
         this.empreintesSuivis =  new ArrayList<>();
         this.emissionTotal = 0.0;
-        this.reductionCibleTotal = reductionCibleTotal;
-        this.sourcePrincipalEmission = sourcePrincipalEmission;
+        this.reductionCibleTotal = 0.0;
     }
 
-    public ServiceSuiviCarbone(int id, String nom, int frequenceRapport, Date dernierDateSuivi, String statusService,double reductionCibleTotal, String sourcePrincipalEmission) {
+    public ServiceSuiviCarbone(int id, String nom, int frequenceRapport, Date dernierDateSuivi, String statusService) {
         super(id, nom, frequenceRapport, dernierDateSuivi, statusService);
         this.empreintesSuivis =  new ArrayList<>();
         this.emissionTotal = 0.0;
-        this.reductionCibleTotal = reductionCibleTotal;
-        this.sourcePrincipalEmission = sourcePrincipalEmission;
+        this.reductionCibleTotal = 0.0;
     }
 
 
@@ -76,7 +74,16 @@ public final class ServiceSuiviCarbone extends ServiceSuivi {
         empreintesSuivis.add(empreinteCarbone);        
         emissionTotal += empreinteCarbone.getEmissionActuelle();
     }
-
+    public void mettreAJourSourcePrincipalEmission() {
+        if (!empreintesSuivis.isEmpty()) {
+            EmpreinteCarbone principale = empreintesSuivis.stream()
+                .max((e1, e2) -> Double.compare(e1.getEmissionActuelle(), e2.getEmissionActuelle()))
+                .orElse(null);
+            if (principale != null) {
+                this.sourcePrincipalEmission = principale.getSourceEmission();
+            }
+        }
+    }
     @Override
     public void suivi() {
         emissionTotal = empreintesSuivis.stream()
@@ -86,25 +93,27 @@ public final class ServiceSuiviCarbone extends ServiceSuivi {
         reductionCibleTotal = empreintesSuivis.stream()
             .mapToDouble(empreinte -> empreinte.getObjectif() != null ? empreinte.getObjectif().getReductionCible() : 0)
             .sum();
-    }
-    
-    @Override    
-    public String genererRapport() {
-        double emissionsTotales = empreintesSuivis.stream()
-            .mapToDouble(EmpreinteCarbone::getEmissionActuelle)
-            .sum();
-        
-        double reductionsTotales = empreintesSuivis.stream()
-            .mapToDouble(EmpreinteCarbone::calculerTauxReduction)
-            .sum();
 
-        return String.format("Rapport de Suivi Carbone:\n" +
-                             "Émissions totales actuelles : %.2f unités\n" +
-                             "Réduction nécessaire pour atteindre les objectifs : %.2f unités\n" +
-                             "Nombre de sources d'émissions suivies : %d"+
-                              "les empreintes Suivis :[\n"+empreintesSuivis +"\n]",
-                             emissionsTotales, reductionsTotales, empreintesSuivis.size());
+         mettreAJourSourcePrincipalEmission();
     }
+    @Override    
+public String genererRapport() {
+    double emissionsTotales = empreintesSuivis.stream()
+        .mapToDouble(EmpreinteCarbone::getEmissionActuelle)
+        .sum();
+    
+    double reductionsTotales = empreintesSuivis.stream()
+        .mapToDouble(EmpreinteCarbone::calculerTauxReduction)
+        .sum();
+
+    return String.format("Rapport de Suivi Carbone:\n" +
+                         "Émissions totales actuelles : %.2f unités\n" +
+                         "Réduction nécessaire pour atteindre les objectifs : %.2f unités\n" +
+                         "Nombre de sources d'émissions suivies : %d\n" +  
+                         "Les empreintes suivies :\n%s",  
+                         emissionsTotales, reductionsTotales, empreintesSuivis.size(), empreintesSuivis);
+}
+
 
     @Override
     public String toString() {

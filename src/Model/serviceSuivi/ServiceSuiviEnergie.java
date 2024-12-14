@@ -73,13 +73,12 @@ public final class ServiceSuiviEnergie extends ServiceSuivi{
     @Override
     public String genererRapport() {
         double consommationTotale = sourcesEnergie.stream()
-            .mapToDouble(Energie::getUtilisationActuelle) // Récupérer les consommations
+            .mapToDouble(Energie::getUtilisationActuelle) 
             .sum();
 
         long renouvelableCount = sourcesEnergie.stream()
             .filter(Energie::estRenouvelable)
-            .count();        
-
+            .count();
 
         double pourcentageRenouvelable = sourcesEnergie.size() > 0 ?
                 (double) renouvelableCount / sourcesEnergie.size() * 100 : 0;
@@ -87,10 +86,11 @@ public final class ServiceSuiviEnergie extends ServiceSuivi{
         return String.format("Rapport de Suivi de l'Énergie:\n" +
                              "Quantité totale d'énergie produite: %.2f unités\n" +
                              "Pourcentage d'énergie renouvelable: %.2f%%\n" +
-                             "Nombre de sources d'énergie suivies: %d"+
-                             "les sources Energie :[\n"+sourcesEnergie +"\n]",
-                             consommationTotale, pourcentageRenouvelable, sourcesEnergie.size());
+                             "Nombre de sources d'énergie suivies: %d\n" +  
+                             "Les sources d'énergie suivies :\n%s", 
+                             consommationTotale, pourcentageRenouvelable, sourcesEnergie.size(), sourcesEnergie);
     }
+
     @Override
     public String toString() {
         return "ServiceSuiviEnergie{" +super.toString()+" "+ "sourcesEnergie=" 

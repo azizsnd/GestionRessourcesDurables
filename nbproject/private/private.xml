@@ -9,7 +9,10 @@
             <file>file:/C:/Users/HP/Documents/NetBeansProjects/GestionRessourcesDurables/src/View/Components/ajoutRessource.fxml</file>
             <file>file:/C:/Users/HP/Documents/NetBeansProjects/GestionRessourcesDurables/src/View/VueSuiviObjectif.fxml</file>
             <file>file:/C:/Users/HP/Documents/NetBeansProjects/GestionRessourcesDurables/src/stylesheet.css</file>
+            <file>file:/C:/Users/HP/Documents/NetBeansProjects/GestionRessourcesDurables/src/Model/entiteDurable/Ressource.java</file>
+            <file>file:/C:/Users/HP/Documents/NetBeansProjects/GestionRessourcesDurables/src/Controller/SuiviRessourceController.java</file>
             <file>file:/C:/Users/HP/Documents/NetBeansProjects/GestionRessourcesDurables/src/View/Login.fxml</file>
+            <file>file:/C:/Users/HP/Documents/NetBeansProjects/GestionRessourcesDurables/src/Controller/AjoutRessourceController.java</file>
         </group>
     </open-files>
 </project-private>

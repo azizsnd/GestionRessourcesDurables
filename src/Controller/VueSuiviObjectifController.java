@@ -74,7 +74,7 @@ public class VueSuiviObjectifController {
     public void genererRapport() {
         try {
             // Create an instance of GestionRapportSuivi
-            GestionRapportSuivi gestionRapportSuivi = new GestionRapportSuivi(
+            GestionRapportSuivi gestionRapportSuivi = new GestionRapportSuivi(1,
                 suiviObjectif.getFrequenceRapport(),
                 "Objectif",                          
                 suiviObjectif                  

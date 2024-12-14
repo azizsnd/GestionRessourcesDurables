@@ -81,9 +81,9 @@ public final class ServiceSuiviRessource extends ServiceSuivi{
         return String.format("Rapport de Suivi des Ressources:\n" +
                              "Utilisation totale de ressources: %.2f unités\n" +
                              "Coût total estimé: %.2f\n" +
-                             "Nombre de types de ressources suivis: %d"+
-                             "les resources Suivis :[\n"+resourcesSuivis +"\n]",
-                             utilisationTotale, coutTotal, resourcesSuivis.size());
+                             "Nombre de types de ressources suivis: %d\n" + 
+                             "Les resources suivis :\n%s",  
+                             utilisationTotale, coutTotal, resourcesSuivis.size(), resourcesSuivis);
     }
 
     @Override

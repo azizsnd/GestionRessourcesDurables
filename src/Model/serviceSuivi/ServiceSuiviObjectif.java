@@ -69,13 +69,12 @@ public final class ServiceSuiviObjectif extends ServiceSuivi {
                 .filter(ObjectifDurabilite::objectifEstAtteint)
                 .count();
     }   
-   @Override
+    @Override
     public String genererRapport() {
         long objectifsAtteints = objectifsSuivis.stream()
                 .filter(ObjectifDurabilite::objectifEstAtteint)
                 .count();
-        //L'utilisation de Optional permet d'indiquer explicitement qu'une valeur pourrait être présente ou absente
-        // Éviter les erreurs NullPointerException
+
         Optional<ObjectifDurabilite> objectifPrioritaireOpt = objectifsSuivis.stream()
                 .filter(objectif -> !objectif.objectifEstAtteint())
                 .min((o1, o2) -> Double.compare(o1.getProgresRestant(), o2.getProgresRestant()));
@@ -88,10 +87,11 @@ public final class ServiceSuiviObjectif extends ServiceSuivi {
         return String.format("Rapport de Suivi des Objectifs:\n" +
                              "Nombre total d'objectifs : %d\n" +
                              "Nombre d'objectifs atteints : %d\n" +
-                             "%s\n"+
-                             "les objectifsSuivis :[\n"+objectifsSuivis +"\n]",
-                             objectifsSuivis.size(), objectifsAtteints, objectifPrioritaireInfo);
+                             "%s\n" +
+                             "Les objectifs suivis :\n%s",  
+                             objectifsSuivis.size(), objectifsAtteints, objectifPrioritaireInfo, objectifsSuivis);
     }
+
     @Override
     public String toString() {
         return "ServiceSuiviObjectif{" +super.toString()+" "+  "objectifsSuivis=" + objectifsSuivis + ", nbreObjectifAtteints=" + nbreObjectifAtteints + ", objectifPrioritaire=" + objectifPrioritaire + '}';
