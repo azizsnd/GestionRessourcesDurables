@@ -1,40 +1,166 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <?import com.jfoenix.controls.JFXButton?>
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<VBox fx:id="sidebar" alignment="TOP_CENTER" prefHeight="700.0" prefWidth="250.0" styleClass="sidebar" stylesheets="@../../stylesheet.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<VBox fx:id="sidebar" alignment="TOP_CENTER" prefHeight="700.0" prefWidth="250.0" styleClass="sidebar" stylesheets="@../../stylesheet.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.MenuController">
    <children>
-      <!-- Top: Title -->
-      <Label text="Plan d'Action Correctif" style="-fx-font-size: 22; -fx-font-weight: bold; -fx-text-fill: #253320; -fx-padding: 10;"/>
+   <AnchorPane prefHeight="80.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="100.0" fitWidth="102.0" layoutX="88.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../images/profil.jpg" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
 
-      <!-- Center: List of Action Plans -->
-      <VBox spacing="15" style="-fx-padding: 20;">
-         <Label text="Plans d'Action Correctif" style="-fx-font-size: 18; -fx-font-weight: bold; -fx-text-fill: #2B3329;"/>
-         <ListView fx:id="actionPlansListView" style="-fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: #619E4F; -fx-padding: 10;">
-            <items>
-               <FXCollections fx:factory="observableArrayList">
-                  <String fx:value="Plan 1: Responsable A - 2024-01-01"/>
-                  <String fx:value="Plan 2: Responsable B - 2024-02-15"/>
-                  <String fx:value="Plan 3: Responsable C - 2024-03-10"/>
-               </FXCollections>
-            </items>
-         </ListView>
-      </VBox>
-
-      <!-- Bottom: Action Buttons -->
-      <HBox spacing="20" alignment="CENTER" style="-fx-padding: 15;">
-         <JFXButton text="Ajouter Nouveau Plan" fx:id="addNewPlanButton" styleClass="sidebar-user-btn" textFill="#273329">
-            <graphic>
-               <FontAwesomeIconView glyphName="PLUS_CIRCLE" size="15" styleClass="sidebar-btn-icon"/>
-            </graphic>
-         </JFXButton>
-         <JFXButton text="Fermer" fx:id="closeButton" styleClass="sidebar-user-btn" textFill="#273329">
-            <graphic>
-               <FontAwesomeIconView glyphName="TIMES" size="15" styleClass="sidebar-btn-icon"/>
-            </graphic>
-         </JFXButton>
+      <JFXButton contentDisplay="RIGHT" ripplerFill="#e4dddd" styleClass="sidebar-user-btn" text="Responsable RSE" textFill="#273329">
+         <font>
+            <Font name="Sora ExtraBold" size="13.0" />
+         </font>
+         <graphic>
+            <FontAwesomeIconView fill="#273329" glyphName="SORT_DESC" glyphStyle="-fx-fill#273329" size="13.0" textAlignment="CENTER">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </FontAwesomeIconView>
+         </graphic>
+         <VBox.margin>
+            <Insets top="10.0" />
+         </VBox.margin>
+      </JFXButton>
+      <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn">
+         <VBox.margin>
+            <Insets top="50.0" />
+         </VBox.margin>
+         <padding>
+            <Insets left="20.0" />
+         </padding>
+         <children>
+            <ImageView fitHeight="30.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true" />
+            <Label text="Home" textFill="#273329">
+               <font>
+                  <Font name="Sora SemiBold" size="14.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="20.0" />
+               </HBox.margin>
+            </Label>
+         </children>
       </HBox>
+      <HBox fx:id="SuiviRessource" alignment="CENTER_LEFT" layoutX="10.0" layoutY="127.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#navigateToSuiviRessource" prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn">
+         <padding>
+            <Insets left="20.0" />
+         </padding>
+         <children>
+            <ImageView fitHeight="30.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true" />
+            <Label text="Suivi Ressource" textFill="#273329">
+               <font>
+                  <Font name="Sora SemiBold" size="14.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="20.0" />
+               </HBox.margin>
+            </Label>
+         </children>
+         <VBox.margin>
+            <Insets top="10.0" />
+         </VBox.margin>
+      </HBox>
+      <HBox fx:id="SuiviEnergie" alignment="CENTER_LEFT" layoutX="10.0" layoutY="127.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#navigateToSuiviEnergie" prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn">
+         <padding>
+            <Insets left="20.0" />
+         </padding>
+         <children>
+            <ImageView fitHeight="30.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true" />
+            <Label text="Suivi Energie" textFill="#273329">
+               <font>
+                  <Font name="Sora SemiBold" size="14.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="20.0" />
+               </HBox.margin>
+            </Label>
+         </children>
+         <VBox.margin>
+            <Insets top="10.0" />
+         </VBox.margin>
+      </HBox>
+      <HBox fx:id="SuiviCarbone" alignment="CENTER_LEFT" layoutX="10.0" layoutY="162.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#navigateToSuiviCarbone" prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn">
+         <padding>
+            <Insets left="20.0" />
+         </padding>
+         <children>
+            <ImageView fitHeight="30.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true" />
+            <Label text="Suivi Carbone" textFill="#273329">
+               <font>
+                  <Font name="Sora SemiBold" size="14.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="20.0" />
+               </HBox.margin>
+            </Label>
+         </children>
+         <VBox.margin>
+            <Insets top="10.0" />
+         </VBox.margin>
+      </HBox>
+      <HBox fx:id="suiviDechet" alignment="CENTER_LEFT" layoutX="10.0" layoutY="127.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#navigateToSuiviDechet" prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn">
+         <padding>
+            <Insets left="20.0" />
+         </padding>
+         <children>
+            <ImageView fitHeight="30.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true" />
+            <Label text="Suivi Déchet" textFill="#273329">
+               <font>
+                  <Font name="Sora SemiBold" size="14.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="20.0" />
+               </HBox.margin>
+            </Label>
+         </children>
+         <VBox.margin>
+            <Insets top="10.0" />
+         </VBox.margin>
+      </HBox>
+      <HBox fx:id="SuiviObjectif" alignment="CENTER_LEFT" layoutX="10.0" layoutY="162.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#navigateToSuiviObjectif" prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn">
+         <padding>
+            <Insets left="20.0" />
+         </padding>
+         <children>
+            <ImageView fitHeight="30.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true" />
+            <Label text="Suivi Objectif" textFill="#273329">
+               <font>
+                  <Font name="Sora SemiBold" size="14.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="20.0" />
+               </HBox.margin>
+            </Label>
+         </children>
+         <VBox.margin>
+            <Insets top="10.0" />
+         </VBox.margin>
+      </HBox>
+      <Button fx:id="deconnecter" mnemonicParsing="false" onAction="#deconnecter" styleClass="sidebar-logout-btn" text="Déconnexion">
+         <VBox.margin>
+            <Insets top="40.0" />
+         </VBox.margin>
+         <font>
+            <Font name="Sora SemiBold" size="12.0" />
+         </font>
+      </Button>
    </children>
 </VBox>
