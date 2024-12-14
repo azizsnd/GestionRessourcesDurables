@@ -6,6 +6,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import javafx.stage.Modality;
 
 public class ViewLoader {
     public static void load(String fxmlPath, Stage stage) {
@@ -16,6 +17,23 @@ public class ViewLoader {
         } catch (IOException e) {
             e.printStackTrace();
             throw new RuntimeException("Failed to load FXML file: " + fxmlPath);
+        }
+    }
+    public static void loadPopup(String fxmlPath)  {
+        try {
+            // Load the FXML file for the 'Ajout Ressource' interface
+            FXMLLoader fxmlLoader = new FXMLLoader(ViewLoader.class.getResource(fxmlPath));
+            Parent root = fxmlLoader.load();
+
+            // Create a new stage for the popup window
+            Stage stage = new Stage();
+            stage.setTitle("Ajouter Ressource");
+            stage.setScene(new Scene(root));
+            stage.initModality(Modality.APPLICATION_MODAL); // Ensures this is a modal window
+            stage.showAndWait(); // Wait for the window to close before returning
+        } catch (IOException e) {
+            e.printStackTrace();
+            Alert.showErrorAlert("Erreur", "Impossible de charger l'interface Ajout Ressource : " + e.getMessage());
         }
     }
 }
