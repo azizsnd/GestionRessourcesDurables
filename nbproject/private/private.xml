@@ -3,16 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/E:/Studying/Cycle%20ing/2eme_enicarthage/Personnel/Sem1/Java/SustainableResourceDashboard/GestionRessourcesDurables/src/View/Components/ajoutDechet.fxml</file>
-            <file>file:/E:/Studying/Cycle%20ing/2eme_enicarthage/Personnel/Sem1/Java/SustainableResourceDashboard/GestionRessourcesDurables/src/Model/Reglementation/Reglementation.java</file>
-            <file>file:/E:/Studying/Cycle%20ing/2eme_enicarthage/Personnel/Sem1/Java/SustainableResourceDashboard/GestionRessourcesDurables/src/View/Components/ajoutPlanDaction.fxml</file>
-            <file>file:/E:/Studying/Cycle%20ing/2eme_enicarthage/Personnel/Sem1/Java/SustainableResourceDashboard/GestionRessourcesDurables/src/Model/Reglementation/NormeIso.java</file>
-            <file>file:/E:/Studying/Cycle%20ing/2eme_enicarthage/Personnel/Sem1/Java/SustainableResourceDashboard/GestionRessourcesDurables/src/Controller/MenuController.java</file>
-            <file>file:/E:/Studying/Cycle%20ing/2eme_enicarthage/Personnel/Sem1/Java/SustainableResourceDashboard/GestionRessourcesDurables/src/View/Components/planDaction.fxml</file>
-            <file>file:/E:/Studying/Cycle%20ing/2eme_enicarthage/Personnel/Sem1/Java/SustainableResourceDashboard/GestionRessourcesDurables/src/View/Components/sideBarAuditeur.fxml</file>
-            <file>file:/E:/Studying/Cycle%20ing/2eme_enicarthage/Personnel/Sem1/Java/SustainableResourceDashboard/GestionRessourcesDurables/src/Model/Reglementation/AuditEnviromental.java</file>
-            <file>file:/E:/Studying/Cycle%20ing/2eme_enicarthage/Personnel/Sem1/Java/SustainableResourceDashboard/GestionRessourcesDurables/src/Model/Reglementation/PlanDActionCorrectif.java</file>
-            <file>file:/E:/Studying/Cycle%20ing/2eme_enicarthage/Personnel/Sem1/Java/SustainableResourceDashboard/GestionRessourcesDurables/src/View/Components/Audit%20Enviromental.fxml</file>
+            <file>file:/C:/Users/HP/Documents/NetBeansProjects/GestionRessourcesDurables/src/View/Components/SuiviRessource.fxml</file>
+            <file>file:/C:/Users/HP/Documents/NetBeansProjects/GestionRessourcesDurables/src/Utils/ViewLoader.java</file>
+            <file>file:/C:/Users/HP/Documents/NetBeansProjects/GestionRessourcesDurables/src/View/Components/sideBarRespRSE.fxml</file>
+            <file>file:/C:/Users/HP/Documents/NetBeansProjects/GestionRessourcesDurables/src/View/Components/ajoutRessource.fxml</file>
+            <file>file:/C:/Users/HP/Documents/NetBeansProjects/GestionRessourcesDurables/src/View/VueSuiviObjectif.fxml</file>
+            <file>file:/C:/Users/HP/Documents/NetBeansProjects/GestionRessourcesDurables/src/stylesheet.css</file>
+            <file>file:/C:/Users/HP/Documents/NetBeansProjects/GestionRessourcesDurables/src/View/Login.fxml</file>
         </group>
     </open-files>
 </project-private>
