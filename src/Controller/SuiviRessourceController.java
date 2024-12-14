@@ -69,7 +69,7 @@ public class SuiviRessourceController {
         }
     }
     @FXML
-    public void ajouterEnergie() {
+    public void ajouterRessource() {
         try {
             ViewLoader.loadPopup("../View/Components/ajoutRessource.fxml");
         } catch (Exception e) {

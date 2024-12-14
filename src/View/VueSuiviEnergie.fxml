@@ -11,7 +11,7 @@
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.VueSuiviEnergieController">
     <left>
-        <fx:include source="Components/sideBar.fxml" />
+        <fx:include source="Components/sideBarRespRSE.fxml" />
     </left>
     <center>
         <AnchorPane prefHeight="500.0" prefWidth="466.0" BorderPane.alignment="CENTER">
