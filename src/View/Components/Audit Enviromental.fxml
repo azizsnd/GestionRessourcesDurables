@@ -10,9 +10,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<SplitPane dividerPositions="0.2817371937639198" orientation="HORIZONTAL" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<SplitPane dividerPositions="0.2817371937639198" orientation="HORIZONTAL" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.AuditEnvironnementaleController">
 <fx:include source="sideBarAuditeur.fxml" />
-<BorderPane prefHeight="700.0" prefWidth="427.0" style=" -fx-background-color: #FFFFFF; -fx-border-color: #505C4C;" SplitPane.resizableWithParent="false" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="774.0" style=" -fx-background-color: #FFFFFF; -fx-border-color: #505C4C;" SplitPane.resizableWithParent="false" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
 
     <!-- Top: Title -->
     <top>
@@ -25,7 +25,7 @@
 
     <!-- Center: Checklist of Regulations -->
     <center>
-        <VBox prefHeight="539.0" prefWidth="432.0" spacing="15" style="-fx-padding: 20;">
+        <VBox spacing="15" style="-fx-padding: 20;">
             <Label style="-fx-font-size: 18; -fx-font-weight: bold; -fx-text-fill: #2B3329;" text="Vérification des Réglementations">
                <VBox.margin>
                   <Insets top="30.0" />
@@ -59,8 +59,8 @@
     <!-- Bottom: Action Buttons -->
     <bottom>
         <HBox alignment="CENTER" spacing="20" style="-fx-padding: 15;">
-            <Button fx:id="saveButton" style="-fx-background-color: #6BDB48; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 10;" text="Enregistrer" />
-            <Button fx:id="cancelButton" style="-fx-background-color: #505C4C; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 10;" text="Annuler" />
+            <Button fx:id="saveButton" onAction="#onSaveClicked"  style="-fx-background-color: #6BDB48; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 10;" text="Enregistrer" />
+            <Button fx:id="cancelButton" onAction="#onCancelClicked"  style="-fx-background-color: #505C4C; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 10;" text="Annuler" />
         </HBox>
     </bottom>
 </BorderPane>

@@ -1,8 +1,10 @@
 package View.Components;
 
 import Model.Reglementation.NormeIso;
+import Services.NormeIsoService;
 import Utils.Alert;
 import Utils.ViewLoader;
+import controller.PopupISOController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -46,6 +48,15 @@ public class IsoManagementController {
         isoListView.getItems().clear();
     }
 
+    // Update the ListView with fetched ISO norms
+    private void updateIsoListView() {
+        isoListView.getItems().clear();
+        if (isoNorms != null) {
+            for (NormeIso norme : isoNorms) {
+                isoListView.getItems().add(norme.toString()); // Assuming `toString()` provides a meaningful description
+            }
+        }
+    }
     @FXML
     private void onSearchClicked(ActionEvent event) {
         String query = searchBar.getText().trim().toLowerCase();
@@ -59,12 +70,42 @@ public class IsoManagementController {
     }
 
     @FXML
-    public void ajoutIso() {
+// This method will be triggered when a new ISO is saved from the popup
+    private void refreshIsoList() {
+        // Fetch the latest ISO norms from the database
         try {
-            ViewLoader.loadPopup("../View/Components/popupISO.fxml");
+            List<NormeIso> isoNorms = NormeIsoService.getAllNormes(); // Fetch data from your service
+            isoListView.getItems().clear();
+
+            // Add each ISO norm to the ListView
+            for (NormeIso norme : isoNorms) {
+                isoListView.getItems().add(norme.toString()); // You can customize what to display
+            }
         } catch (Exception e) {
             e.printStackTrace();
-            Alert.showErrorAlert("Erreur", "Une erreur s'est produite : " + e.getMessage());
+            // Handle the error
+        }
+    }
+
+    // Triggered when the "Ajouter ISO" button is clicked
+    @FXML
+    public void ajoutIso() {
+        try {
+            // Load the popup and pass the callback
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("popupISO.fxml"));
+            Parent root = loader.load();
+
+            PopupISOController popupController = loader.getController();
+            popupController.setOnIsoSavedCallback(this::refreshIsoList);  // Set the callback
+            
+            // Show the popup
+            Stage stage = new Stage();
+            stage.initModality(Modality.APPLICATION_MODAL);  // Make it modal
+            stage.setScene(new Scene(root));
+            stage.showAndWait();  // Wait until the popup is closed
+        } catch (Exception e) {
+            e.printStackTrace();
+            // Handle the error
         }
     }
 

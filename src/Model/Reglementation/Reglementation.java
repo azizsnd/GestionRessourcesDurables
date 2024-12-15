@@ -8,7 +8,11 @@ public record Reglementation(int id,String nom,String descriptionExigence,Date d
         // Vérifie si la date actuelle dépasse la date de mise en application
         return new Date().after(dateMiseEnApplication);
     }
-
+    public boolean isEmpty() {
+        return (nom == null || nom.isEmpty()) || 
+               (descriptionExigence == null || descriptionExigence.isEmpty()) || 
+               (dateMiseEnApplication == null);
+    }
     public void afficher() {
         System.out.println("Règlementation : " + nom +
                 "\nExigences : " + descriptionExigence +

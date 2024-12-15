@@ -12,13 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:controller="Controller.SuiviRessourceController"
-            maxHeight="-Infinity" maxWidth="-Infinity" 
-            minHeight="-Infinity" minWidth="-Infinity" 
-            prefHeight="700.0" prefWidth="774.0" 
-            stylesheets="@../../stylesheet.css" 
-            xmlns="http://javafx.com/javafx/23.0.1" 
-            xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="774.0" stylesheets="@../../stylesheet.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.SuiviRessourceController">
     <top>
         <HBox alignment="CENTER" spacing="10" style="-fx-background-color: #589D43; -fx-padding: 10;">
             <Label style="-fx-text-fill: white;" text="Suivi Ressource">
@@ -41,7 +35,7 @@
                     <Font name="Sora Medium" size="12.0" />
                 </font>
             </Button>
-            <Button fx:id="generateReportButton" onAction="#genererRapport" layoutX="400.0" layoutY="24.0" styleClass="sidebar-logout-btn" stylesheets="@../../stylesheet.css" text="Générer Rapport">
+            <Button fx:id="generateReportButton" layoutX="400.0" layoutY="24.0" onAction="#genererRapport" styleClass="sidebar-logout-btn" stylesheets="@../../stylesheet.css" text="Générer Rapport">
                 <font>
                     <Font name="Sora Medium" size="12.0" />
                 </font>
@@ -55,9 +49,9 @@
                 <HBox prefHeight="280.0" prefWidth="774.0">
                     <children>
                         <!-- Bar Chart 1 -->
-                        <BarChart fx:id="barChart" title="Quantité de resources">
+                        <BarChart fx:id="barChart" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="220.0" prefWidth="377.0" title="Quantité de resources">
                             <xAxis>
-                                <CategoryAxis fx:id="barXAxis" label="Ressource" />
+                                <CategoryAxis fx:id="barXAxis" label="Ressource" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="32.0" />
                             </xAxis>
                             <yAxis>
                                 <NumberAxis fx:id="barYAxis" label="Quantité" />
@@ -65,7 +59,7 @@
                         </BarChart>
                         
                         <!-- Bar Chart 2 -->
-                        <BarChart fx:id="barChart1" title="Nombre Ressource Suivi">
+                        <BarChart fx:id="barChart1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="220.0" prefWidth="377.0" title="Nombre Ressource Suivi">
                             <xAxis>
                                 <CategoryAxis fx:id="barXAxis1" label="Période" />
                             </xAxis>
