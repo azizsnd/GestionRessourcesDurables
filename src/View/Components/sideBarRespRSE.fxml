@@ -50,7 +50,7 @@
          <children>
             <ImageView fitHeight="30.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../Images/icons8-utilisateur-72.png" />
+                  <Image url="@../../images/icons8-utilisateur-72.png" />
                </image></ImageView>
             <Label text="Profil" textFill="#273329">
                <font>
@@ -69,7 +69,7 @@
          <children>
             <ImageView fitHeight="30.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../Images/icons8-nourriture-naturelle-72.png" />
+                  <Image url="@../../images/icons8-nourriture-naturelle-72.png" />
                </image></ImageView>
             <Label text="Suivi Ressource" textFill="#273329">
                <font>
@@ -91,7 +91,7 @@
          <children>
             <ImageView fitHeight="30.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../Images/icons8-panneau-solaire-72.png" />
+                  <Image url="@../../images/icons8-panneau-solaire-72.png" />
                </image></ImageView>
             <Label text="Suivi Energie" textFill="#273329">
                <font>
@@ -113,7 +113,7 @@
          <children>
             <ImageView fitHeight="30.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../Images/icons8-usine-72.png" />
+                  <Image url="@../../images/icons8-usine-72.png" />
                </image></ImageView>
             <Label text="Suivi Carbone" textFill="#273329">
                <font>
@@ -135,7 +135,7 @@
          <children>
             <ImageView fitHeight="30.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../Images/icons8-corbeille-72.png" />
+                  <Image url="@../../images/icons8-corbeille-72.png" />
                </image></ImageView>
             <Label text="Suivi Déchet" textFill="#273329">
                <font>
@@ -157,7 +157,7 @@
          <children>
             <ImageView fitHeight="30.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../Images/icons8-objectif-72.png" />
+                  <Image url="@../../images/icons8-objectif-72.png" />
                </image></ImageView>
             <Label text="Gestion Rapport" textFill="#273329">
                <font>

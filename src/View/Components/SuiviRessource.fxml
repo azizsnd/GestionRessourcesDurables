@@ -51,7 +51,7 @@
                         <!-- Bar Chart 1 -->
                         <BarChart fx:id="barChart" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="220.0" prefWidth="377.0" title="Quantité de resources">
                             <xAxis>
-                                <CategoryAxis fx:id="barXAxis" label="Ressource" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="32.0" />
+                                <CategoryAxis fx:id="barXAxis" label="Ressource" maxHeight="-Infinity" minHeight="-Infinity" />
                             </xAxis>
                             <yAxis>
                                 <NumberAxis fx:id="barYAxis" label="Quantité" />
@@ -71,7 +71,7 @@
                 </HBox>
    
                 <!-- Line Chart -->
-                <LineChart fx:id="lineChart" title="Cout Total de Ressources et Objectifs de Réduction">
+                <LineChart fx:id="lineChart" prefHeight="294.0" prefWidth="754.0" title="Cout Total de Ressources et Objectifs de Réduction">
                     <xAxis>
                         <NumberAxis fx:id="lineXAxis" label="Temps (Mois)" />
                     </xAxis>
