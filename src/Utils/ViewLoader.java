@@ -6,6 +6,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.function.Consumer;
 import javafx.stage.Modality;
 
 public class ViewLoader {
@@ -34,6 +35,26 @@ public class ViewLoader {
         } catch (IOException e) {
             e.printStackTrace();
             Alert.showErrorAlert("Erreur", "Impossible de charger l'interface Ajout Ressource : " + e.getMessage());
+        }
+    }
+
+    public static void loadPopup(String fxmlPath, Consumer<Object> controllerInitializer) {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(ViewLoader.class.getResource(fxmlPath));
+            Parent root = fxmlLoader.load();
+
+            // Initialize the controller
+            Object controller = fxmlLoader.getController();
+            controllerInitializer.accept(controller);
+
+            Stage stage = new Stage();
+            stage.setTitle("Modifier Ressource");
+            stage.setScene(new Scene(root));
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.showAndWait();
+        } catch (IOException e) {
+            e.printStackTrace();
+            Alert.showErrorAlert("Erreur", "Impossible de charger l'interface : " + e.getMessage());
         }
     }
 }
