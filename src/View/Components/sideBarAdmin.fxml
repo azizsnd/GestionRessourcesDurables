@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox fx:id="sidebar" alignment="TOP_CENTER" minHeight="-Infinity" prefHeight="700.0" prefWidth="250.0" styleClass="sidebar" stylesheets="@../../stylesheet.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" >
+<VBox fx:id="sidebar" alignment="TOP_CENTER" minHeight="-Infinity" prefHeight="700.0" prefWidth="250.0" styleClass="sidebar" stylesheets="@../../stylesheet.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.Components.SideBarAdminController">
    <children>
    <AnchorPane prefHeight="80.0" prefWidth="100.0" BorderPane.alignment="CENTER">
          <children>
@@ -40,9 +40,9 @@
             <Insets top="10.0" />
          </VBox.margin>
       </JFXButton>
-      <HBox fx:id="Profil" alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn">
+      <HBox fx:id="Profil" alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn" onMouseClicked="#navigateToProfile" >
          <VBox.margin>
-            <Insets top="30.0" />
+            <Insets top="100.0" />
          </VBox.margin>
          <padding>
             <Insets left="20.0" />
@@ -62,7 +62,7 @@
             </Label>
          </children>
       </HBox>
-      <HBox fx:id="GestionUtilisateur" alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#navigateToSuiviObjectif" prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn">
+      <HBox fx:id="GestionUtilisateur" alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#navigateToUsers" prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn">
          <padding>
             <Insets left="20.0" />
          </padding>
@@ -81,12 +81,12 @@
             </Label>
          </children>
          <VBox.margin>
-            <Insets top="10.0" />
+            <Insets top="30.0" />
          </VBox.margin>
       </HBox>
       <Button fx:id="deconnecter" mnemonicParsing="false" onAction="#deconnecter" styleClass="sidebar-logout-btn" text="Déconnexion">
          <VBox.margin>
-            <Insets top="20.0" />
+            <Insets top="120.0" />
          </VBox.margin>
          <font>
             <Font name="Sora SemiBold" size="12.0" />
