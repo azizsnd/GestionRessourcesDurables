@@ -10,9 +10,9 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.layout.AnchorPane?>
 
-<StackPane>
-<DialogPane style="-fx-padding: 25; -fx-border-color: #505C4C;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<DialogPane style="-fx-padding: 25; -fx-border-color: #505C4C;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.PopupISOController">
     <content>
         <VBox spacing="15" style="-fx-padding: 20;">
             <Label style="-fx-font-size: 22; -fx-font-weight: bold; -fx-text-fill: #253320;" text="Ajouter une Norme ISO" />
@@ -53,4 +53,3 @@
         </VBox>
     </content>
 </DialogPane>
-</StackPane>

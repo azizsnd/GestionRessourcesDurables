@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox fx:id="sidebar" alignment="TOP_CENTER" prefHeight="700.0" prefWidth="250.0" styleClass="sidebar" stylesheets="@../../stylesheet.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.MenuController">
+<VBox fx:id="sidebar" alignment="TOP_CENTER" prefHeight="700.0" prefWidth="250.0" styleClass="sidebar" stylesheets="@../../stylesheet.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Menu2Controller">
    <children>
    <AnchorPane prefHeight="80.0" prefWidth="100.0" BorderPane.alignment="CENTER">
          <children>
@@ -62,7 +62,7 @@
             </Label>
          </children>
       </HBox>
-      <HBox fx:id="ManagementISO" alignment="CENTER_LEFT" layoutX="10.0" layoutY="127.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn">
+      <HBox fx:id="ManagementISO" onMouseClicked="#navigateToManagementISO"  alignment="CENTER_LEFT" layoutX="10.0" layoutY="127.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn">
          <padding>
             <Insets left="20.0" />
          </padding>
@@ -84,7 +84,7 @@
             <Insets top="10.0" />
          </VBox.margin>
       </HBox>
-      <HBox fx:id="Audit" alignment="CENTER_LEFT" layoutX="10.0" layoutY="127.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn">
+      <HBox fx:id="Audit" onMouseClicked="#navigateToAudit"  alignment="CENTER_LEFT" layoutX="10.0" layoutY="127.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn">
          <padding>
             <Insets left="20.0" />
          </padding>
@@ -106,7 +106,7 @@
             <Insets top="10.0" />
          </VBox.margin>
       </HBox>
-      <HBox fx:id="PAC" alignment="CENTER_LEFT" layoutX="10.0" layoutY="162.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn">
+      <HBox fx:id="PAC" onMouseClicked="#navigateToPAC"  alignment="CENTER_LEFT" layoutX="10.0" layoutY="162.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn">
          <padding>
             <Insets left="20.0" />
          </padding>
