@@ -1,0 +1,54 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.sidebar {
+    -fx-background-color: #CEDEC9;
+}
+.sidebar-user-btn{
+    -fx-background-color: transparent;
+    -fx-background-radius: 0px;
+    -fx-text-fill: #2A3327;
+}
+.sidebar-btn{
+    -fx-background-color: transparent;
+    -fx-background-radius: 0px;
+    -fx-text-fill: #2A3327;
+}
+.sidebar-btn:hover{
+    -fx-background-color: #589D43;
+    -fx-background-radius: 0px;
+    -fx-text-fill: #2A3327;
+    -fx-border-color:#405C37;
+    -fx-border-width: 0px 2px 0px 8px;
+}
+.sidebar-btn-icon{
+    -fx-fill: #2A3327;
+}
+
+.sidebar-logout-btn{
+    -fx-background-color: #4C863A;
+    -fx-background-radius: 0px;
+    -fx-text-fill: #CEDEC9;
+     -fx-background-radius: 50px;
+    -fx-border-radius: 50px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.8), 10, 0, 0, 0);
+    -fx-font-family: "Sora Medium";
+    -fx-font-size: 12px;
+}
+.sidebar-logout-btn:hover{
+    -fx-background-color: #CEDEC9;
+    -fx-text-fill: #2A3327;
+    -fx-background-radius: 50px;
+    -fx-border-color:#4C863A;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.8), 10, 0, 0, 0);
+}
+
+.content-area-menu{
+    -fx-background-color: #fff;
+    -fx-border-color: #cccccc;
+    -fx-border-width: 0px 1px 0px 0px;
+}
+.loginLogo{
+        -fx-background-color: #CEDEC9;
+}

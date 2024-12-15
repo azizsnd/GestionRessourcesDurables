@@ -13,45 +13,48 @@ public class MenuController {
 
     @FXML
     private Button deconnecter;
+    @FXML
 
     private HBox SuiviObjectif;
+    @FXML
 
     private HBox suiviDechet;
+    @FXML
 
     private HBox SuiviCarbone;
+    @FXML
 
     private HBox SuiviEnergie;
+    @FXML
 
     private HBox SuiviRessource;
-    @FXML
-    private VBox sidebar;
-    @FXML
-    private HBox ManagementISO;
-    @FXML
-    private HBox Audit;
-    @FXML
-    private HBox PAC;
+
 
     @FXML
     private void deconnecter() throws IOException {
         navigateTo("../View/Login.fxml", deconnecter);
     }
+    @FXML
 
     private void navigateToSuiviRessource() throws IOException {
         navigateTo("../View/VueSuiviRessource.fxml", SuiviRessource);
     }
+    @FXML
 
     private void navigateToSuiviEnergie() throws IOException {
         navigateTo("../View/VueSuiviEnergie.fxml", SuiviEnergie);
     }
+    @FXML
 
     private void navigateToSuiviCarbone() throws IOException {
         navigateTo("../View/VueSuiviCarbone.fxml", SuiviCarbone);
     }
+    @FXML
 
     private void navigateToSuiviDechet() throws IOException {
         navigateTo("../View/VueSuiviDechet.fxml", suiviDechet);
     }
+    @FXML
 
     private void navigateToSuiviObjectif() throws IOException {
         navigateTo("../View/VueGestionRapport.fxml", SuiviObjectif);

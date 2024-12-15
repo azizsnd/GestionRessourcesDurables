@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DialogPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<DialogPane style="-fx-padding: 25; -fx-border-color: #505C4C;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.PopupISOController">
+    <content>
+        <VBox spacing="15" style="-fx-padding: 20;">
+            <Label style="-fx-font-size: 22; -fx-font-weight: bold; -fx-text-fill: #253320;" text="Ajouter une Norme ISO" />
+
+            <Label style="-fx-text-fill: #2B3329;" text="Numéro ISO :">
+            <font>
+               <Font name="Sora Medium" size="13.0" />
+            </font>
+            <opaqueInsets>
+               <Insets />
+            </opaqueInsets>
+            <VBox.margin>
+               <Insets top="20.0" />
+            </VBox.margin></Label>
+            <TextField fx:id="numIsoField" prefWidth="478.0" style="-fx-background-radius: 10; -fx-background-color: #CEDEC9; -fx-border-radius: 10; -fx-border-color: #619E4F;" />
+
+            <Label text="Description :">
+            <font>
+               <Font name="Sora Medium" size="13.0" />
+            </font></Label>
+            <TextArea fx:id="descriptionField" style="-fx-background-radius: 10; -fx-background-color: #CEDEC9; -fx-border-radius: 10; -fx-border-color: #619E4F;" />
+
+            <Label text="Exigences :">
+            <font>
+               <Font name="Sora Medium" size="13.0" />
+            </font></Label>
+            <ListView fx:id="exigencesListView" style="-fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: #619E4F; -fx-background-color: #CEDEC9;" />
+
+            <HBox alignment="CENTER" spacing="10">
+                <Button fx:id="addExigenceButton" style="-fx-background-color: #6BDB48; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 10;" text="Ajouter Exigence" />
+                <Button fx:id="deleteExigenceButton" style="-fx-background-color: #505C4C; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 10;" text="Supprimer Exigence" />
+            </HBox>
+
+            <HBox alignment="CENTER" spacing="15" style="-fx-padding-top: 10;">
+                <Button fx:id="saveButton" style="-fx-background-color: #619E4F; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 10;" text="Enregistrer" />
+                <Button fx:id="cancelButton" style="-fx-background-color: #505C4C; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 10;" text="Annuler" />
+            </HBox>
+        </VBox>
+    </content>
+</DialogPane>
