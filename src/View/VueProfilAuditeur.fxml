@@ -7,7 +7,11 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<SplitPane dividerPositions="0.2817371937639198" orientation="HORIZONTAL" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+    <left>
         <fx:include source="Components/sideBarAuditeur.fxml" />
+    </left>
+    <center>
         <fx:include source="Components/Profile.fxml" />
-</SplitPane>
+    </center>
+</BorderPane>

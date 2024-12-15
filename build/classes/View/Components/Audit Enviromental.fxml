@@ -10,58 +10,61 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<SplitPane dividerPositions="0.2817371937639198" orientation="HORIZONTAL" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.AuditEnvironnementaleController">
-<fx:include source="sideBarAuditeur.fxml" />
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="774.0" style=" -fx-background-color: #FFFFFF; -fx-border-color: #505C4C;" SplitPane.resizableWithParent="false" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
 
-    <!-- Top: Title -->
-    <top>
-        <Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="53.0" prefWidth="774.0" style="-fx-background-color: #589D43;" text="Audit Environnementale" textFill="WHITE" BorderPane.alignment="CENTER">
-            <font>
-               <Font name="Sora ExtraBold" size="20.0" />
-            </font>
-         </Label>
-    </top>
-
-    <!-- Center: Checklist of Regulations -->
+<BorderPane fx:controller="Controller.AuditEnvironnementaleController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+    <left>
+        <fx:include source="sideBarAuditeur.fxml" />
+    </left>
     <center>
-        <VBox spacing="15" style="-fx-padding: 20;">
-            <Label style="-fx-font-size: 18; -fx-font-weight: bold; -fx-text-fill: #2B3329;" text="Vérification des Réglementations">
-               <VBox.margin>
-                  <Insets top="30.0" />
-               </VBox.margin></Label>
-            <VBox fx:id="regulationsContainer" spacing="20.0" style="-fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: #619E4F; -fx-padding: 10;">
-                <CheckBox text="Réglementation 1">
-               <font>
-                  <Font name="Sora Medium" size="12.0" />
-               </font></CheckBox>
-                <CheckBox text="Réglementation 2">
-               <font>
-                  <Font name="Sora Medium" size="12.0" />
-               </font></CheckBox>
-                <CheckBox text="Réglementation 3">
+        <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="774.0" style=" -fx-background-color: #FFFFFF; -fx-border-color: #505C4C;" SplitPane.resizableWithParent="false" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+            <top>
+                <Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="53.0" prefWidth="774.0" style="-fx-background-color: #589D43;" text="Audit Environnementale" textFill="WHITE" BorderPane.alignment="CENTER">
                     <font>
-                  <Font name="Sora Medium" size="12.0" />
+                        <Font name="Sora ExtraBold" size="20.0" />
                     </font>
-                </CheckBox>
-                <CheckBox text="Réglementation 4">
-                    <font>
-                  <Font name="Sora Medium" size="12.0" />
-                    </font>
-                </CheckBox>
-               <VBox.margin>
-                  <Insets top="20.0" />
-               </VBox.margin>
-            </VBox>
-        </VBox>
+                </Label>
+            </top>
+            <center>
+                <VBox spacing="15" style="-fx-padding: 20;">
+                    <Label style="-fx-font-size: 18; -fx-font-weight: bold; -fx-text-fill: #2B3329;" text="Vérification des Réglementations">
+                        <VBox.margin>
+                            <Insets top="30.0" />
+                        </VBox.margin>
+                    </Label>
+                    <VBox fx:id="regulationsContainer" spacing="20.0" style="-fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: #619E4F; -fx-padding: 10;">
+                        <CheckBox text="Réglementation 1">
+                            <font>
+                                <Font name="Sora Medium" size="12.0" />
+                            </font>
+                        </CheckBox>
+                        <CheckBox text="Réglementation 2">
+                            <font>
+                                <Font name="Sora Medium" size="12.0" />
+                            </font>
+                        </CheckBox>
+                        <CheckBox text="Réglementation 3">
+                            <font>
+                                <Font name="Sora Medium" size="12.0" />
+                            </font>
+                        </CheckBox>
+                        <CheckBox text="Réglementation 4">
+                            <font>
+                                <Font name="Sora Medium" size="12.0" />
+                            </font>
+                        </CheckBox>
+                        <VBox.margin>
+                            <Insets top="20.0" />
+                        </VBox.margin>
+                    </VBox>
+                </VBox>
+            </center>
+            <bottom>
+                <HBox alignment="CENTER" spacing="20" style="-fx-padding: 15;">
+                    <Button fx:id="saveButton" onAction="#onSaveClicked"  style="-fx-background-color: #6BDB48; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 10;" text="Enregistrer" />
+                    <Button fx:id="cancelButton" onAction="#onCancelClicked"  style="-fx-background-color: #505C4C; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 10;" text="Annuler" />
+                </HBox>
+            </bottom>
+        </BorderPane>
     </center>
-
-    <!-- Bottom: Action Buttons -->
-    <bottom>
-        <HBox alignment="CENTER" spacing="20" style="-fx-padding: 15;">
-            <Button fx:id="saveButton" onAction="#onSaveClicked"  style="-fx-background-color: #6BDB48; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 10;" text="Enregistrer" />
-            <Button fx:id="cancelButton" onAction="#onCancelClicked"  style="-fx-background-color: #505C4C; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 10;" text="Annuler" />
-        </HBox>
-    </bottom>
 </BorderPane>
-</SplitPane>
+
