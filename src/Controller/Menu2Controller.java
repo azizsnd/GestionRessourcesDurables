@@ -13,8 +13,8 @@ public class Menu2Controller {
 
     @FXML
     private Button deconnecter;
-
-
+    @FXML
+    private HBox Profil;
     @FXML
     private HBox ManagementISO;
     @FXML
@@ -37,10 +37,16 @@ public class Menu2Controller {
     }
     @FXML
 
+    private void navigateToProfile() throws IOException {
+        navigateTo("../View/VueProfilAuditeur.fxml", Profil);
+    }
+    @FXML
+
     private void navigateToPAC() throws IOException {
         navigateTo("../View/Components/planDaction.fxml", PAC);
     }
-        private void navigateTo(String fxmlPath, Node node) {
+        
+    private void navigateTo(String fxmlPath, Node node) {
             Stage stage = (Stage) node.getScene().getWindow();
             ViewLoader.load(fxmlPath, stage);
         }

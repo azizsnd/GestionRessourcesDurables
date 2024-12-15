@@ -23,7 +23,7 @@
                </image>
             </ImageView>
          </children>
-      </AnchorPane>
+    </AnchorPane>
 
       <JFXButton contentDisplay="RIGHT" ripplerFill="#e4dddd" styleClass="sidebar-user-btn" text="Auditeur" textFill="#273329">
          <font>
@@ -40,7 +40,7 @@
             <Insets top="10.0" />
          </VBox.margin>
       </JFXButton>
-      <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn">
+      <HBox  fx:id="Profil" alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn" onMouseClicked="#navigateToProfile" >
          <VBox.margin>
             <Insets top="100.0" />
          </VBox.margin>
