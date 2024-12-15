@@ -1,5 +1,6 @@
 package Controller;
 
+import Utils.SessionManager;
 import Utils.ViewLoader;
 import javafx.fxml.FXML;
 import javafx.stage.Stage;
@@ -33,6 +34,8 @@ public class MenuController {
     @FXML
     private void deconnecter() throws IOException {
         navigateTo("../View/Login.fxml", deconnecter);
+        SessionManager session = SessionManager.getInstance();
+        session.clearSession();
     }
     @FXML
 
