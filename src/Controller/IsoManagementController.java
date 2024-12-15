@@ -1,4 +1,4 @@
-package View.Components;
+package Controller;
 
 import Model.Reglementation.NormeIso;
 import Services.NormeIsoService;
@@ -92,7 +92,7 @@ public class IsoManagementController {
     public void ajoutIso() {
         try {
             // Load the popup and pass the callback
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("popupISO.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("../View/Components/popupISO.fxml"));
             Parent root = loader.load();
 
             PopupISOController popupController = loader.getController();

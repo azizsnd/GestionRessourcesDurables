@@ -10,7 +10,7 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 
-public class MenuController {
+public class SideBarRespRSEController {
 
     @FXML
     private Button deconnecter;
@@ -29,13 +29,19 @@ public class MenuController {
     @FXML
 
     private HBox SuiviRessource;
-
+    @FXML
+    private HBox Profil;
 
     @FXML
     private void deconnecter() throws IOException {
         navigateTo("../View/Login.fxml", deconnecter);
         SessionManager session = SessionManager.getInstance();
         session.clearSession();
+    }
+    @FXML
+
+    private void navigateToProfile() throws IOException {
+        navigateTo("../View/VueProfilRespRSE.fxml", Profil);
     }
     @FXML
 
