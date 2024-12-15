@@ -79,25 +79,20 @@ public class IsoManagementController {
         }
     }
 
-
     private void openIsoPopup(NormeIso norme) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("../View/Components/popupISO.fxml"));
             Parent root = loader.load();
 
             PopupISOController popupController = loader.getController();
-            popupController.setOnIsoSavedCallback(this::loadIsoNorms); // Refresh list on save
-            
-            // Pass existing data if editing
+            popupController.setOnIsoSavedCallback(this::loadIsoNorms);
             if (norme != null) {
-                popupController.populateForm(norme); // Implement this method in PopupISOController
+                popupController.populateForm(norme);
             }
-
             Stage stage = new Stage();
             stage.initModality(Modality.APPLICATION_MODAL);
             stage.setScene(new Scene(root));
             stage.showAndWait();
-
         } catch (IOException e) {
             e.printStackTrace();
             Alert.showErrorAlert("Erreur", "Une erreur est survenue lors de l'ouverture de la popup.");
@@ -108,14 +103,17 @@ public class IsoManagementController {
     private void onDeleteIsoClicked(ActionEvent event) {
         int selectedIndex = isoListView.getSelectionModel().getSelectedIndex();
         if (selectedIndex >= 0) {
-                NormeIso normeToDelete = isoNorms.get(selectedIndex);
-                try {
-                    NormeIsoService.deleteNorme(normeToDelete.getId());
-                    loadIsoNorms();
-                } catch (Exception e) {
-                    e.printStackTrace();
-                    Alert.showErrorAlert("Erreur", "Impossible de supprimer la norme ISO.");
-                }
+            NormeIso normeToDelete = isoNorms.get(selectedIndex);
+            try {
+                System.out.println(normeToDelete+"f : "+normeToDelete.getId());
+            
+                NormeIsoService.deleteNorme(normeToDelete.getId());
+                isoNorms.remove(selectedIndex);
+                updateIsoListView();  
+            } catch (Exception e) {
+                e.printStackTrace();
+                Alert.showErrorAlert("Erreur", "Impossible de supprimer la norme ISO.");
+            }
         } else {
             Alert.showWarningAlert("Avertissement", "Veuillez sélectionner une norme à supprimer.");
         }

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : sam. 14 déc. 2024 à 23:59
+-- Généré le : dim. 15 déc. 2024 à 22:36
 -- Version du serveur : 10.4.32-MariaDB
 -- Version de PHP : 8.2.12
 
@@ -125,7 +125,8 @@ INSERT INTO `empreintecarbone` (`id`, `sourceEmission`, `emissionAnnuelles`, `em
 (2, 'Electricity Usage', 12000, 11000),
 (3, 'Transportation', 500, 450),
 (4, 'Industrial Processes', 15000, 14000),
-(5, 'Energy Generation', 5000, 4500);
+(5, 'Energy Generation', 5000, 4500),
+(6, 'Consom Énergétique', 6000, 5000);
 
 -- --------------------------------------------------------
 
@@ -173,7 +174,8 @@ INSERT INTO `entitedurable` (`id`, `nom`, `description`, `dateCreation`, `object
 (2, 'Retail Store B', 'A large retail store.', '2019-08-01', 2),
 (3, 'Solar Farm C', 'A solar farm generating renewable energy.', '2021-03-20', 3),
 (4, 'Recycling Plant D', 'A recycling unit for urban waste.', '2022-05-01', 2),
-(5, 'Hydropower Station E', 'A hydroelectric power plant.', '2023-01-10', 3);
+(5, 'Hydropower Station E', 'A hydroelectric power plant.', '2023-01-10', 3),
+(6, 'Retail Store E', 'haîne de magasins engagée dans la durabilité', '2022-08-24', 4);
 
 -- --------------------------------------------------------
 
@@ -246,7 +248,8 @@ CREATE TABLE `objectifdurabilite` (
 INSERT INTO `objectifdurabilite` (`id`, `dateCible`, `reductionCible`, `progresActuel`, `description`) VALUES
 (1, '2025-12-31', 20, 5, 'Reduce emissions by 20% by 2025.'),
 (2, '2024-06-30', 50, 30, 'Recycle 50% of all waste.'),
-(3, '2026-01-01', 75, 50, 'Increase renewable energy use by 75%.');
+(3, '2026-01-01', 75, 50, 'Increase renewable energy use by 75%.'),
+(4, '2024-12-15', 40, 5, 'Objectif de réduction');
 
 -- --------------------------------------------------------
 
@@ -324,8 +327,11 @@ CREATE TABLE `rapport` (
 --
 
 INSERT INTO `rapport` (`id`, `contenuRapport`, `dateRapport`, `typeService`) VALUES
-(1, 'Rapport de Suivi des Ressources:\nUtilisation totale de ressources: 191000,00 unités\nCoût total estimé: 558900,00\nNombre de types de ressources suivis: 5\nLes resources suivis :\n[\nRessource{id=1, nom=Factory A, description=An industrial factory producing goods., dateCreation=2020-01-15, objectif=\nObjectifDurabilite{id=0, dateCible=2025-12-31, reductionCible=20.0, progresActuel=5.0, description=Reduce emissions by 20% by 2025.}, uniteDeMesure=Kilograms, utilisationReference=50000.0, utilisationActuelle=48000.0, coutParUnite=1.5}, \nRessource{id=2, nom=Retail Store B, description=A large retail store., dateCreation=2019-08-01, objectif=\nObjectifDurabilite{id=0, dateCible=2024-06-30, reductionCible=50.0, progresActuel=30.0, description=Recycle 50% of all waste.}, uniteDeMesure=Liters, utilisationReference=20000.0, utilisationActuelle=15000.0, coutParUnite=0.1}, \nRessource{id=4, nom=Recycling Plant D, description=A recycling unit for urban waste., dateCreation=2022-05-01, objectif=\nObjectifDurabilite{id=0, dateCible=2024-06-30, reductionCible=50.0, progresActuel=30.0, description=Recycle 50% of all waste.}, uniteDeMesure=Cubic Meters, utilisationReference=20000.0, utilisationActuelle=18000.0, coutParUnite=0.05}, \nRessource{id=3, nom=Solar Farm C, description=A solar farm generating renewable energy., dateCreation=2021-03-20, objectif=\nObjectifDurabilite{id=0, dateCible=2026-01-01, reductionCible=75.0, progresActuel=50.0, description=Increase renewable energy use by 75%.}, uniteDeMesure=Panels, utilisationReference=1000.0, utilisationActuelle=950.0, coutParUnite=500.0}, \nRessource{id=5, nom=Hydropower Station E, description=A hydroelectric power plant., dateCreation=2023-01-10, objectif=\nObjectifDurabilite{id=0, dateCible=2026-01-01, reductionCible=75.0, progresActuel=50.0, description=Increase renewable energy use by 75%.}, uniteDeMesure=kWh, utilisationReference=100000.0, utilisationActuelle=95000.0, coutParUnite=0.1}]', '2024-12-14 22:26:23', 'Ressource'),
-(2, 'Rapport de Suivi Carbone:\nÉmissions totales actuelles : 48950,00 unités\nRéduction nécessaire pour atteindre les objectifs : 40,00 unités\nNombre de sources d\'émissions suivies : 5\nLes empreintes suivies :\n[\nEmpreinteCarbone{id=1, nom=Factory A, description=An industrial factory producing goods., dateCreation=2020-01-15, objectif=\nObjectifDurabilite{id=0, dateCible=2025-12-31, reductionCible=20.0, progresActuel=5.0, description=Reduce emissions by 20% by 2025.}, sourceEmission=Manufacturing Process, emissionAnnuelles=20000.0, emissionActuelle=19000.0}, \nEmpreinteCarbone{id=2, nom=Retail Store B, description=A large retail store., dateCreation=2019-08-01, objectif=\nObjectifDurabilite{id=0, dateCible=2024-06-30, reductionCible=50.0, progresActuel=8.333333333333332, description=Recycle 50% of all waste.}, sourceEmission=Electricity Usage, emissionAnnuelles=12000.0, emissionActuelle=11000.0}, \nEmpreinteCarbone{id=4, nom=Recycling Plant D, description=A recycling unit for urban waste., dateCreation=2022-05-01, objectif=\nObjectifDurabilite{id=0, dateCible=2024-06-30, reductionCible=50.0, progresActuel=6.666666666666667, description=Recycle 50% of all waste.}, sourceEmission=Industrial Processes, emissionAnnuelles=15000.0, emissionActuelle=14000.0}, \nEmpreinteCarbone{id=3, nom=Solar Farm C, description=A solar farm generating renewable energy., dateCreation=2021-03-20, objectif=\nObjectifDurabilite{id=0, dateCible=2026-01-01, reductionCible=75.0, progresActuel=10.0, description=Increase renewable energy use by 75%.}, sourceEmission=Transportation, emissionAnnuelles=500.0, emissionActuelle=450.0}, \nEmpreinteCarbone{id=5, nom=Hydropower Station E, description=A hydroelectric power plant., dateCreation=2023-01-10, objectif=\nObjectifDurabilite{id=0, dateCible=2026-01-01, reductionCible=75.0, progresActuel=10.0, description=Increase renewable energy use by 75%.}, sourceEmission=Energy Generation, emissionAnnuelles=5000.0, emissionActuelle=4500.0}]', '2024-12-14 22:31:12', 'EmpreinteCarbone');
+(1, 'Rapport de Suivi des Ressources:\nUtilisation totale de ressources: 191000,00 unités\nCoût total estimé: 558900,00\nNombre de types de ressources suivis: 5\nLes resources suivis :\n[\nRessource{id=1, nom=Factory A, description=An industrial factory producing goods., dateCreation=2020-01-15, objectif=\nObjectifDurabilite{id=0, dateCible=2025-12-31, reductionCible=20.0, progresActuel=5.0, description=Reduce emissions by 20% by 2025.}, uniteDeMesure=Kilograms, utilisationReference=50000.0, utilisationActuelle=48000.0, coutParUnite=1.5}, \nRessource{id=2, nom=Retail Store B, description=A large retail store., dateCreation=2019-08-01, objectif=\nObjectifDurabilite{id=0, dateCible=2024-06-30, reductionCible=50.0, progresActuel=30.0, description=Recycle 50% of all waste.}, uniteDeMesure=Liters, utilisationReference=20000.0, utilisationActuelle=15000.0, coutParUnite=0.1}, \nRessource{id=4, nom=Recycling Plant D, description=A recycling unit for urban waste., dateCreation=2022-05-01, objectif=\nObjectifDurabilite{id=0, dateCible=2024-06-30, reductionCible=50.0, progresActuel=30.0, description=Recycle 50% of all waste.}, uniteDeMesure=Cubic Meters, utilisationReference=20000.0, utilisationActuelle=18000.0, coutParUnite=0.05}, \nRessource{id=3, nom=Solar Farm C, description=A solar farm generating renewable energy., dateCreation=2021-03-20, objectif=\nObjectifDurabilite{id=0, dateCible=2026-01-01, reductionCible=75.0, progresActuel=50.0, description=Increase renewable energy use by 75%.}, uniteDeMesure=Panels, utilisationReference=1000.0, utilisationActuelle=950.0, coutParUnite=500.0}, \nRessource{id=5, nom=Hydropower Station E, description=A hydroelectric power plant., dateCreation=2023-01-10, objectif=\nObjectifDurabilite{id=0, dateCible=2026-01-01, reductionCible=75.0, progresActuel=50.0, description=Increase renewable energy use by 75%.}, uniteDeMesure=kWh, utilisationReference=100000.0, utilisationActuelle=95000.0, coutParUnite=0.1}]', '2023-12-06 23:00:00', 'Ressource'),
+(2, 'Rapport de Suivi Carbone:\nÉmissions totales actuelles : 48950,00 unités\nRéduction nécessaire pour atteindre les objectifs : 40,00 unités\nNombre de sources d\'émissions suivies : 5\nLes empreintes suivies :\n[\nEmpreinteCarbone{id=1, nom=Factory A, description=An industrial factory producing goods., dateCreation=2020-01-15, objectif=\nObjectifDurabilite{id=0, dateCible=2025-12-31, reductionCible=20.0, progresActuel=5.0, description=Reduce emissions by 20% by 2025.}, sourceEmission=Manufacturing Process, emissionAnnuelles=20000.0, emissionActuelle=19000.0}, \nEmpreinteCarbone{id=2, nom=Retail Store B, description=A large retail store., dateCreation=2019-08-01, objectif=\nObjectifDurabilite{id=0, dateCible=2024-06-30, reductionCible=50.0, progresActuel=8.333333333333332, description=Recycle 50% of all waste.}, sourceEmission=Electricity Usage, emissionAnnuelles=12000.0, emissionActuelle=11000.0}, \nEmpreinteCarbone{id=4, nom=Recycling Plant D, description=A recycling unit for urban waste., dateCreation=2022-05-01, objectif=\nObjectifDurabilite{id=0, dateCible=2024-06-30, reductionCible=50.0, progresActuel=6.666666666666667, description=Recycle 50% of all waste.}, sourceEmission=Industrial Processes, emissionAnnuelles=15000.0, emissionActuelle=14000.0}, \nEmpreinteCarbone{id=3, nom=Solar Farm C, description=A solar farm generating renewable energy., dateCreation=2021-03-20, objectif=\nObjectifDurabilite{id=0, dateCible=2026-01-01, reductionCible=75.0, progresActuel=10.0, description=Increase renewable energy use by 75%.}, sourceEmission=Transportation, emissionAnnuelles=500.0, emissionActuelle=450.0}, \nEmpreinteCarbone{id=5, nom=Hydropower Station E, description=A hydroelectric power plant., dateCreation=2023-01-10, objectif=\nObjectifDurabilite{id=0, dateCible=2026-01-01, reductionCible=75.0, progresActuel=10.0, description=Increase renewable energy use by 75%.}, sourceEmission=Energy Generation, emissionAnnuelles=5000.0, emissionActuelle=4500.0}]', '2022-12-22 23:00:00', 'EmpreinteCarbone'),
+(3, 'Rapport de Suivi Carbone:\nÉmissions totales actuelles : 53950,00 unités\nRéduction nécessaire pour atteindre les objectifs : 56,67 unités\nNombre de sources d\'émissions suivies : 6\nLes empreintes suivies :\n[\nEmpreinteCarbone{id=1, nom=Factory A, description=An industrial factory producing goods., dateCreation=2020-01-15, objectif=\nObjectifDurabilite{id=0, dateCible=2025-12-31, reductionCible=20.0, progresActuel=5.0, description=Reduce emissions by 20% by 2025.}, sourceEmission=Manufacturing Process, emissionAnnuelles=20000.0, emissionActuelle=19000.0}, \nEmpreinteCarbone{id=2, nom=Retail Store B, description=A large retail store., dateCreation=2019-08-01, objectif=\nObjectifDurabilite{id=0, dateCible=2024-06-30, reductionCible=50.0, progresActuel=8.333333333333332, description=Recycle 50% of all waste.}, sourceEmission=Electricity Usage, emissionAnnuelles=12000.0, emissionActuelle=11000.0}, \nEmpreinteCarbone{id=4, nom=Recycling Plant D, description=A recycling unit for urban waste., dateCreation=2022-05-01, objectif=\nObjectifDurabilite{id=0, dateCible=2024-06-30, reductionCible=50.0, progresActuel=6.666666666666667, description=Recycle 50% of all waste.}, sourceEmission=Industrial Processes, emissionAnnuelles=15000.0, emissionActuelle=14000.0}, \nEmpreinteCarbone{id=3, nom=Solar Farm C, description=A solar farm generating renewable energy., dateCreation=2021-03-20, objectif=\nObjectifDurabilite{id=0, dateCible=2026-01-01, reductionCible=75.0, progresActuel=10.0, description=Increase renewable energy use by 75%.}, sourceEmission=Transportation, emissionAnnuelles=500.0, emissionActuelle=450.0}, \nEmpreinteCarbone{id=5, nom=Hydropower Station E, description=A hydroelectric power plant., dateCreation=2023-01-10, objectif=\nObjectifDurabilite{id=0, dateCible=2026-01-01, reductionCible=75.0, progresActuel=10.0, description=Increase renewable energy use by 75%.}, sourceEmission=Energy Generation, emissionAnnuelles=5000.0, emissionActuelle=4500.0}, \nEmpreinteCarbone{id=6, nom=Retail Store E, description=haîne de magasins engagée dans la durabilité, dateCreation=2022-08-24, objectif=\nObjectifDurabilite{id=0, dateCible=2024-12-15, reductionCible=40.0, progresActuel=16.666666666666664, description=Objectif de réduction}, sourceEmission=Consom Énergétique, emissionAnnuelles=6000.0, emissionActuelle=5000.0}]', '2023-11-23 23:00:00', 'EmpreinteCarbone'),
+(5, 'Rapport de Suivi Carbone:\nÉmissions totales actuelles : 53950,00 unités\nRéduction nécessaire pour atteindre les objectifs : 56,67 unités\nNombre de sources d\'émissions suivies : 6\nLes empreintes suivies :\n[\nEmpreinteCarbone{id=1, nom=Factory A, description=An industrial factory producing goods., dateCreation=2020-01-15, objectif=\nObjectifDurabilite{id=0, dateCible=2025-12-31, reductionCible=20.0, progresActuel=5.0, description=Reduce emissions by 20% by 2025.}, sourceEmission=Manufacturing Process, emissionAnnuelles=20000.0, emissionActuelle=19000.0}, \nEmpreinteCarbone{id=2, nom=Retail Store B, description=A large retail store., dateCreation=2019-08-01, objectif=\nObjectifDurabilite{id=0, dateCible=2024-06-30, reductionCible=50.0, progresActuel=8.333333333333332, description=Recycle 50% of all waste.}, sourceEmission=Electricity Usage, emissionAnnuelles=12000.0, emissionActuelle=11000.0}, \nEmpreinteCarbone{id=4, nom=Recycling Plant D, description=A recycling unit for urban waste., dateCreation=2022-05-01, objectif=\nObjectifDurabilite{id=0, dateCible=2024-06-30, reductionCible=50.0, progresActuel=6.666666666666667, description=Recycle 50% of all waste.}, sourceEmission=Industrial Processes, emissionAnnuelles=15000.0, emissionActuelle=14000.0}, \nEmpreinteCarbone{id=3, nom=Solar Farm C, description=A solar farm generating renewable energy., dateCreation=2021-03-20, objectif=\nObjectifDurabilite{id=0, dateCible=2026-01-01, reductionCible=75.0, progresActuel=10.0, description=Increase renewable energy use by 75%.}, sourceEmission=Transportation, emissionAnnuelles=500.0, emissionActuelle=450.0}, \nEmpreinteCarbone{id=5, nom=Hydropower Station E, description=A hydroelectric power plant., dateCreation=2023-01-10, objectif=\nObjectifDurabilite{id=0, dateCible=2026-01-01, reductionCible=75.0, progresActuel=10.0, description=Increase renewable energy use by 75%.}, sourceEmission=Energy Generation, emissionAnnuelles=5000.0, emissionActuelle=4500.0}, \nEmpreinteCarbone{id=6, nom=Retail Store E, description=haîne de magasins engagée dans la durabilité, dateCreation=2022-08-24, objectif=\nObjectifDurabilite{id=0, dateCible=2024-12-15, reductionCible=40.0, progresActuel=16.666666666666664, description=Objectif de réduction}, sourceEmission=Consom Énergétique, emissionAnnuelles=6000.0, emissionActuelle=5000.0}]', '2023-12-14 23:00:00', 'EmpreinteCarbone'),
+(7, 'Rapport Dechet ', '2021-12-16 23:00:00', 'Dechet');
 
 -- --------------------------------------------------------
 
@@ -477,7 +483,7 @@ CREATE TABLE `utilisateur` (
   `id` int(11) NOT NULL,
   `nom` varchar(255) NOT NULL,
   `motDePasse` varchar(255) NOT NULL,
-  `typeUtilisateur` enum('Administrateur','Auditeur') NOT NULL
+  `typeUtilisateur` enum('Administrateur','Auditeur','Responsable RSE') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -485,8 +491,9 @@ CREATE TABLE `utilisateur` (
 --
 
 INSERT INTO `utilisateur` (`id`, `nom`, `motDePasse`, `typeUtilisateur`) VALUES
-(1, 'Aziz', 'aziz123', 'Administrateur'),
-(2, 'Jasser', 'jasser456', 'Auditeur');
+(1, 'Aziz', 'aziz123', 'Responsable RSE'),
+(2, 'Jasser', 'jasser456', 'Auditeur'),
+(3, 'Admin', 'Admin', 'Administrateur');
 
 --
 -- Index pour les tables déchargées
@@ -698,7 +705,7 @@ ALTER TABLE `administrateur`
 -- AUTO_INCREMENT pour la table `auditenviromental`
 --
 ALTER TABLE `auditenviromental`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT pour la table `auditeur`
@@ -710,7 +717,7 @@ ALTER TABLE `auditeur`
 -- AUTO_INCREMENT pour la table `empreintecarbone`
 --
 ALTER TABLE `empreintecarbone`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT pour la table `energie`
@@ -722,7 +729,7 @@ ALTER TABLE `energie`
 -- AUTO_INCREMENT pour la table `entitedurable`
 --
 ALTER TABLE `entitedurable`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT pour la table `gestionrapportsuivi`
@@ -740,19 +747,19 @@ ALTER TABLE `incidentenvironnemental`
 -- AUTO_INCREMENT pour la table `normeiso`
 --
 ALTER TABLE `normeiso`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT pour la table `objectifdurabilite`
 --
 ALTER TABLE `objectifdurabilite`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT pour la table `plandactioncorrectif`
 --
 ALTER TABLE `plandactioncorrectif`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT pour la table `plandactioncorrectif_actions`
@@ -776,13 +783,13 @@ ALTER TABLE `planrisqueassoc`
 -- AUTO_INCREMENT pour la table `rapport`
 --
 ALTER TABLE `rapport`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT pour la table `reglementation`
 --
 ALTER TABLE `reglementation`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT pour la table `ressource`
@@ -842,7 +849,7 @@ ALTER TABLE `strategiemitigation`
 -- AUTO_INCREMENT pour la table `utilisateur`
 --
 ALTER TABLE `utilisateur`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Contraintes pour les tables déchargées
