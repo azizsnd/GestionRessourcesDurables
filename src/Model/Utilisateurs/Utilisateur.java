@@ -4,16 +4,18 @@ public sealed class Utilisateur permits Administrateur, Auditeur{
     private int id;
     private String nom;
     private String motDePasse;
+    private String type;
 
     public Utilisateur(String nom,String motDePasse) {
         this.nom = nom;
         this.motDePasse = motDePasse;
     }
 
-    public Utilisateur(int id, String nom,String motDePasse) {
+    public Utilisateur(int id, String nom,String motDePasse,String type) {
         this.id = id;
         this.nom = nom;
         this.motDePasse = motDePasse;
+        this.type=type;
     }
     public int getId() {
         return id;
@@ -28,6 +30,14 @@ public sealed class Utilisateur permits Administrateur, Auditeur{
 
     public void setNom(String nom) {
         this.nom = nom;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 
     public String getMotDePasse() {
