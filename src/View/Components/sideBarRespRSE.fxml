@@ -159,7 +159,7 @@
                <image>
                   <Image url="@../../../Images/icons8-objectif-72.png" />
                </image></ImageView>
-            <Label text="Suivi Objectif" textFill="#273329">
+            <Label text="Gestion Rapport" textFill="#273329">
                <font>
                   <Font name="Sora SemiBold" size="14.0" />
                </font>

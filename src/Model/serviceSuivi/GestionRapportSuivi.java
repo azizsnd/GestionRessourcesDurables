@@ -101,7 +101,7 @@ public class GestionRapportSuivi {
         }
     }
     // Sauvegarde d'un rapport dans un fichier
-    private void sauvegarderRapportFichier(Rapport rapport) {
+    public void sauvegarderRapportFichier(Rapport rapport) {
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd_HH-mm-ss");
         String dateFormatted = dateFormat.format(rapport.getDateRapport());
         String filename = "rapport_" + rapportType + "_" + dateFormatted + ".txt";
