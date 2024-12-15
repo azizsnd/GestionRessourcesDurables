@@ -13,6 +13,6 @@
         <fx:include source="Components/sideBarRespRSE.fxml" />
     </left>
     <center>
-        <fx:include source="Components/SuiviDechet.fxml" />
+        <fx:include source="Components/GestionRapport.fxml" />
     </center>
 </BorderPane>

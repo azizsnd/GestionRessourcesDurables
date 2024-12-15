@@ -58,7 +58,7 @@ public class MenuController {
 
     @FXML
     private void navigateToSuiviObjectif() throws IOException {
-        navigateTo("../View/VueSuiviObjectif.fxml", SuiviObjectif);
+        navigateTo("../View/VueGestionRapport.fxml", SuiviObjectif);
     }
 
         private void navigateTo(String fxmlPath, Node node) {

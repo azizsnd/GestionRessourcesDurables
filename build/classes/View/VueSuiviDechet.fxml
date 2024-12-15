@@ -8,23 +8,11 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.VueSuiviDechetController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" >
     <left>
         <fx:include source="Components/sideBarRespRSE.fxml" />
     </left>
     <center>
-        <AnchorPane prefHeight="603.0" prefWidth="534.0" BorderPane.alignment="CENTER">
-            <children>
-                <VBox alignment="CENTER" layoutX="-1.0" prefHeight="600.0" prefWidth="549.0" spacing="10.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml">
-                    <Label style="-fx-font-size: 14px; -fx-font-weight: bold;" text="Suivi des Déchets" />
-                    <ListView fx:id="listViewDechets" prefHeight="200.0" prefWidth="571.0" />
-                    <TextField fx:id="txtTypeDechet" promptText="Type de déchet" />
-                    <TextField fx:id="txtQuantite" promptText="Quantité produite" />
-                    <TextField fx:id="txtQuantiteRecycle" promptText="Quantité recyclée" />
-                    <Button onAction="#ajouterDechet" text="Ajouter Déchet" />
-                    <Button onAction="#genererRapport" text="Générer Rapport" />                                   
-                </VBox>
-            </children>
-        </AnchorPane>
+        <fx:include source="Components/SuiviDechet.fxml" />
     </center>
 </BorderPane>
