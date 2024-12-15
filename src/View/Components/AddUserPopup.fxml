@@ -1,20 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.geometry.Insets?>
 
-<VBox prefHeight="185.0" prefWidth="389.0" spacing="15" style="-fx-padding: 20;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/23.0.1" fx:controller="View.Components.AddUserPopupController">
-    <TextField fx:id="Nom" layoutX="30.0" layoutY="30.0" promptText="Nom" />
-    <PasswordField fx:id="password" layoutX="30.0" layoutY="30.0" promptText="Password" />
-    <HBox spacing="10" alignment="CENTER_LEFT">
-        <Label style="-fx-font-size: 14; -fx-text-fill: #2B3329;" text="Poste" />
-        <ComboBox fx:id="typeComboBox" style="-fx-background-radius: 10; -fx-border-radius: 10; " />
-    </HBox>
-    
-    <Button fx:id="addButton" style="-fx-background-color: #6BDB48; -fx-text-fill: white; -fx-font-weight: bold;" text="Ajouter" />
-</VBox>
+<GridPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/23.0.1" fx:controller="View.Components.AddUserPopupController" prefWidth="400" prefHeight="350" hgap="15" vgap="15" padding="20,20,20,20">
+    <Label text="Nom" style="-fx-font-size: 14; -fx-text-fill: #2B3329;" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+    <TextField fx:id="Nom" promptText="Nom" GridPane.columnIndex="1" GridPane.rowIndex="0" prefWidth="200"/>
+
+    <Label text="Password" style="-fx-font-size: 14; -fx-text-fill: #2B3329;" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+    <PasswordField fx:id="password" promptText="Password" GridPane.columnIndex="1" GridPane.rowIndex="1" prefWidth="200"/>
+
+    <Label text="Poste" style="-fx-font-size: 14; -fx-text-fill: #2B3329;" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+    <ComboBox fx:id="typeComboBox" style="-fx-background-radius: 10; -fx-border-radius: 10;" GridPane.columnIndex="1" GridPane.rowIndex="2" prefWidth="200"/>
+
+    <Button fx:id="addButton" text="Ajouter" style="-fx-background-color: #6BDB48; -fx-text-fill: white; -fx-font-weight: bold;" GridPane.columnIndex="1" GridPane.rowIndex="3" prefWidth="100"/>
+</GridPane>
+
