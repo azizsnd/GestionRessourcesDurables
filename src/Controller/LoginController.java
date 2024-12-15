@@ -29,7 +29,6 @@ public class LoginController {
         String username = userField.getText();
         String password = passwordField.getText();
         Utilisateur user = ServiceUser.authenticateUser(username, password);
-
         if (user != null) {
             SessionManager session = SessionManager.getInstance();
             session.setCurrentUser(user);

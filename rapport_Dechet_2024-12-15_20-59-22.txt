@@ -1,0 +1,20 @@
+ID Rapport : 0
+Date : Sun Dec 15 20:59:22 CET 2024
+Contenu : Rapport de Suivi des Déchets:
+Quantité totale de déchets: 0.00
+Taux de recyclage moyen: 68.81%
+Nombre de types de déchets suivis: 6
+Les déchets suivis :
+[
+Dechet{id=1, nom=Factory A, description=An industrial factory producing goods., dateCreation=2020-01-15, objectif=
+ObjectifDurabilite{id=0, dateCible=2025-12-31, reductionCible=20.0, progresActuel=20.0, description=Reduce emissions by 20% by 2025.}, type=Plastic Waste, quantiteProduite=1000.0, quantiteRecycle=200.0, methodeElimination=Landfill}, 
+Dechet{id=2, nom=Retail Store B, description=A large retail store., dateCreation=2019-08-01, objectif=
+ObjectifDurabilite{id=0, dateCible=2024-06-30, reductionCible=50.0, progresActuel=60.0, description=Recycle 50% of all waste.}, type=Food Waste, quantiteProduite=500.0, quantiteRecycle=300.0, methodeElimination=Composting}, 
+Dechet{id=3, nom=Solar Farm C, description=A solar farm generating renewable energy., dateCreation=2021-03-20, objectif=
+ObjectifDurabilite{id=0, dateCible=2026-01-01, reductionCible=75.0, progresActuel=90.0, description=Increase renewable energy use by 75%.}, type=Solar Panel Waste, quantiteProduite=50.0, quantiteRecycle=45.0, methodeElimination=Recycling}, 
+Dechet{id=4, nom=Recycling Plant D, description=A recycling unit for urban waste., dateCreation=2022-05-01, objectif=
+ObjectifDurabilite{id=0, dateCible=2024-06-30, reductionCible=50.0, progresActuel=87.5, description=Recycle 50% of all waste.}, type=Glass Waste, quantiteProduite=800.0, quantiteRecycle=700.0, methodeElimination=Recycling}, 
+Dechet{id=5, nom=Hydropower Station E, description=A hydroelectric power plant., dateCreation=2023-01-10, objectif=
+ObjectifDurabilite{id=0, dateCible=2026-01-01, reductionCible=75.0, progresActuel=83.33333333333334, description=Increase renewable energy use by 75%.}, type=Metal Scrap, quantiteProduite=600.0, quantiteRecycle=500.0, methodeElimination=Recycling}, 
+Dechet{id=11, nom=Recyclage Plastique Industriel., description=Gestion et recyclage des déchets plastiques générés lors de la production., dateCreation=2024-06-06, objectif=
+ObjectifDurabilite{id=0, dateCible=2024-12-15, reductionCible=30.0, progresActuel=72.0, description=Objectif de réduction}, type=Plastique, quantiteProduite=2500.0, quantiteRecycle=1800.0, methodeElimination=Recyclage mécanique et revalorisation en granulés.}]

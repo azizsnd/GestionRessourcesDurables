@@ -5,6 +5,7 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
@@ -14,10 +15,13 @@
    <children>
       <AnchorPane prefHeight="700.0" prefWidth="400.0" styleClass="loginLogo" stylesheets="@../stylesheet.css">
          <children>
-            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="89.0" layoutY="175.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fitHeight="335.0" fitWidth="413.0" layoutX="-7.0" layoutY="175.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="175.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="175.0">
+               <image>
+                  <Image url="@../images/logo.png" />
+               </image></ImageView>
          </children>
       </AnchorPane>
-      <VBox alignment="TOP_CENTER" layoutX="440.0" prefHeight="700.0" prefWidth="435.0">
+      <VBox alignment="TOP_CENTER" layoutX="414.0" prefHeight="700.0" prefWidth="611.0">
          <children>
             <Label text="Welcome">
                <font>
@@ -37,7 +41,7 @@
             </Label>
             <TextField fx:id="userField" floatText="Username" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="300.0">
                <VBox.margin>
-                  <Insets bottom="20.0" />
+                  <Insets bottom="50.0" />
                </VBox.margin>
                <padding>
                   <Insets top="5.0" />
@@ -52,6 +56,9 @@
                <font>
                   <Font name="Sora Medium" size="14.0" />
                </font>
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
             </JFXButton>
          </children>
          <padding>
