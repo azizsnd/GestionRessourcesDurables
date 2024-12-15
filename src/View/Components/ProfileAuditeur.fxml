@@ -12,8 +12,6 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<SplitPane dividerPositions="0.2817371937639198" orientation="HORIZONTAL" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
-<fx:include source="sideBarAdmin.fxml" />
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700" prefWidth="774" style="-fx-background-color: #FFFFFF; -fx-border-color: #505C4C;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
     <!-- Top: Title -->
     <top>
@@ -66,4 +64,3 @@
         </HBox>
     </bottom>
 </BorderPane>
-</SplitPane>
