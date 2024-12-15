@@ -30,12 +30,12 @@
 
     <!-- Main Section -->
     <center>
-        <SplitPane dividerPositions="0.5" orientation="HORIZONTAL">
+        <SplitPane dividerPositions="0.39751552795031053" orientation="HORIZONTAL">
             <!-- Left Pane: Entities and Reports -->
-            <VBox spacing="10" style="-fx-padding: 10;">
+            <VBox prefHeight="596.0" prefWidth="326.0" spacing="10" style="-fx-padding: 10;">
                 <Label style="-fx-font-size: 14; -fx-font-weight: bold;" text="Entités Durables" />
-               <TextField fx:id="searchField" promptText="Rechercher une entité..." style="-fx-min-width: 150;" />
-<TreeView fx:id="rapportTreeView">
+               <TextField fx:id="searchField" prefHeight="27.0" prefWidth="305.0" promptText="Rechercher une entité..." style="-fx-min-width: 150;" />
+<TreeView fx:id="rapportTreeView" prefHeight="400.0" prefWidth="300.0">
     <root>
         <TreeItem expanded="true" value="">
             <children>
@@ -83,7 +83,7 @@
             <HBox maxWidth="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="330.0" spacing="20.0">
                <children>
                       <Button fx:id="viewReportButton" style="-fx-alignment: center;" styleClass="sidebar-logout-btn" text="Voir le Rapport Complet" />
-                     <Button fx:id="exportReportButton" styleClass="sidebar-logout-btn" text="Exporter en PDF" />
+                     <Button fx:id="exportReportButton" styleClass="sidebar-logout-btn" text="Exporter" />
                </children>
                <opaqueInsets>
                   <Insets />
