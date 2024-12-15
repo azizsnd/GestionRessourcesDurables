@@ -6,8 +6,8 @@ public final class Auditeur extends Utilisateur {
         super(nom, motDePasse);
     }
 
-    public Auditeur(int id, String nom, String motDePasse) {
-        super(id, nom, motDePasse);
+    public Auditeur(int id, String nom, String motDePasse,String type) {
+        super(id, nom, motDePasse,type);
     }
 
     public void effectuerAudit() {

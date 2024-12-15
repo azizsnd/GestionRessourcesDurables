@@ -1,7 +1,7 @@
 
 package Controller;
 import Model.Utilisateurs.Utilisateur;
-import Services.authenticateUser;
+import Services.ServiceUser;
 import Utils.ViewLoader;
 import Utils.Alert;
 import javafx.event.ActionEvent;
@@ -28,7 +28,7 @@ public class LoginController {
     private void handleLoginButton(ActionEvent event) throws IOException {
         String username = userField.getText();
         String password = passwordField.getText();
-        Utilisateur user = authenticateUser.authenticateUser(username, password);
+        Utilisateur user = ServiceUser.authenticateUser(username, password);
         
     if (user != null) {
             Stage currentStage = (Stage) loginButton.getScene().getWindow();
