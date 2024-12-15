@@ -123,32 +123,25 @@ private void setupBarChartRessourceQuantity() {
     }
 
 private void setupLineChartCoutTotal() {
-    // Set chart title and axes labels
     lineChart.setTitle("Cout Total de Ressources et Objectifs de Réduction");
     lineXAxis.setLabel("Temps (Mois)");
     lineYAxis.setLabel("Cout");
 
-    // Create series for total cost and reduction objective
     XYChart.Series<Number, Number> coutTotalSeries = new XYChart.Series<>();
     coutTotalSeries.setName("Cout Total");
 
     XYChart.Series<Number, Number> objectifSeries = new XYChart.Series<>();
     objectifSeries.setName("Objectif de Réduction");
 
-    // Calculate total initial cost
     double coutTotal = suiviRessource.getResourcesSuivis().stream()
         .mapToDouble(Ressource::calculerCoutTotal)
         .sum();
 
-    // Iterate over months
     for (int mois = 1; mois <= 6; mois++) {
-        final int currentMonth = mois; // Make mois effectively final
-
-        // Calculate progressively reduced total cost
+        final int currentMonth = mois;
         double calculatedCout = coutTotal * (1 - 0.1 * currentMonth);
         coutTotalSeries.getData().add(new XYChart.Data<>(currentMonth, calculatedCout));
 
-        // Calculate reduction objective
         double totalReduction = suiviRessource.getResourcesSuivis().stream()
             .mapToDouble(ressource -> {
                 double resourceCout = ressource.calculerCoutTotal();
@@ -162,7 +155,6 @@ private void setupLineChartCoutTotal() {
 
     }
 
-    // Clear existing data and add new series to the chart
     lineChart.getData().clear();
     lineChart.getData().addAll(coutTotalSeries, objectifSeries);
 }

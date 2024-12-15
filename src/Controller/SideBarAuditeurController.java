@@ -9,7 +9,7 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 
-public class Menu2Controller {
+public class SideBarAuditeurController {
 
     @FXML
     private Button deconnecter;

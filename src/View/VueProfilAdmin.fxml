@@ -9,5 +9,5 @@
 
 <SplitPane dividerPositions="0.2817371937639198" orientation="HORIZONTAL" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
         <fx:include source="Components/sideBarAdmin.fxml" />
-        <fx:include source="Components/ProfileAdmin.fxml" />
+        <fx:include source="Components/Profile.fxml" />
 </SplitPane>

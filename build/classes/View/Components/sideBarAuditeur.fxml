@@ -13,13 +13,13 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox fx:id="sidebar" alignment="TOP_CENTER" prefHeight="700.0" prefWidth="250.0" styleClass="sidebar" stylesheets="@../../stylesheet.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Menu2Controller">
+<VBox fx:id="sidebar" alignment="TOP_CENTER" prefHeight="700.0" prefWidth="250.0" styleClass="sidebar" stylesheets="@../../stylesheet.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.SideBarAuditeurController">
    <children>
-   <AnchorPane prefHeight="80.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+   <AnchorPane prefHeight="172.0" prefWidth="275.0" BorderPane.alignment="CENTER">
          <children>
-            <ImageView fitHeight="100.0" fitWidth="102.0" layoutX="88.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="88.0" AnchorPane.rightAnchor="87.0" AnchorPane.topAnchor="26.0">
+            <ImageView fitHeight="200.0" fitWidth="160.0" layoutX="57.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="14.199999999999989" AnchorPane.leftAnchor="57.0" AnchorPane.rightAnchor="57.0" AnchorPane.topAnchor="23.0">
                <image>
-                  <Image url="@../../images/profil.jpg" />
+                  <Image url="@../../images/Auditeurprofil.jpg" />
                </image>
             </ImageView>
          </children>
@@ -40,7 +40,7 @@
             <Insets top="10.0" />
          </VBox.margin>
       </JFXButton>
-      <HBox  fx:id="Profil" alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn" onMouseClicked="#navigateToProfile" >
+      <HBox fx:id="Profil" alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#navigateToProfile" prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn">
          <VBox.margin>
             <Insets top="100.0" />
          </VBox.margin>
@@ -62,7 +62,7 @@
             </Label>
          </children>
       </HBox>
-      <HBox fx:id="ManagementISO" onMouseClicked="#navigateToManagementISO"  alignment="CENTER_LEFT" layoutX="10.0" layoutY="127.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn">
+      <HBox fx:id="ManagementISO" alignment="CENTER_LEFT" layoutX="10.0" layoutY="127.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#navigateToManagementISO" prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn">
          <padding>
             <Insets left="20.0" />
          </padding>
@@ -84,7 +84,7 @@
             <Insets top="10.0" />
          </VBox.margin>
       </HBox>
-      <HBox fx:id="Audit" onMouseClicked="#navigateToAudit"  alignment="CENTER_LEFT" layoutX="10.0" layoutY="127.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn">
+      <HBox fx:id="Audit" alignment="CENTER_LEFT" layoutX="10.0" layoutY="127.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#navigateToAudit" prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn">
          <padding>
             <Insets left="20.0" />
          </padding>
@@ -106,7 +106,7 @@
             <Insets top="10.0" />
          </VBox.margin>
       </HBox>
-      <HBox fx:id="PAC" onMouseClicked="#navigateToPAC"  alignment="CENTER_LEFT" layoutX="10.0" layoutY="162.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn">
+      <HBox fx:id="PAC" alignment="CENTER_LEFT" layoutX="10.0" layoutY="162.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#navigateToPAC" prefHeight="35.0" prefWidth="250.0" styleClass="sidebar-btn">
          <padding>
             <Insets left="20.0" />
          </padding>
