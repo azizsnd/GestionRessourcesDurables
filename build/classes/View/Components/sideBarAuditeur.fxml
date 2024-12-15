@@ -50,7 +50,7 @@
          <children>
             <ImageView fitHeight="27.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../Images/icons8-utilisateur-72.png" />
+                  <Image url="@../../images/icons8-utilisateur-72.png" />
                </image></ImageView>
             <Label text="Profile" textFill="#273329">
                <font>
@@ -69,7 +69,7 @@
          <children>
             <ImageView fitHeight="27.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../Images/icons8-diplôme-1-72.png" />
+                  <Image url="@../../images/icons8-diplôme-1-72.png" />
                </image></ImageView>
             <Label text="Management d'ISO" textFill="#273329">
                <font>
@@ -91,7 +91,7 @@
          <children>
             <ImageView fitHeight="27.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../Images/icons8-audit-72.png" />
+                  <Image url="@../../images/icons8-audit-72.png" />
                </image></ImageView>
             <Label text="Audit Enviromentale" textFill="#273329">
                <font>
@@ -113,7 +113,7 @@
          <children>
             <ImageView fitHeight="27.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../Images/icons8-modifier-72.png" />
+                  <Image url="@../../images/icons8-modifier-72.png" />
                </image></ImageView>
             <Label text="Plan d'action corrective" textFill="#273329">
                <font>

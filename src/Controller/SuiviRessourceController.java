@@ -17,6 +17,7 @@ import Model.serviceSuivi.ServiceSuiviRessource;
 import Services.SuiviRessource;
 import Utils.Alert;
 import Utils.ViewLoader;
+import javafx.scene.control.Tooltip;
 
 public class SuiviRessourceController {
     private ServiceSuiviRessource suiviRessource = new ServiceSuiviRessource("Ressource", 30, new Date(), "Actif");
@@ -73,22 +74,39 @@ public class SuiviRessourceController {
             Alert.showErrorAlert("Erreur", "Une erreur s'est produite : " + e.getMessage());
         }
     }
-    private void setupBarChartRessourceQuantity() {
-        barChart.setTitle("Quantité de Ressources");
-        barXAxis.setLabel("Ressource");
-        barYAxis.setLabel("Quantité");
-        
-        XYChart.Series<String, Number> series = new XYChart.Series<>();
-        series.setName("Utilisation Actuelle");
+private void setupBarChartRessourceQuantity() {
+    barChart.setTitle("Quantité de Ressources");
+    barXAxis.setLabel("Ressource");
+    barYAxis.setLabel("Quantité");
+    
+    XYChart.Series<String, Number> series = new XYChart.Series<>();
+    series.setName("Utilisation Actuelle");
 
-        for (Ressource ressource : suiviRessource.getResourcesSuivis()) {
-            series.getData().add(new XYChart.Data<>(ressource.getNom(), ressource.getUtilisationActuelle()));
+    for (Ressource ressource : suiviRessource.getResourcesSuivis()) {
+        String shortName = ressource.getNom();
+        if (shortName.length() > 10) {
+            shortName = shortName.substring(0, 10) + "...";
         }
-
-        barChart.getData().clear();
-        barChart.getData().add(series);
+        
+        XYChart.Data<String, Number> data = new XYChart.Data<>(shortName, ressource.getUtilisationActuelle());
+        
+        // Create tooltip
+        Tooltip tooltip = new Tooltip(ressource.getNom());
+        
+        // Add listener to install tooltip when node is created
+        data.nodeProperty().addListener((observable, oldValue, newValue) -> {
+            if (newValue != null) {
+                // Install tooltip on the node
+                Tooltip.install(newValue, tooltip);
+            }
+        });
+        
+        series.getData().add(data);
     }
-
+    
+    barChart.getData().clear();
+    barChart.getData().add(series);
+}
     private void setupBarChartRessourceSuivi() {
         barChart1.setTitle("Nombre de Ressources Suivies");
         barXAxis1.setLabel("Période");
