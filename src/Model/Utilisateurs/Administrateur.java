@@ -14,8 +14,8 @@ public final class Administrateur extends Utilisateur {
         this.listUtilisateurs = new HashSet<>();
     }
 
-    public Administrateur(int id, String nom, String motDePasse) {
-        super(id, nom, motDePasse);
+    public Administrateur(int id, String nom, String motDePasse,String type) {
+        super(id, nom, motDePasse, type);
         this.listAuditeurs = new HashSet<>();
         this.listUtilisateurs = new HashSet<>();
     }
