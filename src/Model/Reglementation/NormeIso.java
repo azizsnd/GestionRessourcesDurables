@@ -95,6 +95,6 @@ public class NormeIso {
 
     @Override
     public String toString() {
-        return String.format("ISO %d: %s (Exigences: %d)", numISO, descriptionNorme, exigences.size());
+        return String.format("ISO %d: %s ", numISO, descriptionNorme);
     }
 }

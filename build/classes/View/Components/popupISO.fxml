@@ -11,10 +11,10 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<DialogPane style="-fx-padding: 25; -fx-border-color: #505C4C;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.PopupISOController">
+<DialogPane style="-fx-padding: 5; -fx-border-color: #505C4C;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.PopupISOController">
     <content>
-        <VBox spacing="10" style="-fx-padding: 20;">
-            <Label style="-fx-font-size: 22; -fx-font-weight: bold; -fx-text-fill: #253320;" text="Ajouter une Norme ISO" />
+        <VBox spacing="10" style="-fx-padding: 10;">
+            <Label style="-fx-font-size: 20; -fx-font-weight: bold; -fx-text-fill: #253320;" text="Ajouter une Norme ISO" />
 
             <Label style="-fx-text-fill: #2B3329;" text="Numéro ISO :">
             <font>
@@ -24,7 +24,7 @@
                <Insets />
             </opaqueInsets>
             <VBox.margin>
-               <Insets top="20.0" />
+               <Insets top="15.0" />
             </VBox.margin></Label>
             <TextField fx:id="numIsoField" prefWidth="478.0" style="-fx-background-radius: 10; -fx-background-color: #CEDEC9; -fx-border-radius: 10; -fx-border-color: #619E4F;" />
 

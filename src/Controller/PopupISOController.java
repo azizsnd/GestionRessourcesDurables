@@ -1,6 +1,7 @@
 package controller;
 
 import DataBase.DatabaseConnection;
+import Model.Reglementation.NormeIso;
 import Model.Reglementation.Reglementation;
 import java.io.IOException;
 import javafx.fxml.FXML;
@@ -162,4 +163,11 @@ public class PopupISOController {
         alert.setContentText(message);
         alert.showAndWait();
     }
+    public void populateForm(NormeIso norme) {
+    if (norme != null) {
+        numIsoField.setText(String.valueOf(norme.getNumISO())); // Assuming NormeIso has a getNumISO() method
+        descriptionField.setText(norme.getDescriptionNorme()); // Assuming NormeIso has a getDescriptionNorme() method
+    }
+}
+
 }
