@@ -5,7 +5,6 @@ import java.util.Date;
 public record Reglementation(int id,String nom,String descriptionExigence,Date dateMiseEnApplication) {
     
     public boolean estActive() {
-        // Vérifie si la date actuelle dépasse la date de mise en application
         return new Date().after(dateMiseEnApplication);
     }
     public boolean isEmpty() {

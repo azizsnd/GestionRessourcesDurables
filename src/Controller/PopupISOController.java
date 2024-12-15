@@ -3,6 +3,7 @@ package controller;
 import DataBase.DatabaseConnection;
 import Model.Reglementation.NormeIso;
 import Model.Reglementation.Reglementation;
+import Services.NormeIsoService;
 import java.io.IOException;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
@@ -43,11 +44,12 @@ public class PopupISOController {
     public PopupISOController() {
         // Default constructor
     }
-        // Add a reference to the callback function
+    // Add a reference to the callback function
     private OnIsoSavedCallback onIsoSavedCallback;
 
     // Interface for callback
     public interface OnIsoSavedCallback {
+
         void onIsoSaved();  // This will be triggered when a new ISO is saved
     }
 
@@ -55,6 +57,7 @@ public class PopupISOController {
     public void setOnIsoSavedCallback(OnIsoSavedCallback callback) {
         this.onIsoSavedCallback = callback;
     }
+
     @FXML
     public void initialize() {
         addExigenceButton.setOnAction(e -> addExigence());
@@ -102,47 +105,30 @@ public class PopupISOController {
             return;
         }
 
-        try (Connection conn = DatabaseConnection.getConnection()) {
-            // Insert ISO Norm into `normes`
-            String insertISO = "INSERT INTO normeiso (numISO, descriptionNorme) VALUES (?, ?)";
-            PreparedStatement isoStmt = conn.prepareStatement(insertISO, PreparedStatement.RETURN_GENERATED_KEYS);
-            isoStmt.setInt(1, Integer.parseInt(isoNumber));
-            isoStmt.setString(2, description);
-            isoStmt.executeUpdate();
+        try {
+            // Check if the ISO already exists (check based on numISO)
+            NormeIso existingNorme = NormeIsoService.getNormeByNumISO(Integer.parseInt(isoNumber));
 
-            // Get the generated ISO ID
-            int normeId = 0;
-            var generatedKeys = isoStmt.getGeneratedKeys();
-            if (generatedKeys.next()) {
-                normeId = generatedKeys.getInt(1);
+            if (existingNorme != null) {
+                // Update the existing ISO norm
+                existingNorme.setDescriptionNorme(description);
+                NormeIsoService.updateNorme(existingNorme);  // Use the service to update
+
+                // Update the exigences (link them properly to the updated ISO norm)
+                updateExigencesForNorme(existingNorme);
+
+                showAlert(Alert.AlertType.INFORMATION, "Succès", "Norme ISO mise à jour avec succès!");
+            } else {
+                // Insert a new ISO norm
+                NormeIso newNorme = new NormeIso(Integer.parseInt(isoNumber), description);
+                NormeIsoService.addNorme(newNorme);  // Use the service to insert
+
+                // Add the exigences to the new ISO norm
+                addExigencesForNorme(newNorme);
+
+                showAlert(Alert.AlertType.INFORMATION, "Succès", "Norme ISO et exigences enregistrées avec succès!");
             }
 
-            // Insert Exigences into `reglementations` and link them
-            String insertExigence = "INSERT INTO reglementation (nom, descriptionExigence, dateMiseEnApplication) VALUES (?, ?, ?)";
-            String linkExigence = "INSERT INTO normeiso_reglementation (norme_id, reglementation_id) VALUES (?, ?)";
-
-            for (Reglementation exigence : exigencesListView.getItems()) {
-                PreparedStatement regStmt = conn.prepareStatement(insertExigence, PreparedStatement.RETURN_GENERATED_KEYS);
-                regStmt.setString(1, exigence.nom());  // Use .nom() to get the name
-                regStmt.setString(2, exigence.descriptionExigence());  // Use .descriptionExigence() to get the description
-                regStmt.setDate(3, new java.sql.Date(System.currentTimeMillis())); // Example date
-                regStmt.executeUpdate();
-
-                // Get the generated Exigence ID
-                int reglementationId = 0;
-                var regKeys = regStmt.getGeneratedKeys();
-                if (regKeys.next()) {
-                    reglementationId = regKeys.getInt(1);
-                }
-
-                // Link ISO and Exigence
-                PreparedStatement linkStmt = conn.prepareStatement(linkExigence);
-                linkStmt.setInt(1, normeId);
-                linkStmt.setInt(2, reglementationId);
-                linkStmt.executeUpdate();
-            }
-
-            showAlert(Alert.AlertType.INFORMATION, "Succès", "Norme ISO et exigences enregistrées avec succès!");
             closePopup();
 
         } catch (SQLException e) {
@@ -150,6 +136,30 @@ public class PopupISOController {
             showAlert(Alert.AlertType.ERROR, "Erreur", "Une erreur est survenue lors de l'enregistrement.");
         }
     }
+    private void updateExigencesForNorme(NormeIso norme) throws SQLException {
+        for (Reglementation exigence : exigencesListView.getItems()) {
+            Reglementation updatedExigence = new Reglementation(
+                exigence.id(),
+                exigence.nom(),
+                exigence.descriptionExigence(),
+                exigence.dateMiseEnApplication()
+            );
+            NormeIsoService.updateExigence(updatedExigence);
+        }
+    }
+
+    private void addExigencesForNorme(NormeIso norme) throws SQLException {
+        for (Reglementation exigence : exigencesListView.getItems()) {
+            Reglementation updatedExigence = new Reglementation(
+                exigence.id(),
+                exigence.nom(),
+                exigence.descriptionExigence(),
+                exigence.dateMiseEnApplication()
+            );
+            NormeIsoService.addExigence(updatedExigence);
+        }
+    }
+
 
     private void closePopup() {
         Stage stage = (Stage) saveButton.getScene().getWindow();
@@ -163,11 +173,12 @@ public class PopupISOController {
         alert.setContentText(message);
         alert.showAndWait();
     }
+
     public void populateForm(NormeIso norme) {
-    if (norme != null) {
-        numIsoField.setText(String.valueOf(norme.getNumISO())); // Assuming NormeIso has a getNumISO() method
-        descriptionField.setText(norme.getDescriptionNorme()); // Assuming NormeIso has a getDescriptionNorme() method
+        if (norme != null) {
+            numIsoField.setText(String.valueOf(norme.getNumISO()));
+            descriptionField.setText(norme.getDescriptionNorme());
+        }
     }
-}
 
 }

@@ -64,9 +64,6 @@ public class SuiviEmpreinteCarboneController {
         }
     }
 
-    /**
-     * Opens the "Ajouter Empreinte Carbone" popup.
-     */
     @FXML
     public void ajouterEmpreinteCarbone() {
         try {

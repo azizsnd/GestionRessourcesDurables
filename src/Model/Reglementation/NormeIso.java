@@ -15,7 +15,12 @@ public class NormeIso {
         this.setDescriptionNorme(descriptionNorme);
         this.exigences = new LinkedList<>();
     }
-
+    public NormeIso(int id, int numISO, String descriptionNorme ) {
+        this.id = id;
+        this.setNumISO(numISO);
+        this.setDescriptionNorme(descriptionNorme);
+        this.exigences = new LinkedList<>();
+    }
     public NormeIso(int id, int numISO, String descriptionNorme, List<Reglementation> exigences) {
         this.id = id;
         this.setNumISO(numISO);
