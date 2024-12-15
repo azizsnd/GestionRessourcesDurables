@@ -1,11 +1,8 @@
 package Controller;
 
-import Model.entiteDurable.ObjectifDurabilite;
 import Model.entiteDurable.ObjectifInvalideException;
 import Model.entiteDurable.Ressource;
 import Model.serviceSuivi.GestionRapportSuivi;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.chart.BarChart;
 import javafx.scene.chart.LineChart;
@@ -15,7 +12,6 @@ import javafx.scene.chart.NumberAxis;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.stream.Collectors;
 
 import Model.serviceSuivi.ServiceSuiviRessource;
 import Services.SuiviRessource;
@@ -23,7 +19,7 @@ import Utils.Alert;
 import Utils.ViewLoader;
 
 public class SuiviRessourceController {
-    private ServiceSuiviRessource suiviRessource = new ServiceSuiviRessource("Ressource", 30, null, "Actif");
+    private ServiceSuiviRessource suiviRessource = new ServiceSuiviRessource("Ressource", 30, new Date(), "Actif");
 
     @FXML
     private BarChart<String, Number> barChart;
@@ -81,7 +77,7 @@ public class SuiviRessourceController {
         barChart.setTitle("Quantité de Ressources");
         barXAxis.setLabel("Ressource");
         barYAxis.setLabel("Quantité");
-
+        
         XYChart.Series<String, Number> series = new XYChart.Series<>();
         series.setName("Utilisation Actuelle");
 
