@@ -18,13 +18,12 @@ public class ServiceUser {
             stmt.setString(1, username);
             stmt.setString(2, password);
             ResultSet rs = stmt.executeQuery();
-
+                
             if (rs.next()) {
                 String type = rs.getString("typeUtilisateur");
                 int id = rs.getInt("id");
                 String nom = rs.getString("nom");
                 String motDePasse = rs.getString("motDePasse");
-
                 if ("Administrateur".equals(type)) {
                     return new Administrateur(id, nom, motDePasse, type);
                 } else if ("Auditeur".equals(type)) {
