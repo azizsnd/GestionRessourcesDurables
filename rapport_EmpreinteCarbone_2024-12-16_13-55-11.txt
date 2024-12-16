@@ -1,0 +1,20 @@
+ID Rapport : 0
+Date : Mon Dec 16 13:55:11 WAT 2024
+Contenu : Rapport de Suivi Carbone:
+Émissions totales actuelles : 53950,00 unités
+Réduction nécessaire pour atteindre les objectifs : 56,67 unités
+Nombre de sources d'émissions suivies : 6
+Les empreintes suivies :
+[
+EmpreinteCarbone{id=1, nom=Factory A, description=An industrial factory producing goods., dateCreation=2020-01-15, objectif=
+ObjectifDurabilite{id=0, dateCible=2025-12-31, reductionCible=20.0, progresActuel=5.0, description=Reduce emissions by 20% by 2025.}, sourceEmission=Manufacturing Process, emissionAnnuelles=20000.0, emissionActuelle=19000.0}, 
+EmpreinteCarbone{id=2, nom=Retail Store B, description=A large retail store., dateCreation=2019-08-01, objectif=
+ObjectifDurabilite{id=0, dateCible=2024-06-30, reductionCible=50.0, progresActuel=8.333333333333332, description=Recycle 50% of all waste.}, sourceEmission=Electricity Usage, emissionAnnuelles=12000.0, emissionActuelle=11000.0}, 
+EmpreinteCarbone{id=3, nom=Solar Farm C, description=A solar farm generating renewable energy., dateCreation=2021-03-20, objectif=
+ObjectifDurabilite{id=0, dateCible=2026-01-01, reductionCible=75.0, progresActuel=10.0, description=Increase renewable energy use by 75%.}, sourceEmission=Transportation, emissionAnnuelles=500.0, emissionActuelle=450.0}, 
+EmpreinteCarbone{id=4, nom=Recycling Plant D, description=A recycling unit for urban waste., dateCreation=2022-05-01, objectif=
+ObjectifDurabilite{id=0, dateCible=2024-06-30, reductionCible=50.0, progresActuel=6.666666666666667, description=Recycle 50% of all waste.}, sourceEmission=Industrial Processes, emissionAnnuelles=15000.0, emissionActuelle=14000.0}, 
+EmpreinteCarbone{id=5, nom=Hydropower Station E, description=A hydroelectric power plant., dateCreation=2023-01-10, objectif=
+ObjectifDurabilite{id=0, dateCible=2026-01-01, reductionCible=75.0, progresActuel=10.0, description=Increase renewable energy use by 75%.}, sourceEmission=Energy Generation, emissionAnnuelles=5000.0, emissionActuelle=4500.0}, 
+EmpreinteCarbone{id=6, nom=Retail Store E, description=haîne de magasins engagée dans la durabilité, dateCreation=2022-08-24, objectif=
+ObjectifDurabilite{id=0, dateCible=2024-12-15, reductionCible=40.0, progresActuel=16.666666666666664, description=Objectif de réduction}, sourceEmission=Consom Énergétique, emissionAnnuelles=6000.0, emissionActuelle=5000.0}]

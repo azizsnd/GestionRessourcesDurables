@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Hôte : 127.0.0.1
--- Généré le : dim. 15 déc. 2024 à 22:36
--- Version du serveur : 10.4.32-MariaDB
--- Version de PHP : 8.2.12
+-- Host: 127.0.0.1
+-- Generation Time: Dec 16, 2024 at 12:22 PM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données : `gestionressourcesdurables`
+-- Database: `gestionressourcesdurables`
 --
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `administrateur`
+-- Table structure for table `administrateur`
 --
 
 CREATE TABLE `administrateur` (
@@ -32,7 +32,7 @@ CREATE TABLE `administrateur` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Déchargement des données de la table `administrateur`
+-- Dumping data for table `administrateur`
 --
 
 INSERT INTO `administrateur` (`id`) VALUES
@@ -41,7 +41,7 @@ INSERT INTO `administrateur` (`id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `auditenviromental`
+-- Table structure for table `auditenviromental`
 --
 
 CREATE TABLE `auditenviromental` (
@@ -49,10 +49,17 @@ CREATE TABLE `auditenviromental` (
   `entite` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `auditenviromental`
+--
+
+INSERT INTO `auditenviromental` (`id`, `entite`) VALUES
+(3, 'Some Entity');
+
 -- --------------------------------------------------------
 
 --
--- Structure de la table `auditenviromental_resultat`
+-- Table structure for table `auditenviromental_resultat`
 --
 
 CREATE TABLE `auditenviromental_resultat` (
@@ -61,10 +68,17 @@ CREATE TABLE `auditenviromental_resultat` (
   `conforme` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `auditenviromental_resultat`
+--
+
+INSERT INTO `auditenviromental_resultat` (`audit_id`, `reglementation_id`, `conforme`) VALUES
+(3, 7, 1);
+
 -- --------------------------------------------------------
 
 --
--- Structure de la table `auditeur`
+-- Table structure for table `auditeur`
 --
 
 CREATE TABLE `auditeur` (
@@ -72,7 +86,7 @@ CREATE TABLE `auditeur` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Déchargement des données de la table `auditeur`
+-- Dumping data for table `auditeur`
 --
 
 INSERT INTO `auditeur` (`id`) VALUES
@@ -81,7 +95,7 @@ INSERT INTO `auditeur` (`id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `dechet`
+-- Table structure for table `dechet`
 --
 
 CREATE TABLE `dechet` (
@@ -93,7 +107,7 @@ CREATE TABLE `dechet` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Déchargement des données de la table `dechet`
+-- Dumping data for table `dechet`
 --
 
 INSERT INTO `dechet` (`id`, `type`, `quantiteProduite`, `quantiteRecycle`, `methodeElimination`) VALUES
@@ -106,7 +120,7 @@ INSERT INTO `dechet` (`id`, `type`, `quantiteProduite`, `quantiteRecycle`, `meth
 -- --------------------------------------------------------
 
 --
--- Structure de la table `empreintecarbone`
+-- Table structure for table `empreintecarbone`
 --
 
 CREATE TABLE `empreintecarbone` (
@@ -117,7 +131,7 @@ CREATE TABLE `empreintecarbone` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Déchargement des données de la table `empreintecarbone`
+-- Dumping data for table `empreintecarbone`
 --
 
 INSERT INTO `empreintecarbone` (`id`, `sourceEmission`, `emissionAnnuelles`, `emissionActuelle`) VALUES
@@ -131,7 +145,7 @@ INSERT INTO `empreintecarbone` (`id`, `sourceEmission`, `emissionAnnuelles`, `em
 -- --------------------------------------------------------
 
 --
--- Structure de la table `energie`
+-- Table structure for table `energie`
 --
 
 CREATE TABLE `energie` (
@@ -141,7 +155,7 @@ CREATE TABLE `energie` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Déchargement des données de la table `energie`
+-- Dumping data for table `energie`
 --
 
 INSERT INTO `energie` (`id`, `estRenouvelable`, `type`) VALUES
@@ -154,7 +168,7 @@ INSERT INTO `energie` (`id`, `estRenouvelable`, `type`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `entitedurable`
+-- Table structure for table `entitedurable`
 --
 
 CREATE TABLE `entitedurable` (
@@ -166,7 +180,7 @@ CREATE TABLE `entitedurable` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Déchargement des données de la table `entitedurable`
+-- Dumping data for table `entitedurable`
 --
 
 INSERT INTO `entitedurable` (`id`, `nom`, `description`, `dateCreation`, `objectifId`) VALUES
@@ -180,7 +194,7 @@ INSERT INTO `entitedurable` (`id`, `nom`, `description`, `dateCreation`, `object
 -- --------------------------------------------------------
 
 --
--- Structure de la table `gestionrapportsuivi`
+-- Table structure for table `gestionrapportsuivi`
 --
 
 CREATE TABLE `gestionrapportsuivi` (
@@ -194,7 +208,7 @@ CREATE TABLE `gestionrapportsuivi` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `incidentenvironnemental`
+-- Table structure for table `incidentenvironnemental`
 --
 
 CREATE TABLE `incidentenvironnemental` (
@@ -207,7 +221,7 @@ CREATE TABLE `incidentenvironnemental` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `normeiso`
+-- Table structure for table `normeiso`
 --
 
 CREATE TABLE `normeiso` (
@@ -216,10 +230,19 @@ CREATE TABLE `normeiso` (
   `descriptionNorme` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `normeiso`
+--
+
+INSERT INTO `normeiso` (`id`, `numISO`, `descriptionNorme`) VALUES
+(9, 26000, 'L\'ISO 26000 fournit des lignes directrices aux organisations pour intégrer la responsabilité sociétale dans leurs activités. Elle n\'est pas certifiable, mais constitue une référence pour adopter des pratiques durables.'),
+(10, 14001, 'L\'ISO 14001 est une norme certifiable qui aide les organisations à gérer leurs impacts environnementaux de manière systématique. Elle est utilisée pour intégrer des pratiques durables liées à l\'environnement.'),
+(11, 45001, 'La norme ISO 45001, qui remplace OHSAS 18001, établit les exigences pour un système de gestion de la santé et de la sécurité au travail.\n\n');
+
 -- --------------------------------------------------------
 
 --
--- Structure de la table `normeiso_reglementation`
+-- Table structure for table `normeiso_reglementation`
 --
 
 CREATE TABLE `normeiso_reglementation` (
@@ -230,7 +253,7 @@ CREATE TABLE `normeiso_reglementation` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `objectifdurabilite`
+-- Table structure for table `objectifdurabilite`
 --
 
 CREATE TABLE `objectifdurabilite` (
@@ -242,7 +265,7 @@ CREATE TABLE `objectifdurabilite` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Déchargement des données de la table `objectifdurabilite`
+-- Dumping data for table `objectifdurabilite`
 --
 
 INSERT INTO `objectifdurabilite` (`id`, `dateCible`, `reductionCible`, `progresActuel`, `description`) VALUES
@@ -254,7 +277,7 @@ INSERT INTO `objectifdurabilite` (`id`, `dateCible`, `reductionCible`, `progresA
 -- --------------------------------------------------------
 
 --
--- Structure de la table `plandactioncorrectif`
+-- Table structure for table `plandactioncorrectif`
 --
 
 CREATE TABLE `plandactioncorrectif` (
@@ -263,10 +286,18 @@ CREATE TABLE `plandactioncorrectif` (
   `responsable` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `plandactioncorrectif`
+--
+
+INSERT INTO `plandactioncorrectif` (`id`, `date`, `responsable`) VALUES
+(11, '2024-12-15', 'Jasser'),
+(12, '2024-12-16', 'Aziz');
+
 -- --------------------------------------------------------
 
 --
--- Structure de la table `plandactioncorrectif_actions`
+-- Table structure for table `plandactioncorrectif_actions`
 --
 
 CREATE TABLE `plandactioncorrectif_actions` (
@@ -277,7 +308,7 @@ CREATE TABLE `plandactioncorrectif_actions` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `plandactioncorrectif_reglementation`
+-- Table structure for table `plandactioncorrectif_reglementation`
 --
 
 CREATE TABLE `plandactioncorrectif_reglementation` (
@@ -285,10 +316,19 @@ CREATE TABLE `plandactioncorrectif_reglementation` (
   `reglementation_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `plandactioncorrectif_reglementation`
+--
+
+INSERT INTO `plandactioncorrectif_reglementation` (`plan_id`, `reglementation_id`) VALUES
+(11, 5),
+(11, 6),
+(12, 5);
+
 -- --------------------------------------------------------
 
 --
--- Structure de la table `plandegestionrisque`
+-- Table structure for table `plandegestionrisque`
 --
 
 CREATE TABLE `plandegestionrisque` (
@@ -300,7 +340,7 @@ CREATE TABLE `plandegestionrisque` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `planrisqueassoc`
+-- Table structure for table `planrisqueassoc`
 --
 
 CREATE TABLE `planrisqueassoc` (
@@ -312,7 +352,7 @@ CREATE TABLE `planrisqueassoc` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `rapport`
+-- Table structure for table `rapport`
 --
 
 CREATE TABLE `rapport` (
@@ -323,7 +363,7 @@ CREATE TABLE `rapport` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Déchargement des données de la table `rapport`
+-- Dumping data for table `rapport`
 --
 
 INSERT INTO `rapport` (`id`, `contenuRapport`, `dateRapport`, `typeService`) VALUES
@@ -336,7 +376,7 @@ INSERT INTO `rapport` (`id`, `contenuRapport`, `dateRapport`, `typeService`) VAL
 -- --------------------------------------------------------
 
 --
--- Structure de la table `reglementation`
+-- Table structure for table `reglementation`
 --
 
 CREATE TABLE `reglementation` (
@@ -346,10 +386,19 @@ CREATE TABLE `reglementation` (
   `dateMiseEnApplication` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `reglementation`
+--
+
+INSERT INTO `reglementation` (`id`, `nom`, `descriptionExigence`, `dateMiseEnApplication`) VALUES
+(5, 'Droits de l\'homme,', 'Respecter les droits de l\'homme, y compris la lutte contre les discriminations.\n', '2024-12-15'),
+(6, 'politique environnementale', 'Mettre en place une politique environnementale alignée avec les objectifs de l\'organisation.\n', '2024-12-15'),
+(7, 'Risque', 'Identifier et évaluer les risques liés à la sécurité et à la santé des employés.\n', '2024-12-15');
+
 -- --------------------------------------------------------
 
 --
--- Structure de la table `ressource`
+-- Table structure for table `ressource`
 --
 
 CREATE TABLE `ressource` (
@@ -361,7 +410,7 @@ CREATE TABLE `ressource` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Déchargement des données de la table `ressource`
+-- Dumping data for table `ressource`
 --
 
 INSERT INTO `ressource` (`id`, `uniteDeMesure`, `utilisationReference`, `utilisationActuelle`, `coutParUnite`) VALUES
@@ -374,7 +423,7 @@ INSERT INTO `ressource` (`id`, `uniteDeMesure`, `utilisationReference`, `utilisa
 -- --------------------------------------------------------
 
 --
--- Structure de la table `risqueenviromental`
+-- Table structure for table `risqueenviromental`
 --
 
 CREATE TABLE `risqueenviromental` (
@@ -389,7 +438,7 @@ CREATE TABLE `risqueenviromental` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `servicesuivi`
+-- Table structure for table `servicesuivi`
 --
 
 CREATE TABLE `servicesuivi` (
@@ -403,7 +452,7 @@ CREATE TABLE `servicesuivi` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `servicesuivicarbone`
+-- Table structure for table `servicesuivicarbone`
 --
 
 CREATE TABLE `servicesuivicarbone` (
@@ -416,7 +465,7 @@ CREATE TABLE `servicesuivicarbone` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `servicesuividechet`
+-- Table structure for table `servicesuividechet`
 --
 
 CREATE TABLE `servicesuividechet` (
@@ -428,7 +477,7 @@ CREATE TABLE `servicesuividechet` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `servicesuivienergie`
+-- Table structure for table `servicesuivienergie`
 --
 
 CREATE TABLE `servicesuivienergie` (
@@ -440,7 +489,7 @@ CREATE TABLE `servicesuivienergie` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `servicesuiviobjectif`
+-- Table structure for table `servicesuiviobjectif`
 --
 
 CREATE TABLE `servicesuiviobjectif` (
@@ -452,7 +501,7 @@ CREATE TABLE `servicesuiviobjectif` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `servicesuiviressource`
+-- Table structure for table `servicesuiviressource`
 --
 
 CREATE TABLE `servicesuiviressource` (
@@ -464,7 +513,7 @@ CREATE TABLE `servicesuiviressource` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `strategiemitigation`
+-- Table structure for table `strategiemitigation`
 --
 
 CREATE TABLE `strategiemitigation` (
@@ -476,7 +525,7 @@ CREATE TABLE `strategiemitigation` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `utilisateur`
+-- Table structure for table `utilisateur`
 --
 
 CREATE TABLE `utilisateur` (
@@ -487,7 +536,7 @@ CREATE TABLE `utilisateur` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Déchargement des données de la table `utilisateur`
+-- Dumping data for table `utilisateur`
 --
 
 INSERT INTO `utilisateur` (`id`, `nom`, `motDePasse`, `typeUtilisateur`) VALUES
@@ -496,119 +545,119 @@ INSERT INTO `utilisateur` (`id`, `nom`, `motDePasse`, `typeUtilisateur`) VALUES
 (3, 'Admin', 'Admin', 'Administrateur');
 
 --
--- Index pour les tables déchargées
+-- Indexes for dumped tables
 --
 
 --
--- Index pour la table `administrateur`
+-- Indexes for table `administrateur`
 --
 ALTER TABLE `administrateur`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `auditenviromental`
+-- Indexes for table `auditenviromental`
 --
 ALTER TABLE `auditenviromental`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `auditenviromental_resultat`
+-- Indexes for table `auditenviromental_resultat`
 --
 ALTER TABLE `auditenviromental_resultat`
   ADD PRIMARY KEY (`audit_id`,`reglementation_id`),
   ADD KEY `reglementation_id` (`reglementation_id`);
 
 --
--- Index pour la table `auditeur`
+-- Indexes for table `auditeur`
 --
 ALTER TABLE `auditeur`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `dechet`
+-- Indexes for table `dechet`
 --
 ALTER TABLE `dechet`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `empreintecarbone`
+-- Indexes for table `empreintecarbone`
 --
 ALTER TABLE `empreintecarbone`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `energie`
+-- Indexes for table `energie`
 --
 ALTER TABLE `energie`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `entitedurable`
+-- Indexes for table `entitedurable`
 --
 ALTER TABLE `entitedurable`
   ADD PRIMARY KEY (`id`),
   ADD KEY `objectifId` (`objectifId`);
 
 --
--- Index pour la table `gestionrapportsuivi`
+-- Indexes for table `gestionrapportsuivi`
 --
 ALTER TABLE `gestionrapportsuivi`
   ADD PRIMARY KEY (`id`),
   ADD KEY `idService` (`idService`);
 
 --
--- Index pour la table `incidentenvironnemental`
+-- Indexes for table `incidentenvironnemental`
 --
 ALTER TABLE `incidentenvironnemental`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `normeiso`
+-- Indexes for table `normeiso`
 --
 ALTER TABLE `normeiso`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `normeiso_reglementation`
+-- Indexes for table `normeiso_reglementation`
 --
 ALTER TABLE `normeiso_reglementation`
   ADD PRIMARY KEY (`norme_id`,`reglementation_id`),
   ADD KEY `reglementation_id` (`reglementation_id`);
 
 --
--- Index pour la table `objectifdurabilite`
+-- Indexes for table `objectifdurabilite`
 --
 ALTER TABLE `objectifdurabilite`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `plandactioncorrectif`
+-- Indexes for table `plandactioncorrectif`
 --
 ALTER TABLE `plandactioncorrectif`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `plandactioncorrectif_actions`
+-- Indexes for table `plandactioncorrectif_actions`
 --
 ALTER TABLE `plandactioncorrectif_actions`
   ADD PRIMARY KEY (`plan_id`),
   ADD KEY `plan_id` (`plan_id`);
 
 --
--- Index pour la table `plandactioncorrectif_reglementation`
+-- Indexes for table `plandactioncorrectif_reglementation`
 --
 ALTER TABLE `plandactioncorrectif_reglementation`
   ADD PRIMARY KEY (`plan_id`,`reglementation_id`),
   ADD KEY `reglementation_id` (`reglementation_id`);
 
 --
--- Index pour la table `plandegestionrisque`
+-- Indexes for table `plandegestionrisque`
 --
 ALTER TABLE `plandegestionrisque`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `planrisqueassoc`
+-- Indexes for table `planrisqueassoc`
 --
 ALTER TABLE `planrisqueassoc`
   ADD PRIMARY KEY (`id`),
@@ -616,348 +665,348 @@ ALTER TABLE `planrisqueassoc`
   ADD KEY `risqueEnviromentalId` (`risqueEnviromentalId`);
 
 --
--- Index pour la table `rapport`
+-- Indexes for table `rapport`
 --
 ALTER TABLE `rapport`
   ADD PRIMARY KEY (`id`),
   ADD KEY `fk_typeService` (`typeService`);
 
 --
--- Index pour la table `reglementation`
+-- Indexes for table `reglementation`
 --
 ALTER TABLE `reglementation`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `ressource`
+-- Indexes for table `ressource`
 --
 ALTER TABLE `ressource`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `risqueenviromental`
+-- Indexes for table `risqueenviromental`
 --
 ALTER TABLE `risqueenviromental`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `servicesuivi`
+-- Indexes for table `servicesuivi`
 --
 ALTER TABLE `servicesuivi`
   ADD PRIMARY KEY (`id`),
   ADD KEY `idx_nom` (`nom`);
 
 --
--- Index pour la table `servicesuivicarbone`
+-- Indexes for table `servicesuivicarbone`
 --
 ALTER TABLE `servicesuivicarbone`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `servicesuividechet`
+-- Indexes for table `servicesuividechet`
 --
 ALTER TABLE `servicesuividechet`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `servicesuivienergie`
+-- Indexes for table `servicesuivienergie`
 --
 ALTER TABLE `servicesuivienergie`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `servicesuiviobjectif`
+-- Indexes for table `servicesuiviobjectif`
 --
 ALTER TABLE `servicesuiviobjectif`
   ADD PRIMARY KEY (`id`),
   ADD KEY `objectifPrioritaire` (`objectifPrioritaire`);
 
 --
--- Index pour la table `servicesuiviressource`
+-- Indexes for table `servicesuiviressource`
 --
 ALTER TABLE `servicesuiviressource`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `strategiemitigation`
+-- Indexes for table `strategiemitigation`
 --
 ALTER TABLE `strategiemitigation`
   ADD PRIMARY KEY (`id`),
   ADD KEY `planDeGestionRisqueId` (`planDeGestionRisqueId`);
 
 --
--- Index pour la table `utilisateur`
+-- Indexes for table `utilisateur`
 --
 ALTER TABLE `utilisateur`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT pour les tables déchargées
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT pour la table `administrateur`
+-- AUTO_INCREMENT for table `administrateur`
 --
 ALTER TABLE `administrateur`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT pour la table `auditenviromental`
+-- AUTO_INCREMENT for table `auditenviromental`
 --
 ALTER TABLE `auditenviromental`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT pour la table `auditeur`
+-- AUTO_INCREMENT for table `auditeur`
 --
 ALTER TABLE `auditeur`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT pour la table `empreintecarbone`
+-- AUTO_INCREMENT for table `empreintecarbone`
 --
 ALTER TABLE `empreintecarbone`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT pour la table `energie`
+-- AUTO_INCREMENT for table `energie`
 --
 ALTER TABLE `energie`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT pour la table `entitedurable`
+-- AUTO_INCREMENT for table `entitedurable`
 --
 ALTER TABLE `entitedurable`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT pour la table `gestionrapportsuivi`
+-- AUTO_INCREMENT for table `gestionrapportsuivi`
 --
 ALTER TABLE `gestionrapportsuivi`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT pour la table `incidentenvironnemental`
+-- AUTO_INCREMENT for table `incidentenvironnemental`
 --
 ALTER TABLE `incidentenvironnemental`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT pour la table `normeiso`
+-- AUTO_INCREMENT for table `normeiso`
 --
 ALTER TABLE `normeiso`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
--- AUTO_INCREMENT pour la table `objectifdurabilite`
+-- AUTO_INCREMENT for table `objectifdurabilite`
 --
 ALTER TABLE `objectifdurabilite`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT pour la table `plandactioncorrectif`
+-- AUTO_INCREMENT for table `plandactioncorrectif`
 --
 ALTER TABLE `plandactioncorrectif`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
--- AUTO_INCREMENT pour la table `plandactioncorrectif_actions`
+-- AUTO_INCREMENT for table `plandactioncorrectif_actions`
 --
 ALTER TABLE `plandactioncorrectif_actions`
   MODIFY `plan_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT pour la table `plandegestionrisque`
+-- AUTO_INCREMENT for table `plandegestionrisque`
 --
 ALTER TABLE `plandegestionrisque`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT pour la table `planrisqueassoc`
+-- AUTO_INCREMENT for table `planrisqueassoc`
 --
 ALTER TABLE `planrisqueassoc`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT pour la table `rapport`
+-- AUTO_INCREMENT for table `rapport`
 --
 ALTER TABLE `rapport`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT pour la table `reglementation`
+-- AUTO_INCREMENT for table `reglementation`
 --
 ALTER TABLE `reglementation`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT pour la table `ressource`
+-- AUTO_INCREMENT for table `ressource`
 --
 ALTER TABLE `ressource`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT pour la table `risqueenviromental`
+-- AUTO_INCREMENT for table `risqueenviromental`
 --
 ALTER TABLE `risqueenviromental`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT pour la table `servicesuivi`
+-- AUTO_INCREMENT for table `servicesuivi`
 --
 ALTER TABLE `servicesuivi`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT pour la table `servicesuivicarbone`
+-- AUTO_INCREMENT for table `servicesuivicarbone`
 --
 ALTER TABLE `servicesuivicarbone`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT pour la table `servicesuividechet`
+-- AUTO_INCREMENT for table `servicesuividechet`
 --
 ALTER TABLE `servicesuividechet`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT pour la table `servicesuivienergie`
+-- AUTO_INCREMENT for table `servicesuivienergie`
 --
 ALTER TABLE `servicesuivienergie`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT pour la table `servicesuiviobjectif`
+-- AUTO_INCREMENT for table `servicesuiviobjectif`
 --
 ALTER TABLE `servicesuiviobjectif`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT pour la table `servicesuiviressource`
+-- AUTO_INCREMENT for table `servicesuiviressource`
 --
 ALTER TABLE `servicesuiviressource`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT pour la table `strategiemitigation`
+-- AUTO_INCREMENT for table `strategiemitigation`
 --
 ALTER TABLE `strategiemitigation`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT pour la table `utilisateur`
+-- AUTO_INCREMENT for table `utilisateur`
 --
 ALTER TABLE `utilisateur`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- Contraintes pour les tables déchargées
+-- Constraints for dumped tables
 --
 
 --
--- Contraintes pour la table `administrateur`
+-- Constraints for table `administrateur`
 --
 ALTER TABLE `administrateur`
   ADD CONSTRAINT `administrateur_ibfk_1` FOREIGN KEY (`id`) REFERENCES `utilisateur` (`id`);
 
 --
--- Contraintes pour la table `auditenviromental_resultat`
+-- Constraints for table `auditenviromental_resultat`
 --
 ALTER TABLE `auditenviromental_resultat`
   ADD CONSTRAINT `auditenviromental_resultat_ibfk_1` FOREIGN KEY (`audit_id`) REFERENCES `auditenviromental` (`id`),
   ADD CONSTRAINT `auditenviromental_resultat_ibfk_2` FOREIGN KEY (`reglementation_id`) REFERENCES `reglementation` (`id`);
 
 --
--- Contraintes pour la table `auditeur`
+-- Constraints for table `auditeur`
 --
 ALTER TABLE `auditeur`
   ADD CONSTRAINT `auditeur_ibfk_1` FOREIGN KEY (`id`) REFERENCES `utilisateur` (`id`);
 
 --
--- Contraintes pour la table `energie`
+-- Constraints for table `energie`
 --
 ALTER TABLE `energie`
   ADD CONSTRAINT `energie_ibfk_1` FOREIGN KEY (`id`) REFERENCES `ressource` (`id`);
 
 --
--- Contraintes pour la table `entitedurable`
+-- Constraints for table `entitedurable`
 --
 ALTER TABLE `entitedurable`
   ADD CONSTRAINT `entitedurable_ibfk_1` FOREIGN KEY (`objectifId`) REFERENCES `objectifdurabilite` (`id`);
 
 --
--- Contraintes pour la table `gestionrapportsuivi`
+-- Constraints for table `gestionrapportsuivi`
 --
 ALTER TABLE `gestionrapportsuivi`
   ADD CONSTRAINT `gestionrapportsuivi_ibfk_1` FOREIGN KEY (`idService`) REFERENCES `servicesuivi` (`id`) ON DELETE CASCADE;
 
 --
--- Contraintes pour la table `incidentenvironnemental`
+-- Constraints for table `incidentenvironnemental`
 --
 ALTER TABLE `incidentenvironnemental`
   ADD CONSTRAINT `incidentenvironnemental_ibfk_1` FOREIGN KEY (`id`) REFERENCES `risqueenviromental` (`id`) ON DELETE CASCADE;
 
 --
--- Contraintes pour la table `normeiso_reglementation`
+-- Constraints for table `normeiso_reglementation`
 --
 ALTER TABLE `normeiso_reglementation`
   ADD CONSTRAINT `normeiso_reglementation_ibfk_1` FOREIGN KEY (`norme_id`) REFERENCES `normeiso` (`id`),
   ADD CONSTRAINT `normeiso_reglementation_ibfk_2` FOREIGN KEY (`reglementation_id`) REFERENCES `reglementation` (`id`);
 
 --
--- Contraintes pour la table `plandactioncorrectif_actions`
+-- Constraints for table `plandactioncorrectif_actions`
 --
 ALTER TABLE `plandactioncorrectif_actions`
   ADD CONSTRAINT `plandactioncorrectif_actions_ibfk_1` FOREIGN KEY (`plan_id`) REFERENCES `plandactioncorrectif` (`id`);
 
 --
--- Contraintes pour la table `plandactioncorrectif_reglementation`
+-- Constraints for table `plandactioncorrectif_reglementation`
 --
 ALTER TABLE `plandactioncorrectif_reglementation`
   ADD CONSTRAINT `plandactioncorrectif_reglementation_ibfk_1` FOREIGN KEY (`plan_id`) REFERENCES `plandactioncorrectif` (`id`),
   ADD CONSTRAINT `plandactioncorrectif_reglementation_ibfk_2` FOREIGN KEY (`reglementation_id`) REFERENCES `reglementation` (`id`);
 
 --
--- Contraintes pour la table `planrisqueassoc`
+-- Constraints for table `planrisqueassoc`
 --
 ALTER TABLE `planrisqueassoc`
   ADD CONSTRAINT `planrisqueassoc_ibfk_1` FOREIGN KEY (`planDeGestionRisqueId`) REFERENCES `plandegestionrisque` (`id`) ON DELETE CASCADE,
   ADD CONSTRAINT `planrisqueassoc_ibfk_2` FOREIGN KEY (`risqueEnviromentalId`) REFERENCES `risqueenviromental` (`id`) ON DELETE CASCADE;
 
 --
--- Contraintes pour la table `servicesuivicarbone`
+-- Constraints for table `servicesuivicarbone`
 --
 ALTER TABLE `servicesuivicarbone`
   ADD CONSTRAINT `servicesuivicarbone_ibfk_1` FOREIGN KEY (`id`) REFERENCES `servicesuivi` (`id`) ON DELETE CASCADE;
 
 --
--- Contraintes pour la table `servicesuividechet`
+-- Constraints for table `servicesuividechet`
 --
 ALTER TABLE `servicesuividechet`
   ADD CONSTRAINT `servicesuividechet_ibfk_1` FOREIGN KEY (`id`) REFERENCES `servicesuivi` (`id`) ON DELETE CASCADE;
 
 --
--- Contraintes pour la table `servicesuivienergie`
+-- Constraints for table `servicesuivienergie`
 --
 ALTER TABLE `servicesuivienergie`
   ADD CONSTRAINT `servicesuivienergie_ibfk_1` FOREIGN KEY (`id`) REFERENCES `servicesuivi` (`id`) ON DELETE CASCADE;
 
 --
--- Contraintes pour la table `servicesuiviobjectif`
+-- Constraints for table `servicesuiviobjectif`
 --
 ALTER TABLE `servicesuiviobjectif`
   ADD CONSTRAINT `servicesuiviobjectif_ibfk_1` FOREIGN KEY (`id`) REFERENCES `servicesuivi` (`id`) ON DELETE CASCADE,
   ADD CONSTRAINT `servicesuiviobjectif_ibfk_2` FOREIGN KEY (`objectifPrioritaire`) REFERENCES `objectifdurabilite` (`id`) ON DELETE SET NULL;
 
 --
--- Contraintes pour la table `servicesuiviressource`
+-- Constraints for table `servicesuiviressource`
 --
 ALTER TABLE `servicesuiviressource`
   ADD CONSTRAINT `servicesuiviressource_ibfk_1` FOREIGN KEY (`id`) REFERENCES `servicesuivi` (`id`) ON DELETE CASCADE;
 
 --
--- Contraintes pour la table `strategiemitigation`
+-- Constraints for table `strategiemitigation`
 --
 ALTER TABLE `strategiemitigation`
   ADD CONSTRAINT `strategiemitigation_ibfk_1` FOREIGN KEY (`planDeGestionRisqueId`) REFERENCES `plandegestionrisque` (`id`) ON DELETE CASCADE;

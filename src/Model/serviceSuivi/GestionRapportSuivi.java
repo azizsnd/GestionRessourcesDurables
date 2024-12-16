@@ -81,10 +81,8 @@ public class GestionRapportSuivi {
     public void genererRapport(String contenuRapport) {
         Rapport rapport = new Rapport(this.service.getNom(), contenuRapport);
         listeRapports.add(rapport);
-        dateDernierRapport = rapport.getDateRapport(); // Met à jour la date du dernier rapport
-        // Save the report locally
+        dateDernierRapport = rapport.getDateRapport();
         sauvegarderRapportFichier(rapport);
-        // Save the report to the database
         try {
             RapportDAO.saveRapportToDatabase(rapport);
         } catch (SQLException e) {
@@ -100,7 +98,6 @@ public class GestionRapportSuivi {
             System.out.println("Aucun service associé pour générer le rapport.");
         }
     }
-    // Sauvegarde d'un rapport dans un fichier
     public void sauvegarderRapportFichier(Rapport rapport) {
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd_HH-mm-ss");
         String dateFormatted = dateFormat.format(rapport.getDateRapport());
@@ -117,7 +114,6 @@ public class GestionRapportSuivi {
             System.out.println("Erreur lors de l'écriture du rapport dans le fichier : " + e.getMessage());
         }
     }
-    // Méthode toString pour afficher l'état de GestionRapportSuivi
     @Override
     public String toString() {
         return "GestionRapportSuivi{" +

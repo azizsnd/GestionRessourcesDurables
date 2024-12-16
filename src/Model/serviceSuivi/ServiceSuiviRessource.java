@@ -71,11 +71,11 @@ public final class ServiceSuiviRessource extends ServiceSuivi{
     @Override
     public String genererRapport() {
         double coutTotal = resourcesSuivis.stream()
-            .mapToDouble(Ressource::calculerCoutTotal) // Calculer le coût total pour chaque ressource
+            .mapToDouble(Ressource::calculerCoutTotal) 
             .sum();
 
         double utilisationTotale = resourcesSuivis.stream()
-            .mapToDouble(Ressource::getUtilisationReference) // Récupérer la consommation de chaque ressource
+            .mapToDouble(Ressource::getUtilisationReference) 
             .sum();
 
         return String.format("Rapport de Suivi des Ressources:\n" +

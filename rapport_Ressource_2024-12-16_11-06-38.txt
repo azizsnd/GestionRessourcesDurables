@@ -1,0 +1,18 @@
+ID Rapport : 0
+Date : Mon Dec 16 11:06:38 WAT 2024
+Contenu : Rapport de Suivi des Ressources:
+Utilisation totale de ressources: 191000,00 unités
+Coût total estimé: 558900,00
+Nombre de types de ressources suivis: 5
+Les resources suivis :
+[
+Ressource{id=1, nom=Factory A, description=An industrial factory producing goods., dateCreation=2020-01-15, objectif=
+ObjectifDurabilite{id=0, dateCible=2025-12-31, reductionCible=20.0, progresActuel=5.0, description=Reduce emissions by 20% by 2025.}, uniteDeMesure=Kilograms, utilisationReference=50000.0, utilisationActuelle=48000.0, coutParUnite=1.5}, 
+Ressource{id=2, nom=Retail Store B, description=A large retail store., dateCreation=2019-08-01, objectif=
+ObjectifDurabilite{id=0, dateCible=2024-06-30, reductionCible=50.0, progresActuel=30.0, description=Recycle 50% of all waste.}, uniteDeMesure=Liters, utilisationReference=20000.0, utilisationActuelle=15000.0, coutParUnite=0.1}, 
+Ressource{id=3, nom=Solar Farm C, description=A solar farm generating renewable energy., dateCreation=2021-03-20, objectif=
+ObjectifDurabilite{id=0, dateCible=2026-01-01, reductionCible=75.0, progresActuel=50.0, description=Increase renewable energy use by 75%.}, uniteDeMesure=Panels, utilisationReference=1000.0, utilisationActuelle=950.0, coutParUnite=500.0}, 
+Ressource{id=4, nom=Recycling Plant D, description=A recycling unit for urban waste., dateCreation=2022-05-01, objectif=
+ObjectifDurabilite{id=0, dateCible=2024-06-30, reductionCible=50.0, progresActuel=30.0, description=Recycle 50% of all waste.}, uniteDeMesure=Cubic Meters, utilisationReference=20000.0, utilisationActuelle=18000.0, coutParUnite=0.05}, 
+Ressource{id=5, nom=Hydropower Station E, description=A hydroelectric power plant., dateCreation=2023-01-10, objectif=
+ObjectifDurabilite{id=0, dateCible=2026-01-01, reductionCible=75.0, progresActuel=50.0, description=Increase renewable energy use by 75%.}, uniteDeMesure=kWh, utilisationReference=100000.0, utilisationActuelle=95000.0, coutParUnite=0.1}]

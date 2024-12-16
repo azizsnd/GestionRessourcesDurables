@@ -18,9 +18,9 @@ public class GestionRessourcesDurables extends Application{
        
         primaryStage.setScene(scene);
 
-        primaryStage.setWidth(1024.0); // largeur souhaitée
-        primaryStage.setHeight(730); // hauteur souhaitée
-        primaryStage.setResizable(false); // rendre la fenêtre non redimensionnable (si nécessaire)
+        primaryStage.setWidth(1024.0); 
+        primaryStage.setHeight(730); 
+        primaryStage.setResizable(false); 
         primaryStage.show();
     }
     public static void main(String[] args) {
